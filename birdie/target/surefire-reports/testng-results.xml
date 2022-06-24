@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Basic Suite" duration-ms="31" started-at="2022-06-24T14:23:51 PDT" finished-at="2022-06-24T14:23:52 PDT">
+    <groups>
+    </groups>
+    <test name="Basic Test" duration-ms="31" started-at="2022-06-24T14:23:51 PDT" finished-at="2022-06-24T14:23:52 PDT">
+      <class name="com.revature.BasicTest">
+        <test-method status="PASS" signature="testBasicTest()[pri:0, instance:com.revature.BasicTest@5e853265]" name="testBasicTest" duration-ms="5" started-at="2022-06-24T14:23:51 PDT" finished-at="2022-06-24T14:23:52 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasicTest -->
+      </class> <!-- com.revature.BasicTest -->
+    </test> <!-- Basic Test -->
+  </suite> <!-- Basic Suite -->
+</testng-results>
