@@ -6,6 +6,7 @@ import org.eclipse.jetty.util.PathWatcher.Config;
 
 import com.revature.controller.HomeController;
 import com.revature.util.ConnectionFactory;
+import com.revature.util.connectionFactory;
 
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
@@ -21,5 +22,8 @@ public class App
         );
         app.start(9090);
         app.get("/", HomeController.homePageEntered);
+        Connection connection = ConnectionFactory.getConnection();
+        System.out.println(connection);
+        };
     }
-}
+

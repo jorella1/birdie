@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Basic Suite" duration-ms="31" started-at="2022-06-24T14:23:51 PDT" finished-at="2022-06-24T14:23:52 PDT">
+  <suite name="Basic Suite" duration-ms="30" started-at="2022-06-24T18:16:08 PDT" finished-at="2022-06-24T18:16:08 PDT">
     <groups>
     </groups>
-    <test name="Basic Test" duration-ms="31" started-at="2022-06-24T14:23:51 PDT" finished-at="2022-06-24T14:23:52 PDT">
+    <test name="Basic Test" duration-ms="30" started-at="2022-06-24T18:16:08 PDT" finished-at="2022-06-24T18:16:08 PDT">
       <class name="com.revature.BasicTest">
-        <test-method status="PASS" signature="testBasicTest()[pri:0, instance:com.revature.BasicTest@5e853265]" name="testBasicTest" duration-ms="5" started-at="2022-06-24T14:23:51 PDT" finished-at="2022-06-24T14:23:52 PDT">
+        <test-method status="PASS" signature="testBasicTest()[pri:0, instance:com.revature.BasicTest@5e853265]" name="testBasicTest" duration-ms="6" started-at="2022-06-24T18:16:08 PDT" finished-at="2022-06-24T18:16:08 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBasicTest -->
