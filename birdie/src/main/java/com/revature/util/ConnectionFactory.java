@@ -19,7 +19,7 @@ public class ConnectionFactory {
             // I have to make the connection
             try{
                 connection = DriverManager.getConnection(
-                "jdbc:p0-database.cvzbvdn4nh5s.us-west-1.rds.amazonaws.com:5432/postgres", 
+                "jdbc://p0-database.cvzbvdn4nh5s.us-west-1.rds.amazonaws.com:5432/postgres", 
                 "postgres", 
                 "password123");
                 return connection;
