@@ -14,8 +14,10 @@ import com.revature.repository.entities.postEntity;
 // import io.javalin.http.staticfiles.Location;
 // import com.revature.repository.*;
 import com.revature.repository.entities.userLoginEntity;
+import com.revature.repository.entities.userRegisterEntity;
 import com.revature.models.userLogin;
 import com.revature.repository.userLoginDao;
+import com.revature.repository.userRegisterDao;
 import com.revature.repository.postDao;
 
 
@@ -39,10 +41,25 @@ public class App
     //  System.out.println("testing");
     //  System.out.println(user.getuserName());
     //  System.out.println(user.getPassword());
+
+    userRegisterEntity new_user = new userRegisterEntity(0, 2, "mr.", "birdie"
+                                    , "birdie@gmail.com", "657 street", 1234567890);
+
+    
+    System.out.println("New User");
+    System.out.println(new_user.getFirst_name());
+    System.out.println(new_user.getLast_name());
+    System.out.println(new_user.getEmail());
+    System.out.println(new_user.getAddress());
+    System.out.println(new_user.getPhone_number());
+
+    userRegisterDao user_new = new userRegisterDao();
+    user_new.insert(new_user);
+    //user_new.delete(1);
     
     // postEntity post = new postEntity(1, "making a new post");
-     postDao newpost = new postDao();
-    newpost.delete(3);
+     //postDao newpost = new postDao();
+    //newpost.delete(3);
     //  newpost.updateText(1,"Hello");
     //  userLoginDao newuser = new userLoginDao();
     //  newuser.insert(user);
@@ -50,7 +67,7 @@ public class App
     //  System.out.println(db_user);
     //  List<userLoginEntity> users= newuser.selectAll();
         
-     System.out.println("testing"); 
+     //System.out.println("testing"); 
 
     //  for (int i=0; i<users.size(); i++){
 
