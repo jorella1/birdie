@@ -22,7 +22,7 @@ public class ConnectionFactory {
             System.out.println("in the else if");
             try{
                 connection = DriverManager.getConnection(
-                "jdbc:postgresql://p0-database.cvzbvdn4nh5s.us-west-1.rds.amazonaws.com/", 
+                "jdbc://p0-database.cvzbvdn4nh5s.us-west-1.rds.amazonaws.com:5432/postgres", 
                 "postgres", 
                 "password123");
                 return connection;
