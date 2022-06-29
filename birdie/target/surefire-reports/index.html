@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 33 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,8 +39,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Basic_Suite">
-              <span class="suite-name border-passed">Basic Suite</span>
+            <a href="#" class="navigator-link" panel-name="suite-Surefire_suite">
+              <span class="suite-name border-failed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Basic_Suite">
-                    <span>C:\Users\modes\Documents\GitHub\Revature\birdie\birdie\src\test\resources\test_suite_1.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Surefire_suite">
+                    <span>[unset file name]</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Basic_Suite">
+                  <a href="#" class="navigator-link " panel-name="testlist-Surefire_suite">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Basic_Suite">
-                    <span>0 groups</span>
+                  <a href="#" class="navigator-link " panel-name="group-Surefire_suite">
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Basic_Suite">
+                  <a href="#" class="navigator-link " panel-name="times-Surefire_suite">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Basic_Suite">
+                  <a href="#" class="navigator-link " panel-name="reporter-Surefire_suite">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Basic_Suite">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Surefire_suite">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Basic_Suite">
+                  <a href="#" class="navigator-link " panel-name="chronological-Surefire_suite">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -93,21 +93,380 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">71 methods, 33 failed,   38 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Surefire_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.postValidationTests" hash-for-method="testCorrectLength">testCorrectLength</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname(1)">testIncorrectFirstname(1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname(b)">testIncorrectFirstname(b)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname({john})">testIncorrectFirstname({john})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname((((((((john))))))))">testIncorrectFirstname((((((((john))))))))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname(a)">testIncorrectFirstname(a)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname(lasdjkfhadskljfhalskjfhlakdf)">testIncorrectFirstname(lasdjkfhadskljfhalskjfhlakdf)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname(emda/llaskd)">testIncorrectFirstname(emda/llaskd)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectFirstname(123)">testIncorrectFirstname(123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname((((((((john))))))))">testIncorrectLastname((((((((john))))))))</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname(emda/llaskd)">testIncorrectLastname(emda/llaskd)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname({john})">testIncorrectLastname({john})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname(a)">testIncorrectLastname(a)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname(lasdjkfhadskljfhalskjfhlakdf)">testIncorrectLastname(lasdjkfhadskljfhalskjfhlakdf)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname(1)">testIncorrectLastname(1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname(123)">testIncorrectLastname(123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectLastname(b)">testIncorrectLastname(b)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.postValidationTests" hash-for-method="testIncorrectLength">testIncorrectLength</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword(11)">testIncorrectPassword(11)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword(pa,ssword12#3)">testIncorrectPassword(pa,ssword12#3)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword(i)">testIncorrectPassword(i)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword(password---)">testIncorrectPassword(password---)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword(iamapas,,sword)">testIncorrectPassword(iamapas,,sword)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)">testIncorrectPassword(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword([][]])">testIncorrectPassword([][]])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPassword(i)">testIncorrectPassword(i)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectUsername(ab)">testIncorrectUsername(ab)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectUsername(-09-09../.,)">testIncorrectUsername(-09-09../.,)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectUsername(123456789012345)">testIncorrectUsername(123456789012345)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectUsername(1)">testIncorrectUsername(1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectUsername(apple#)">testIncorrectUsername(apple#)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectUsername(a)">testIncorrectUsername(a)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectUsername(++++++++)">testIncorrectUsername(++++++++)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Basic_Suite" class="hide-methods passed suite-Basic_Suite"> (hide)</a> <!-- hide-methods passed suite-Basic_Suite -->
-                      <a href="#" panel-name="suite-Basic_Suite" class="show-methods passed suite-Basic_Suite"> (show)</a> <!-- show-methods passed suite-Basic_Suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods passed suite-Surefire_suite"> (hide)</a> <!-- hide-methods passed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods passed suite-Surefire_suite"> (show)</a> <!-- show-methods passed suite-Surefire_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Basic_Suite">
+                    <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Basic_Suite" title="com.revature.BasicTest" hash-for-method="testBasicTest">testBasicTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.TestRunner" hash-for-method="runScenario(&quot;A user enters the correct credentials&quot;, &quot;Test Login Functionality&quot;)">runScenario("A user enters the correct credentials", "Test Login Functionality")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Basic_Suite -->
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(joe)">testCorrectFirstname(joe)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(omar)">testCorrectFirstname(omar)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(modesto)">testCorrectFirstname(modesto)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(bbbbbbbb)">testCorrectFirstname(bbbbbbbb)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(sophia)">testCorrectFirstname(sophia)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(bob)">testCorrectFirstname(bob)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(john)">testCorrectFirstname(john)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectFirstname(emdallaskd)">testCorrectFirstname(emdallaskd)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(modesto)">testCorrectLastname(modesto)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(emdallaskd)">testCorrectLastname(emdallaskd)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(bbbbbbbb)">testCorrectLastname(bbbbbbbb)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(john)">testCorrectLastname(john)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(bob)">testCorrectLastname(bob)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(omar)">testCorrectLastname(omar)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(sophia)">testCorrectLastname(sophia)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectLastname(joe)">testCorrectLastname(joe)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPassword(insecure)">testCorrectPassword(insecure)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPassword(password)">testCorrectPassword(password)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPassword(password123)">testCorrectPassword(password123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPassword(iamapassword)">testCorrectPassword(iamapassword)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPhone(2021112222)">testCorrectPhone(2021112222)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPhone(5555555555)">testCorrectPhone(5555555555)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPhone(1234567890)">testCorrectPhone(1234567890)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectPhone(0123456789)">testCorrectPhone(0123456789)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectUsername(bob)">testCorrectUsername(bob)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectUsername(twitter9000)">testCorrectUsername(twitter9000)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectUsername(jimmothy999)">testCorrectUsername(jimmothy999)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testCorrectUsername(smith)">testCorrectUsername(smith)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(-----)">testIncorrectPhone(-----)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(12345678)">testIncorrectPhone(12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(abc)">testIncorrectPhone(abc)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(0123456789111)">testIncorrectPhone(0123456789111)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(55)">testIncorrectPhone(55)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(555555555)">testIncorrectPhone(555555555)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(20211122221)">testIncorrectPhone(20211122221)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.userValidationTests" hash-for-method="testIncorrectPhone(2)">testIncorrectPhone(2)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.revature.daoTests" hash-for-method="test_select_by_id">test_select_by_id</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Surefire_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,113 +477,1540 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Basic_Suite" class="panel Basic_Suite">
-          <div class="suite-Basic_Suite-class-passed">
+        <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.revature.BasicTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.revature.postValidationTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testBasicTest">
-                  </a> <!-- testBasicTest -->
-                  <span class="method-name">testBasicTest</span>
+                  <a name="testCorrectLength">
+                  </a> <!-- testCorrectLength -->
+                  <span class="method-name">testCorrectLength</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Found two providers called &apos;test-postlength-correct&apos; on class com.revature.dpClass
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLength">
+                  </a> <!-- testIncorrectLength -->
+                  <span class="method-name">testIncorrectLength</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Method public void com.revature.postValidationTests.testIncorrectLength(java.lang.String) requires a @DataProvider named : test-postlength-incorrect in class com.revature.dpClass
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Basic_Suite-class-passed -->
-        </div> <!-- panel Basic_Suite -->
-        <div panel-name="test-xml-Basic_Suite" class="panel">
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.revature.userValidationTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname(1)">
+                  </a> <!-- testIncorrectFirstname(1) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">(1)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname(b)">
+                  </a> <!-- testIncorrectFirstname(b) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">(b)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname({john})">
+                  </a> <!-- testIncorrectFirstname({john}) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">({john})</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname((((((((john))))))))">
+                  </a> <!-- testIncorrectFirstname((((((((john)))))))) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">((((((((john))))))))</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname(a)">
+                  </a> <!-- testIncorrectFirstname(a) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">(a)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname(lasdjkfhadskljfhalskjfhlakdf)">
+                  </a> <!-- testIncorrectFirstname(lasdjkfhadskljfhalskjfhlakdf) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">(lasdjkfhadskljfhalskjfhlakdf)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname(emda/llaskd)">
+                  </a> <!-- testIncorrectFirstname(emda/llaskd) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">(emda/llaskd)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectFirstname(123)">
+                  </a> <!-- testIncorrectFirstname(123) -->
+                  <span class="method-name">testIncorrectFirstname</span>
+                  <span class="parameters">(123)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectFirstname(userValidationTests.java:37)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname((((((((john))))))))">
+                  </a> <!-- testIncorrectLastname((((((((john)))))))) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">((((((((john))))))))</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname(emda/llaskd)">
+                  </a> <!-- testIncorrectLastname(emda/llaskd) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">(emda/llaskd)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname({john})">
+                  </a> <!-- testIncorrectLastname({john}) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">({john})</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname(a)">
+                  </a> <!-- testIncorrectLastname(a) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">(a)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname(lasdjkfhadskljfhalskjfhlakdf)">
+                  </a> <!-- testIncorrectLastname(lasdjkfhadskljfhalskjfhlakdf) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">(lasdjkfhadskljfhalskjfhlakdf)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname(1)">
+                  </a> <!-- testIncorrectLastname(1) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">(1)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname(123)">
+                  </a> <!-- testIncorrectLastname(123) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">(123)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectLastname(b)">
+                  </a> <!-- testIncorrectLastname(b) -->
+                  <span class="method-name">testIncorrectLastname</span>
+                  <span class="parameters">(b)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectLastname(userValidationTests.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword(11)">
+                  </a> <!-- testIncorrectPassword(11) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">(11)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword(pa,ssword12#3)">
+                  </a> <!-- testIncorrectPassword(pa,ssword12#3) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">(pa,ssword12#3)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword(i)">
+                  </a> <!-- testIncorrectPassword(i) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">(i)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword(password---)">
+                  </a> <!-- testIncorrectPassword(password-) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">(password---)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword(iamapas,,sword)">
+                  </a> <!-- testIncorrectPassword(iamapas,,sword) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">(iamapas,,sword)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)">
+                  </a> <!-- testIncorrectPassword(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword([][]])">
+                  </a> <!-- testIncorrectPassword([][]]) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">([][]])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPassword(i)">
+                  </a> <!-- testIncorrectPassword(i) -->
+                  <span class="method-name">testIncorrectPassword</span>
+                  <span class="parameters">(i)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectPassword(userValidationTests.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectUsername(ab)">
+                  </a> <!-- testIncorrectUsername(ab) -->
+                  <span class="method-name">testIncorrectUsername</span>
+                  <span class="parameters">(ab)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectUsername(userValidationTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectUsername(-09-09../.,)">
+                  </a> <!-- testIncorrectUsername(-09-09../.,) -->
+                  <span class="method-name">testIncorrectUsername</span>
+                  <span class="parameters">(-09-09../.,)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectUsername(userValidationTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectUsername(123456789012345)">
+                  </a> <!-- testIncorrectUsername(123456789012345) -->
+                  <span class="method-name">testIncorrectUsername</span>
+                  <span class="parameters">(123456789012345)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectUsername(userValidationTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectUsername(1)">
+                  </a> <!-- testIncorrectUsername(1) -->
+                  <span class="method-name">testIncorrectUsername</span>
+                  <span class="parameters">(1)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectUsername(userValidationTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectUsername(apple#)">
+                  </a> <!-- testIncorrectUsername(apple#) -->
+                  <span class="method-name">testIncorrectUsername</span>
+                  <span class="parameters">(apple#)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectUsername(userValidationTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectUsername(a)">
+                  </a> <!-- testIncorrectUsername(a) -->
+                  <span class="method-name">testIncorrectUsername</span>
+                  <span class="parameters">(a)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectUsername(userValidationTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectUsername(++++++++)">
+                  </a> <!-- testIncorrectUsername(++++++++) -->
+                  <span class="method-name">testIncorrectUsername</span>
+                  <span class="parameters">(++++++++)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at com.revature.userValidationTests.testIncorrectUsername(userValidationTests.java:21)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.revature.daoTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_select_by_id">
+                  </a> <!-- test_select_by_id -->
+                  <span class="method-name">test_select_by_id</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.revature.userValidationTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(joe)">
+                  </a> <!-- testCorrectFirstname(joe) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(joe)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(omar)">
+                  </a> <!-- testCorrectFirstname(omar) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(omar)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(modesto)">
+                  </a> <!-- testCorrectFirstname(modesto) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(modesto)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(bbbbbbbb)">
+                  </a> <!-- testCorrectFirstname(bbbbbbbb) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(bbbbbbbb)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(sophia)">
+                  </a> <!-- testCorrectFirstname(sophia) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(sophia)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(bob)">
+                  </a> <!-- testCorrectFirstname(bob) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(bob)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(john)">
+                  </a> <!-- testCorrectFirstname(john) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(john)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectFirstname(emdallaskd)">
+                  </a> <!-- testCorrectFirstname(emdallaskd) -->
+                  <span class="method-name">testCorrectFirstname</span>
+                  <span class="parameters">(emdallaskd)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(modesto)">
+                  </a> <!-- testCorrectLastname(modesto) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(modesto)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(emdallaskd)">
+                  </a> <!-- testCorrectLastname(emdallaskd) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(emdallaskd)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(bbbbbbbb)">
+                  </a> <!-- testCorrectLastname(bbbbbbbb) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(bbbbbbbb)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(john)">
+                  </a> <!-- testCorrectLastname(john) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(john)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(bob)">
+                  </a> <!-- testCorrectLastname(bob) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(bob)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(omar)">
+                  </a> <!-- testCorrectLastname(omar) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(omar)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(sophia)">
+                  </a> <!-- testCorrectLastname(sophia) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(sophia)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectLastname(joe)">
+                  </a> <!-- testCorrectLastname(joe) -->
+                  <span class="method-name">testCorrectLastname</span>
+                  <span class="parameters">(joe)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPassword(insecure)">
+                  </a> <!-- testCorrectPassword(insecure) -->
+                  <span class="method-name">testCorrectPassword</span>
+                  <span class="parameters">(insecure)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPassword(password)">
+                  </a> <!-- testCorrectPassword(password) -->
+                  <span class="method-name">testCorrectPassword</span>
+                  <span class="parameters">(password)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPassword(password123)">
+                  </a> <!-- testCorrectPassword(password123) -->
+                  <span class="method-name">testCorrectPassword</span>
+                  <span class="parameters">(password123)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPassword(iamapassword)">
+                  </a> <!-- testCorrectPassword(iamapassword) -->
+                  <span class="method-name">testCorrectPassword</span>
+                  <span class="parameters">(iamapassword)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPhone(2021112222)">
+                  </a> <!-- testCorrectPhone(2021112222) -->
+                  <span class="method-name">testCorrectPhone</span>
+                  <span class="parameters">(2021112222)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPhone(5555555555)">
+                  </a> <!-- testCorrectPhone(5555555555) -->
+                  <span class="method-name">testCorrectPhone</span>
+                  <span class="parameters">(5555555555)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPhone(1234567890)">
+                  </a> <!-- testCorrectPhone(1234567890) -->
+                  <span class="method-name">testCorrectPhone</span>
+                  <span class="parameters">(1234567890)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectPhone(0123456789)">
+                  </a> <!-- testCorrectPhone(0123456789) -->
+                  <span class="method-name">testCorrectPhone</span>
+                  <span class="parameters">(0123456789)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectUsername(bob)">
+                  </a> <!-- testCorrectUsername(bob) -->
+                  <span class="method-name">testCorrectUsername</span>
+                  <span class="parameters">(bob)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectUsername(twitter9000)">
+                  </a> <!-- testCorrectUsername(twitter9000) -->
+                  <span class="method-name">testCorrectUsername</span>
+                  <span class="parameters">(twitter9000)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectUsername(jimmothy999)">
+                  </a> <!-- testCorrectUsername(jimmothy999) -->
+                  <span class="method-name">testCorrectUsername</span>
+                  <span class="parameters">(jimmothy999)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCorrectUsername(smith)">
+                  </a> <!-- testCorrectUsername(smith) -->
+                  <span class="method-name">testCorrectUsername</span>
+                  <span class="parameters">(smith)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(-----)">
+                  </a> <!-- testIncorrectPhone(-) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(-----)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(12345678)">
+                  </a> <!-- testIncorrectPhone(12345678) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(12345678)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(abc)">
+                  </a> <!-- testIncorrectPhone(abc) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(abc)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(0123456789111)">
+                  </a> <!-- testIncorrectPhone(0123456789111) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(0123456789111)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(55)">
+                  </a> <!-- testIncorrectPhone(55) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(55)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(555555555)">
+                  </a> <!-- testIncorrectPhone(555555555) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(555555555)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(20211122221)">
+                  </a> <!-- testIncorrectPhone(20211122221) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(20211122221)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testIncorrectPhone(2)">
+                  </a> <!-- testIncorrectPhone(2) -->
+                  <span class="method-name">testIncorrectPhone</span>
+                  <span class="parameters">(2)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.revature.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;A user enters the correct credentials&quot;, &quot;Test Login Functionality&quot;)">
+                  </a> <!-- runScenario("A user enters the correct credentials", "Test Login Functionality") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("A user enters the correct credentials", "Test Login Functionality")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+        </div> <!-- panel Surefire_suite -->
+        <div panel-name="test-xml-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\modes\Documents\GitHub\Revature\birdie\birdie\src\test\resources\test_suite_1.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite verbose=&quot;0&quot; name=&quot;Basic Suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Basic Test&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; verbose=&quot;0&quot; name=&quot;Surefire suite&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; verbose=&quot;0&quot; name=&quot;Surefire test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.revature.BasicTest&quot;/&gt;
+      &lt;class name=&quot;com.revature.daoTests&quot;/&gt;
+      &lt;class name=&quot;com.revature.postValidationTests&quot;/&gt;
+      &lt;class name=&quot;com.revature.TestRunner&quot;/&gt;
+      &lt;class name=&quot;com.revature.userValidationTests&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Basic Test --&gt;
-&lt;/suite&gt; &lt;!-- Basic Suite --&gt;
+  &lt;/test&gt; &lt;!-- Surefire test --&gt;
+&lt;/suite&gt; &lt;!-- Surefire suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Basic_Suite" class="panel">
+        <div panel-name="testlist-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Basic Suite</span>
+            <span class="header-content">Tests for Surefire suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Basic Test (1 class)</span>
+                <span class="test-name">Surefire test (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Basic_Suite" class="panel">
+        <div panel-name="group-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Basic Suite</span>
+            <span class="header-content">Groups for Surefire suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">cucumber</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">runScenario</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Basic_Suite" class="panel">
+        <div panel-name="times-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Basic Suite</span>
+            <span class="header-content">Times for Surefire suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Basic_Suite');
-function tableData_Basic_Suite() {
+suiteTableInitFunctions.push('tableData_Surefire_suite');
+function tableData_Surefire_suite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(71);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testBasicTest')
-data.setCell(0, 2, 'com.revature.BasicTest')
-data.setCell(0, 3, 6);
-window.suiteTableData['Basic_Suite']= { tableData: data, tableDiv: 'times-div-Basic_Suite'}
+data.setCell(0, 1, 'runScenario')
+data.setCell(0, 2, 'com.revature.TestRunner')
+data.setCell(0, 3, 13321);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test_select_by_id')
+data.setCell(1, 2, 'com.revature.daoTests')
+data.setCell(1, 3, 10);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testCorrectLastname')
+data.setCell(2, 2, 'com.revature.userValidationTests')
+data.setCell(2, 3, 10);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCorrectFirstname')
+data.setCell(3, 2, 'com.revature.userValidationTests')
+data.setCell(3, 3, 10);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testCorrectLastname')
+data.setCell(4, 2, 'com.revature.userValidationTests')
+data.setCell(4, 3, 10);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testIncorrectFirstname')
+data.setCell(5, 2, 'com.revature.userValidationTests')
+data.setCell(5, 3, 10);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testIncorrectFirstname')
+data.setCell(6, 2, 'com.revature.userValidationTests')
+data.setCell(6, 3, 1);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testIncorrectPhone')
+data.setCell(7, 2, 'com.revature.userValidationTests')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testCorrectLastname')
+data.setCell(8, 2, 'com.revature.userValidationTests')
+data.setCell(8, 3, 0);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testIncorrectPhone')
+data.setCell(9, 2, 'com.revature.userValidationTests')
+data.setCell(9, 3, 0);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testCorrectFirstname')
+data.setCell(10, 2, 'com.revature.userValidationTests')
+data.setCell(10, 3, 0);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testIncorrectPhone')
+data.setCell(11, 2, 'com.revature.userValidationTests')
+data.setCell(11, 3, 0);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testCorrectFirstname')
+data.setCell(12, 2, 'com.revature.userValidationTests')
+data.setCell(12, 3, 0);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testCorrectUsername')
+data.setCell(13, 2, 'com.revature.userValidationTests')
+data.setCell(13, 3, 0);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testCorrectUsername')
+data.setCell(14, 2, 'com.revature.userValidationTests')
+data.setCell(14, 3, 0);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testCorrectFirstname')
+data.setCell(15, 2, 'com.revature.userValidationTests')
+data.setCell(15, 3, 0);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testCorrectFirstname')
+data.setCell(16, 2, 'com.revature.userValidationTests')
+data.setCell(16, 3, 0);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'testCorrectFirstname')
+data.setCell(17, 2, 'com.revature.userValidationTests')
+data.setCell(17, 3, 0);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'testCorrectPassword')
+data.setCell(18, 2, 'com.revature.userValidationTests')
+data.setCell(18, 3, 0);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'testCorrectLastname')
+data.setCell(19, 2, 'com.revature.userValidationTests')
+data.setCell(19, 3, 0);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'testIncorrectPhone')
+data.setCell(20, 2, 'com.revature.userValidationTests')
+data.setCell(20, 3, 0);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'testCorrectLastname')
+data.setCell(21, 2, 'com.revature.userValidationTests')
+data.setCell(21, 3, 0);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'testCorrectPassword')
+data.setCell(22, 2, 'com.revature.userValidationTests')
+data.setCell(22, 3, 0);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'testCorrectPassword')
+data.setCell(23, 2, 'com.revature.userValidationTests')
+data.setCell(23, 3, 0);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'testCorrectPhone')
+data.setCell(24, 2, 'com.revature.userValidationTests')
+data.setCell(24, 3, 0);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'testCorrectPhone')
+data.setCell(25, 2, 'com.revature.userValidationTests')
+data.setCell(25, 3, 0);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'testCorrectFirstname')
+data.setCell(26, 2, 'com.revature.userValidationTests')
+data.setCell(26, 3, 0);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'testCorrectFirstname')
+data.setCell(27, 2, 'com.revature.userValidationTests')
+data.setCell(27, 3, 0);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'testCorrectPhone')
+data.setCell(28, 2, 'com.revature.userValidationTests')
+data.setCell(28, 3, 0);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'testCorrectUsername')
+data.setCell(29, 2, 'com.revature.userValidationTests')
+data.setCell(29, 3, 0);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'testCorrectLastname')
+data.setCell(30, 2, 'com.revature.userValidationTests')
+data.setCell(30, 3, 0);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'testCorrectUsername')
+data.setCell(31, 2, 'com.revature.userValidationTests')
+data.setCell(31, 3, 0);
+data.setCell(32, 0, 32)
+data.setCell(32, 1, 'testCorrectLastname')
+data.setCell(32, 2, 'com.revature.userValidationTests')
+data.setCell(32, 3, 0);
+data.setCell(33, 0, 33)
+data.setCell(33, 1, 'testIncorrectPhone')
+data.setCell(33, 2, 'com.revature.userValidationTests')
+data.setCell(33, 3, 0);
+data.setCell(34, 0, 34)
+data.setCell(34, 1, 'testIncorrectPhone')
+data.setCell(34, 2, 'com.revature.userValidationTests')
+data.setCell(34, 3, 0);
+data.setCell(35, 0, 35)
+data.setCell(35, 1, 'testCorrectPhone')
+data.setCell(35, 2, 'com.revature.userValidationTests')
+data.setCell(35, 3, 0);
+data.setCell(36, 0, 36)
+data.setCell(36, 1, 'testCorrectLastname')
+data.setCell(36, 2, 'com.revature.userValidationTests')
+data.setCell(36, 3, 0);
+data.setCell(37, 0, 37)
+data.setCell(37, 1, 'testCorrectPassword')
+data.setCell(37, 2, 'com.revature.userValidationTests')
+data.setCell(37, 3, 0);
+data.setCell(38, 0, 38)
+data.setCell(38, 1, 'testIncorrectPhone')
+data.setCell(38, 2, 'com.revature.userValidationTests')
+data.setCell(38, 3, 0);
+data.setCell(39, 0, 39)
+data.setCell(39, 1, 'testIncorrectPhone')
+data.setCell(39, 2, 'com.revature.userValidationTests')
+data.setCell(39, 3, 0);
+data.setCell(40, 0, 40)
+data.setCell(40, 1, 'testIncorrectUsername')
+data.setCell(40, 2, 'com.revature.userValidationTests')
+data.setCell(40, 3, 0);
+data.setCell(41, 0, 41)
+data.setCell(41, 1, 'testIncorrectUsername')
+data.setCell(41, 2, 'com.revature.userValidationTests')
+data.setCell(41, 3, 0);
+data.setCell(42, 0, 42)
+data.setCell(42, 1, 'testIncorrectUsername')
+data.setCell(42, 2, 'com.revature.userValidationTests')
+data.setCell(42, 3, 0);
+data.setCell(43, 0, 43)
+data.setCell(43, 1, 'testIncorrectPassword')
+data.setCell(43, 2, 'com.revature.userValidationTests')
+data.setCell(43, 3, 0);
+data.setCell(44, 0, 44)
+data.setCell(44, 1, 'testIncorrectLastname')
+data.setCell(44, 2, 'com.revature.userValidationTests')
+data.setCell(44, 3, 0);
+data.setCell(45, 0, 45)
+data.setCell(45, 1, 'testIncorrectFirstname')
+data.setCell(45, 2, 'com.revature.userValidationTests')
+data.setCell(45, 3, 0);
+data.setCell(46, 0, 46)
+data.setCell(46, 1, 'testIncorrectPassword')
+data.setCell(46, 2, 'com.revature.userValidationTests')
+data.setCell(46, 3, 0);
+data.setCell(47, 0, 47)
+data.setCell(47, 1, 'testIncorrectLastname')
+data.setCell(47, 2, 'com.revature.userValidationTests')
+data.setCell(47, 3, 0);
+data.setCell(48, 0, 48)
+data.setCell(48, 1, 'testIncorrectLastname')
+data.setCell(48, 2, 'com.revature.userValidationTests')
+data.setCell(48, 3, 0);
+data.setCell(49, 0, 49)
+data.setCell(49, 1, 'testIncorrectPassword')
+data.setCell(49, 2, 'com.revature.userValidationTests')
+data.setCell(49, 3, 0);
+data.setCell(50, 0, 50)
+data.setCell(50, 1, 'testIncorrectPassword')
+data.setCell(50, 2, 'com.revature.userValidationTests')
+data.setCell(50, 3, 0);
+data.setCell(51, 0, 51)
+data.setCell(51, 1, 'testIncorrectPassword')
+data.setCell(51, 2, 'com.revature.userValidationTests')
+data.setCell(51, 3, 0);
+data.setCell(52, 0, 52)
+data.setCell(52, 1, 'testIncorrectUsername')
+data.setCell(52, 2, 'com.revature.userValidationTests')
+data.setCell(52, 3, 0);
+data.setCell(53, 0, 53)
+data.setCell(53, 1, 'testIncorrectLastname')
+data.setCell(53, 2, 'com.revature.userValidationTests')
+data.setCell(53, 3, 0);
+data.setCell(54, 0, 54)
+data.setCell(54, 1, 'testIncorrectUsername')
+data.setCell(54, 2, 'com.revature.userValidationTests')
+data.setCell(54, 3, 0);
+data.setCell(55, 0, 55)
+data.setCell(55, 1, 'testIncorrectFirstname')
+data.setCell(55, 2, 'com.revature.userValidationTests')
+data.setCell(55, 3, 0);
+data.setCell(56, 0, 56)
+data.setCell(56, 1, 'testIncorrectPassword')
+data.setCell(56, 2, 'com.revature.userValidationTests')
+data.setCell(56, 3, 0);
+data.setCell(57, 0, 57)
+data.setCell(57, 1, 'testIncorrectLastname')
+data.setCell(57, 2, 'com.revature.userValidationTests')
+data.setCell(57, 3, 0);
+data.setCell(58, 0, 58)
+data.setCell(58, 1, 'testIncorrectFirstname')
+data.setCell(58, 2, 'com.revature.userValidationTests')
+data.setCell(58, 3, 0);
+data.setCell(59, 0, 59)
+data.setCell(59, 1, 'testIncorrectLength')
+data.setCell(59, 2, 'com.revature.postValidationTests')
+data.setCell(59, 3, 0);
+data.setCell(60, 0, 60)
+data.setCell(60, 1, 'testIncorrectLastname')
+data.setCell(60, 2, 'com.revature.userValidationTests')
+data.setCell(60, 3, 0);
+data.setCell(61, 0, 61)
+data.setCell(61, 1, 'testIncorrectFirstname')
+data.setCell(61, 2, 'com.revature.userValidationTests')
+data.setCell(61, 3, 0);
+data.setCell(62, 0, 62)
+data.setCell(62, 1, 'testIncorrectUsername')
+data.setCell(62, 2, 'com.revature.userValidationTests')
+data.setCell(62, 3, 0);
+data.setCell(63, 0, 63)
+data.setCell(63, 1, 'testIncorrectFirstname')
+data.setCell(63, 2, 'com.revature.userValidationTests')
+data.setCell(63, 3, 0);
+data.setCell(64, 0, 64)
+data.setCell(64, 1, 'testCorrectLength')
+data.setCell(64, 2, 'com.revature.postValidationTests')
+data.setCell(64, 3, 0);
+data.setCell(65, 0, 65)
+data.setCell(65, 1, 'testIncorrectFirstname')
+data.setCell(65, 2, 'com.revature.userValidationTests')
+data.setCell(65, 3, 0);
+data.setCell(66, 0, 66)
+data.setCell(66, 1, 'testIncorrectLastname')
+data.setCell(66, 2, 'com.revature.userValidationTests')
+data.setCell(66, 3, 0);
+data.setCell(67, 0, 67)
+data.setCell(67, 1, 'testIncorrectPassword')
+data.setCell(67, 2, 'com.revature.userValidationTests')
+data.setCell(67, 3, 0);
+data.setCell(68, 0, 68)
+data.setCell(68, 1, 'testIncorrectLastname')
+data.setCell(68, 2, 'com.revature.userValidationTests')
+data.setCell(68, 3, 0);
+data.setCell(69, 0, 69)
+data.setCell(69, 1, 'testIncorrectPassword')
+data.setCell(69, 2, 'com.revature.userValidationTests')
+data.setCell(69, 3, 0);
+data.setCell(70, 0, 70)
+data.setCell(70, 1, 'testIncorrectUsername')
+data.setCell(70, 2, 'com.revature.userValidationTests')
+data.setCell(70, 3, 0);
+window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 ms</span>
-              <div id="times-div-Basic_Suite">
-              </div> <!-- times-div-Basic_Suite -->
+              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <div id="times-div-Surefire_suite">
+              </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Basic_Suite" class="panel">
+        <div panel-name="reporter-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Basic Suite</span>
+            <span class="header-content">Reporter output for Surefire suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Basic_Suite" class="panel">
+        <div panel-name="ignored-methods-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Basic_Suite" class="panel">
+        <div panel-name="chronological-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.revature.BasicTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">testBasicTest</span>
+              <div class="chronological-class-name">com.revature.TestRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">testStart</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.userValidationTests</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">testStart</span>
+                <span class="method-start">20 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.daoTests</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">testStart</span>
+                <span class="method-start">20 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.postValidationTests</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">testStart</span>
+                <span class="method-start">20 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.daoTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">test_select_by_id</span>
+                <span class="method-start">70 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.TestRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@7a799159)</span>
+                <span class="method-start">120 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">setupClass</span>
+                <span class="method-start">1205 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("A user enters the correct credentials", "Test Login Functionality")</span>
+                <span class="method-start">1245 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">14566 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.userValidationTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(modesto)</span>
+                <span class="method-start">14656 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(bob)</span>
+                <span class="method-start">14656 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(sophia)</span>
+                <span class="method-start">14656 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(omar)</span>
+                <span class="method-start">14666 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(bbbbbbbb)</span>
+                <span class="method-start">14666 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(joe)</span>
+                <span class="method-start">14666 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(john)</span>
+                <span class="method-start">14666 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectFirstname(emdallaskd)</span>
+                <span class="method-start">14666 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(modesto)</span>
+                <span class="method-start">14676 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(omar)</span>
+                <span class="method-start">14676 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(sophia)</span>
+                <span class="method-start">14676 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(john)</span>
+                <span class="method-start">14676 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(bob)</span>
+                <span class="method-start">14676 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(joe)</span>
+                <span class="method-start">14686 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(emdallaskd)</span>
+                <span class="method-start">14696 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectLastname(bbbbbbbb)</span>
+                <span class="method-start">14696 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPassword(password)</span>
+                <span class="method-start">14696 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPassword(password123)</span>
+                <span class="method-start">14696 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPassword(iamapassword)</span>
+                <span class="method-start">14696 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPhone(2021112222)</span>
+                <span class="method-start">14706 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPhone(5555555555)</span>
+                <span class="method-start">14706 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPhone(1234567890)</span>
+                <span class="method-start">14706 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPassword(insecure)</span>
+                <span class="method-start">14706 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectUsername(bob)</span>
+                <span class="method-start">14716 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectUsername(twitter9000)</span>
+                <span class="method-start">14716 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname(a)</span>
+                <span class="method-start">14716 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectUsername(jimmothy999)</span>
+                <span class="method-start">14716 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectUsername(smith)</span>
+                <span class="method-start">14716 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCorrectPhone(0123456789)</span>
+                <span class="method-start">14716 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname(b)</span>
+                <span class="method-start">14727 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname({john})</span>
+                <span class="method-start">14729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname(1)</span>
+                <span class="method-start">14729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname((((((((john))))))))</span>
+                <span class="method-start">14729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname(lasdjkfhadskljfhalskjfhlakdf)</span>
+                <span class="method-start">14729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname(emda/llaskd)</span>
+                <span class="method-start">14729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectFirstname(123)</span>
+                <span class="method-start">14729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname({john})</span>
+                <span class="method-start">14739 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname((((((((john))))))))</span>
+                <span class="method-start">14739 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname(a)</span>
+                <span class="method-start">14739 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname(1)</span>
+                <span class="method-start">14739 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname(123)</span>
+                <span class="method-start">14739 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname(b)</span>
+                <span class="method-start">14739 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword(pa,ssword12#3)</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname(emda/llaskd)</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword(password---)</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectLastname(lasdjkfhadskljfhalskjfhlakdf)</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword([][]])</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword(iamapas,,sword)</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword(i)</span>
+                <span class="method-start">14749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(12345678)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(55)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(-----)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectUsername(-09-09../.,)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectUsername(123456789012345)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(abc)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword(11)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectPassword(i)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(0123456789111)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(555555555)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(20211122221)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testIncorrectPhone(2)</span>
+                <span class="method-start">14759 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectUsername(ab)</span>
+                <span class="method-start">14769 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectUsername(apple#)</span>
+                <span class="method-start">14769 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectUsername(++++++++)</span>
+                <span class="method-start">14769 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectUsername(1)</span>
+                <span class="method-start">14769 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testIncorrectUsername(a)</span>
+                <span class="method-start">14769 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
