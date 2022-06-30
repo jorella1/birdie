@@ -30,35 +30,39 @@ public class userValidationTests {
     }
     @Test(dataProvider = "test-firstname-correct", dataProviderClass = dpClass.class)
     public void testCorrectFirstname(String firstname){
-        Assert.assertTrue(vs.validatePassword(firstname));
+        Assert.assertTrue(vs.validateFirstName(firstname));
     }
     @Test(dataProvider = "test-firstname-incorrect", dataProviderClass = dpClass.class)
     public void testIncorrectFirstname(String firstname){
-        Assert.assertFalse(vs.validatePassword(firstname));
+        Assert.assertFalse(vs.validateFirstName(firstname));
     }
     @Test(dataProvider = "test-lastname-correct", dataProviderClass = dpClass.class)
     public void testCorrectLastname(String lastname){
-        Assert.assertTrue(vs.validatePassword(lastname));
+        Assert.assertTrue(vs.validateLastName(lastname));
     }
     @Test(dataProvider = "test-lastname-incorrect", dataProviderClass = dpClass.class)
     public void testIncorrectLastname(String lastname){
-        Assert.assertFalse(vs.validatePassword(lastname));
+        Assert.assertFalse(vs.validateLastName(lastname));
     }
     @Test(dataProvider = "test-address-correct", dataProviderClass = dpClass.class)
     public void testCorrectAddress(String address){
-        Assert.assertTrue(vs.validatePassword(address));
+        Assert.assertTrue(vs.validateAddress(address));
     }
     @Test(dataProvider = "test-address-correct", dataProviderClass = dpClass.class)
     public void testCorrectEmail(String email){
-        Assert.assertTrue(vs.validatePassword(email));
+        Assert.assertTrue(vs.validateAddress(email));
+    }
+    @Test(dataProvider = "test-email-correct", dataProviderClass = dpClass.class)
+    public void testIncorrectEmail(String email){
+        Assert.assertFalse(vs.validateEmail(email));
     }
     @Test(dataProvider = "test-phone-correct", dataProviderClass = dpClass.class)
     public void testCorrectPhone(String phone){
-        Assert.assertTrue(vs.validatePassword(phone));
+        Assert.assertTrue(vs.validatePhone(phone));
     }
     @Test(dataProvider = "test-phone-incorrect", dataProviderClass = dpClass.class)
     public void testIncorrectPhone(String phone){
-        Assert.assertTrue(vs.validatePassword(phone));
+        Assert.assertFalse(vs.validatePhone(phone));
     }
     
     

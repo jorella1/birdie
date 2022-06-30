@@ -6,20 +6,20 @@ public class dpClass {
     @DataProvider(name= "test-username-correct")
     public Object[][] usernameCorrectProvider(){
         return new Object[][] {
-            {"bob"},{"smith"},{"jimmothy999"},{"twitter9000"}
+            {"abc12"},{"smith"},{"jimmothy999"},{"twitter9000"}
         };
     }
     @DataProvider(name= "test-username-incorrect")
     public Object[][] usernameincorrectProvider(){
         return new Object[][] {
-            {"-09-09../.,"},{"123456789012345"},{"++++++++"},{"apple#"},
+            {"-09-09../.,"},{"1234567890123456"},{"++++++++"},{"apple#"},
             {"1"},{"a"},{"ab"}
         };
     }
     @DataProvider(name= "test-password-correct")
     public Object[][] passwordCorrectProvider(){
         return new Object[][] {
-            {"password123"},{"password"},{"iamapassword"},{"insecure"}
+            {"Password123!"},{"passW0rd?"},{"iama%passworD3"},{"1nsecure$Maybe"}
         };
     }
     @DataProvider(name= "test-password-incorrect")
@@ -33,14 +33,14 @@ public class dpClass {
     public Object[][] firstnameCorrectProvider(){
         return new Object[][] {
             {"bob"},{"sophia"},{"modesto"},{"omar"},
-            {"john"},{"joe"},{"bbbbbbbb"},{"emdallaskd"}
+            {"john"},{"joe"},{"bbbbbbbb"},{"abcdfghjertlasdmgndk"}
         };
     }
     @DataProvider(name= "test-firstname-incorrect")
     public Object[][] firstnameIncorrectProvider(){
         return new Object[][] {
-            {"a"},{"b"},{"1"},{"123"},
-            {"(((((((john)))))))"},{"{john}"},{"lasdjkfhadskljfhalskjfhlakdf"},{"emda/llaskd"}
+            {"a"},{"ba"},{"1"},{"123"},
+            {"(((((((john)))))))"},{"{john}"},{"abcnbmdlskdopaodasldk"},{"emda/llaskd"}
         };
     }
     @DataProvider(name= "test-lastname-correct")
@@ -64,11 +64,18 @@ public class dpClass {
             
         };
     }
-    //TODO should we validate real emails?
+
     @DataProvider(name= "test-email-correct")
     public Object[][] emailCorrectProvider(){
         return new Object[][] {
-            
+            {"tim@apple.com"}, {"twitter@twitter.com"}
+        };
+    }
+    @DataProvider(name= "test-email-incorrect")
+    public Object[][] emailIncorrectProvider(){
+        return new Object[][] {
+            {"timapple.com"}, {"@twitter.com"},{"tim@apple..com"}, {"_@twitter.com"},
+            {"123"}, {"a"},{".com"}, {"_@twittecom"}
         };
     }
     @DataProvider(name= "test-phone-correct")
@@ -78,9 +85,9 @@ public class dpClass {
         };
     }
     @DataProvider(name= "test-phone-incorrect")
-    public Object[][] phoneincorrectProvider(){
+    public Object[][] phoneIncorrectProvider(){
         return new Object[][] {
-            {"20211122221"},{"555555555"},{"12345678"},{"0123456789111"},
+            {"20211122221"},{"555555555"},{"2345678"},{"0123456789111"},
             {"2"},{"55"},{"abc"},{"-----"}
         };
     }
@@ -91,7 +98,7 @@ public class dpClass {
             {"This is a great tweet"},{"This is a better tweet"},{new String(new char[280]).replace("\0", a)}
         };
     }
-    @DataProvider(name= "test-postlength-correct")
+    @DataProvider(name= "test-postlength-incorrect")
     public Object[][] postLengthIncorrectProvider(){
         String a = "a";
         return new Object[][] {
