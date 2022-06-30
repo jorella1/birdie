@@ -1,7 +1,22 @@
 <suite name="Basic Suite">
-    <test name="Basic Test">
+    <test name="DAO Test">
         <classes>
-            <class name="com.revature.BasicTest" />
+            <class name="com.revature.daoTests" />
+        </classes>
+    </test>
+    <test name="User Test">
+        <classes>
+            <class name="com.revature.userValidationTests" />
+        </classes>
+    </test>
+    <test name="Post Test">
+        <classes>
+            <class name="com.revature.postValidationTests" />
+        </classes>
+    </test>
+    <test name="Cucumber login">
+        <classes>
+            <class name="com.revature.TestRunner"/>
         </classes>
     </test>
 </suite>

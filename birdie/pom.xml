@@ -30,6 +30,23 @@
       <artifactId>javalin</artifactId>
       <version>4.6.3</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>7.3.4</version>
+      <scope>test</scope>
+  </dependency>
+
+  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+  <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>7.3.4</version>
+      <scope>test</scope>
+  </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
     <dependency>
       <groupId>org.testng</groupId>
@@ -49,27 +66,35 @@
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.31</version>
   </dependency>
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.0.0</version>
+  </dependency>
+  
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M6</version>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
+          <encoding>UTF-8</encoding>
+          <source>1.8</source>
+          <target>1.8</target>
           <suiteXmlFiles>
             <suiteXmlFile>src/test/resources/test_suite_1.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M6</version>
       </plugin>
+      
     </plugins>
   </build>
 </project>
