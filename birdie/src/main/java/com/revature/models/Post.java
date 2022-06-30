@@ -1,12 +1,12 @@
 package com.revature.models;
 
-public class posts {
+public class Post {
   
     private int postid;
-    private int userid;
+    // private int userid;
     private String post;
     private int likes;
-    public posts(String post) {
+    public Post(int postid, String post, int likes) {
         this.post=post;
         this.likes=0;
     }
@@ -17,12 +17,6 @@ public class posts {
         this.postid =id;
     }
 
-    public int getuserId() {
-        return userid;
-    }
-    public void setuserId(int id) {
-        this.userid =id;
-    }
 
     public String getPost() {
         return post;
@@ -42,7 +36,7 @@ public class posts {
     @Override
     public String toString() { 
         
-        return "Postid: "+postid+ " Userid: "+ userid + " Post: "+ post + " Likes: "+likes;
+        return "Postid: "+postid + " Post: "+ post + " Likes: "+likes;
 
     }
     
