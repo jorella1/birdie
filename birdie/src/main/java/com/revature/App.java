@@ -47,7 +47,7 @@ public class App
                 get("report/{id}", PostController.report);
                 get("delete/{id}", PostController.delete);
 
-            });
+            }});
 
         ///User
 
@@ -58,8 +58,12 @@ public class App
                 get("report/{id}", UserController.report);
                 get("delete/{id}", UserController.delete);
                 
-            });
+            }});
 
+
+        }
+
+    }
         // };
 
     //  userLoginEntity user = new userLoginEntity(0,"Myname1", "testpassword1");
@@ -103,7 +107,4 @@ public class App
     //  }
 
     
-        }
-
-    }
 
