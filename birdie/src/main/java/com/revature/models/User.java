@@ -1,10 +1,10 @@
 package com.revature.models;
 
-public class userLogin {
+public class User {
     private String username;
     private String password;
     private int userid;
-    public userLogin(int userid, String username, String password) {
+    public User(int userid, String username, String password) {
         this.userid=userid;
         this.username = username;
         this.password = password;
