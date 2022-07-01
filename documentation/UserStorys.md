@@ -1,10 +1,12 @@
 5 different features per User:
+
     - Register/Login/Logout
     - Post Birdie
     - View Birdies
     - Like Birdies
     - Comment on Birdies
 Admin:
+
     - Delete Birdies
     - Add warning to Birdie?
     - Delete comment
