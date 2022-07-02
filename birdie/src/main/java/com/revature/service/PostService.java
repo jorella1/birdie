@@ -9,21 +9,28 @@ import com.revature.repository.entities.postEntity;
 
 public class PostService {
 
-    private postDao PostDao;
+    private postDao Posts= new postDao();
+
+    public void makePost(postEntity newpost) throws PostNotFoundException {
+        Posts.insert(newpost);
+        // return convertPostModel(Posts.select(id));
+    }
 
 
 
     public Post getPost(int id) throws PostNotFoundException {
-        return convertPostModel(PostDao.select(id));
+        return convertPostModel(Posts.select(id));
     }
 
     public void deletePost(int id) throws PostNotFoundException {
-        PostDao.delete(id);
+        Posts.delete(id);
     }
 
 
     public List<Post> getAllPosts() throws PostNotFoundException {
-        List<postEntity> PostEntities = PostDao.selectAll();
+        System.out.println("in the get all posts");
+        List<postEntity> PostEntities = Posts.selectAll();
+        System.out.println(PostEntities);
         List<Post> PostModels = new ArrayList<>();
 
         for (postEntity PostEntity : PostEntities){
@@ -34,9 +41,17 @@ public class PostService {
     }
 
     public void editPost(int id, String text) throws PostNotFoundException {
-        PostDao.updateText(id, text);
+        Posts.updateText(id, text);
+    }
+    public void likePost(int id) throws PostNotFoundException {
+        // postEntity post= Posts.select(id);
+        // int newlikes=post.getLikes()+1;
+        Posts.updateLikes(id);
     }
 
+    public void flagPost(int id) throws PostNotFoundException {
+        Posts.updateFlag(id,true);
+    }
 
     private static Post convertPostModel(postEntity PostEntity) throws PostNotFoundException {
         if(PostEntity == null){
@@ -48,6 +63,8 @@ public class PostService {
             PostEntity.getLikes() 
             );
     }
+
+    
 
 
 }

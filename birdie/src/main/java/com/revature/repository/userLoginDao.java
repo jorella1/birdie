@@ -14,11 +14,11 @@ import com.revature.util.ConnectionFactory;
 public class userLoginDao implements userLoginDaoInterface{
 
     @Override
-    public void insert (userLoginEntity userLoginEntity) {
+    public void insert(userLoginEntity userLoginEntity) {
         Connection connection = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO project2.userlogin (username, password) VALUES (?,?)   RETURNING userid;";
+        String sql = "INSERT INTO project2.userlogin (username, password, role) VALUES (?,?,?)   RETURNING userid;";
 
-
+        System.out.println("inserting");
         // TODO Auto-generated method stub
 
         try{
@@ -26,13 +26,18 @@ public class userLoginDao implements userLoginDaoInterface{
 
             preparedStatement.setString(1, userLoginEntity.getuserName());
             preparedStatement.setString(2, userLoginEntity.getPassword());
-            int row = preparedStatement.executeUpdate();
-
+            preparedStatement.setString(3, userLoginEntity.getRole());
+            preparedStatement.executeUpdate();
+            // int id = row;
+            // System.out.println("my id is "+row);
+       
 
         }catch(SQLException e){
             e.printStackTrace();
         }
 
+ 
+      
     }
         
     
@@ -54,7 +59,9 @@ public class userLoginDao implements userLoginDaoInterface{
                 return new userLoginEntity(
                     resultSet.getInt(1), 
                     resultSet.getString(2), 
-                    resultSet.getString(3));
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+                    );
             }
 
         }catch(SQLException e){
@@ -82,7 +89,9 @@ public class userLoginDao implements userLoginDaoInterface{
                 items.add(new userLoginEntity(
                     resultSet.getInt(1), 
                     resultSet.getString(2),
-                    resultSet.getString(3)));
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+                    ));
             }
         
 

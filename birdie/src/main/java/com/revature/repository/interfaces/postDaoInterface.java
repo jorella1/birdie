@@ -14,7 +14,8 @@ public interface postDaoInterface{
     List<postEntity> selectAll();
 
     void updateText(int textid, String text);
-    void updateLikes(int textid, int likes);
+    void updateLikes(int textid);
+    void updateFlag(int textid, boolean flag);
     void delete(int postid);
 
 }

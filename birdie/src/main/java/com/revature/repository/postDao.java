@@ -17,7 +17,7 @@ public class postDao implements postDaoInterface {
     @Override
     public void insert (postEntity postEntity) {
         Connection connection = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO project2.posts (userid, text) VALUES (?, ?);";
+        String sql = "INSERT INTO project2.posts (userid, texts) VALUES (?, ?);";
 
 
         // TODO Auto-generated method stub
@@ -56,7 +56,8 @@ public class postDao implements postDaoInterface {
                     resultSet.getInt(1), 
                     resultSet.getInt(2), 
                     resultSet.getString(3),
-                    resultSet.getInt(4));
+                    resultSet.getInt(4),
+                    resultSet.getBoolean(5));
             }
 
         }catch(SQLException e){
@@ -85,7 +86,8 @@ public class postDao implements postDaoInterface {
                     resultSet.getInt(1), 
                     resultSet.getInt(2),
                     resultSet.getString(3),
-                    resultSet.getInt(4)
+                    resultSet.getInt(4),
+                    resultSet.getBoolean(5)
                     ));
             }
         
@@ -124,11 +126,12 @@ public class postDao implements postDaoInterface {
     }
 
     @Override
-    public void updateLikes(int postid, int likes){
+    public void updateLikes(int postid){
 
         Connection connection = ConnectionFactory.getConnection();
+        // int increment=1;
         // String sql = "INSERT INTO project2.posts (userid, texts) VALUES (?, ?});";
-        String sql = "UPDATE project2.posts SET likes=? WHERE postid=?;";
+        String sql = "UPDATE project2.posts SET likes=likes+1 WHERE postid=?;";
 
 
         // TODO Auto-generated method stub
@@ -136,7 +139,32 @@ public class postDao implements postDaoInterface {
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1, likes);
+            // preparedStatement.setInt(2, like);
+            preparedStatement.setInt(1, postid);
+            int row = preparedStatement.executeUpdate();
+
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Override
+    public void updateFlag(int postid, boolean flag){
+
+        Connection connection = ConnectionFactory.getConnection();
+        // String sql = "INSERT INTO project2.posts (userid, texts) VALUES (?, ?});";
+        String sql = "UPDATE project2.posts SET flagged=? WHERE postid=?;";
+
+
+        // TODO Auto-generated method stub
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setBoolean(1, flag);
             preparedStatement.setInt(2, postid);
             int row = preparedStatement.executeUpdate();
 
@@ -147,6 +175,7 @@ public class postDao implements postDaoInterface {
 
 
     }
+
 
     @Override
     public void delete(int postid){

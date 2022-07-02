@@ -5,12 +5,14 @@ public class postEntity {
     private int userid;
     private String text;
     private int likes;
+    private boolean flag;
 
-    public postEntity(int textid, int userid, String text, int likes) {
+    public postEntity(int textid, int userid, String text, int likes, boolean flag) {
         this.textid = textid;
         this.userid = userid;
         this.text = text;
         this.likes = likes;
+        this.flag = flag;
     }
 
     
@@ -19,6 +21,7 @@ public class postEntity {
         this.userid = userid;
         this.text = text;
         this.likes = 0;
+        this.flag = false;
     }
     public int getTid() {
         return textid;
@@ -46,6 +49,17 @@ public class postEntity {
     }
     public void setLikes(int amount) {
         this.likes = amount ;
+    }
+
+    public boolean getFlag(){
+
+        return flag;
+    }
+
+    public void setFlag (boolean flag){
+
+
+        this.flag = flag;
     }
 
 
