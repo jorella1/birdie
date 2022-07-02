@@ -4,16 +4,19 @@ public class userLoginEntity {
     private int userid;
     private String username;
     private String password;
+    private String role;
 
-    public userLoginEntity(int userid, String username, String password) {
+    public userLoginEntity(int userid, String username, String password, String role) {
         this.userid = userid;
         this.username =username;
         this.password = password;
+        this.role = role;
     }
 
-    public userLoginEntity( String username, String password) {
+    public userLoginEntity( String username, String password, String role) {
         this.username =username;
         this.password = password;
+        this.role = role;
     }
 
     public int getId() {
@@ -36,6 +39,13 @@ public class userLoginEntity {
         this.password = password;
     }
 
+
+    public String getRole() {
+        return password;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     @Override
     public String toString() {

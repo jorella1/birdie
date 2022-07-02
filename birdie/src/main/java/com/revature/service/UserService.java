@@ -9,21 +9,27 @@ import com.revature.repository.entities.userLoginEntity;
 
 public class UserService {
 
-    private userLoginDao userLoginDao;
+    private userLoginDao userLogin= new userLoginDao();
 
+    private static User User = new User(4,"hello", "test", "user");
 
-
-    public Post getUser(int id) throws UserNotFoundException {
-        return convertUserModel(userLoginDao.select(id));
+    public User getUser(int id) {
+        System.out.println("I'm in user service");
+        User testuser= convertUserModel(userLogin.select(id));
+        System.out.println(testuser);
+        // return convertUserModel(userLoginDao.select(id));
+        // return convertUserModel(userLoginDao.select(id));
+        System.out.println("after test user");
+         return testuser;
     }
 
-    public void deleteUser(int id) throws UserNotFoundException {
-        userLoginDao.delete(id);
-    }
+    // public void deleteUser(int id) throws UserNotFoundException {
+    //     userLoginDao.delete(id);
+    // }
 
 
     public List<User> getAllUsers() throws UserNotFoundException {
-        List<userLoginEntity> UserEntities = userLoginDao.selectAll();
+        List<userLoginEntity> UserEntities = userLogin.selectAll();
         List<User> UserModels = new ArrayList<>();
 
         for (userLoginEntity UserEntity : UserEntities){
@@ -33,14 +39,16 @@ public class UserService {
         return UserModels;
     }
 
-    private static User convertUserModel(userLoginEntity userLoginEntity) throws UserNotFoundException {
+    private static User convertUserModel(userLoginEntity userLoginEntity){
+        System.out.println("in convert model");
         if(userLoginEntity == null){
-            throw new UserNotFoundException();
+            System.out.println("testing convert");
         }
         return new User(
             userLoginEntity.getId(), 
             userLoginEntity.getuserName(), 
-            userLoginEntity.getPassword() 
+            userLoginEntity.getPassword(),
+            userLoginEntity.getRole() 
             );
     }
 

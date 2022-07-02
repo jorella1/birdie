@@ -22,6 +22,12 @@ import com.revature.repository.userLoginDao;
 import com.revature.repository.userRegisterDao;
 import com.revature.repository.postDao;
 
+import io.javalin.Javalin;
+import io.javalin.apibuilder.ApiBuilder;
+import io.javalin.http.staticfiles.Location;
+
+import static io.javalin.apibuilder.ApiBuilder.*;
+
 
 public class App 
 {
@@ -40,14 +46,19 @@ public class App
         ////Post routes
 
         app.routes(() -> {
-            path("post", () -> {
+            path("posting", () -> {
                 get("all", PostController.allPostsHandler);
                 get("{id}", PostController.getPost);
-                get("update/{id}", PostController.update);
-                get("report/{id}", PostController.report);
-                get("delete/{id}", PostController.delete);
+                get("like/{id}", PostController.likePost);
+                get("delete/{id}", PostController.deletePost);
+                get("flag/{id}", PostController.flagPost);
+                // get("update/{id}", PostController.update);
+                // get("report/{id}", PostController.report);
+                // get("delete/{id}", PostController.delete);
 
-            }});
+            });
+        
+        });
 
         ///User
 
@@ -55,22 +66,42 @@ public class App
             path("user", () -> {
                 get("all", UserController.allUserHandler);
                 get("{id}", UserController.getUser);
-                get("report/{id}", UserController.report);
-                get("delete/{id}", UserController.delete);
+                // get("report/{id}", UserController.report);
+                // get("delete/{id}", UserController.delete);
                 
-            }});
+            });
+        });
+
+
+        
+        postEntity post = new postEntity(1,"13th post");
+
+        System.out.println("testing");
+        System.out.println(post);
+        postDao poster = new postDao();
+        // poster.insert(post); 
+        // poster.updateLikes(1);
+        postEntity posterE = poster.select(1);
+        System.out.println("My ilkes are");
+        int likes= posterE.getLikes()+1;
+        System.out.println(posterE.getLikes());
+        poster.updateLikes(1);
+        poster.delete(4);
+
+
+
+     
+
 
 
         }
 
+
     }
         // };
 
-    //  userLoginEntity user = new userLoginEntity(0,"Myname1", "testpassword1");
 
-    //  System.out.println("testing");
-    //  System.out.println(user.getuserName());
-    //  System.out.println(user.getPassword());
+
 
     // userRegisterEntity new_user = new userRegisterEntity(0, 2, "mr.", "birdie"
     //                                 , "birdie@gmail.com", "657 street", 1234567890);

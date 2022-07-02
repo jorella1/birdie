@@ -5,10 +5,12 @@ public class Post {
     private int postid;
     // private int userid;
     private String post;
-    private int likes;
+    private int likes=0;
+    private boolean flag = false;
+
     public Post(int postid, String post, int likes) {
+        this.postid=postid;
         this.post=post;
-        this.likes=0;
     }
     public int getId() {
         return postid;
@@ -30,6 +32,17 @@ public class Post {
     }
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public boolean getFlag(){
+
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+
+        this.flag=flag;
+
     }
 
 
