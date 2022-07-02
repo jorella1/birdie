@@ -1,0 +1,25 @@
+{
+    "tweets": [
+        {
+            "profileImage": "https://placekitten.com/40/40",
+            "username": "John",
+            "handle": "joe",
+            "description": "yo i hope this works",
+            "media": "https://placekitten.com/600/400"
+        },
+        {
+            "profileImage": "https://placekitten.com/40/40",
+            "username": "Maria",
+            "handle": "maria",
+            "description": "how is yalls day goin?",
+            "media": "https://placekitten.com/200/200"
+        },
+        {
+            "profileImage": "https://placekitten.com/40/40",
+            "username": "Felix",
+            "handle": "pewdiepie",
+            "description": "Im taking a break from youtube",
+            "media": "null"
+        }
+    ]
+}

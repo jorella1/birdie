@@ -15,6 +15,12 @@ import com.revature.repository.entities.postEntity;
 // import com.revature.repository.*;
 import com.revature.repository.entities.userLoginEntity;
 import com.revature.repository.entities.userRegisterEntity;
+import com.revature.util.ConnectionFactory;
+
+import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
+
+import com.revature.controller.HomeController;
 import com.revature.models.userLogin;
 import com.revature.repository.userLoginDao;
 import com.revature.repository.userRegisterDao;
@@ -25,16 +31,16 @@ public class App
 {
     public static void main( String[] args )
     {
-        // Javalin app = Javalin.create(
-        //     config -> {
-        //         config.addStaticFiles("birdie/src/main/resources/public", Location.EXTERNAL);
-        //     }
-        // );
-        // app.start(9090);
-        // app.get("/", HomeController.homePageEntered);
-        // Connection connection = ConnectionFactory.getConnection();
-        // System.out.println(connection);
-        // };
+        Javalin app = Javalin.create(
+            config -> {
+                config.addStaticFiles("birdie/src/main/resources/public", Location.EXTERNAL);
+            }
+        );
+        app.start(9090);
+        app.get("/", HomeController.homePageEntered);
+
+        };
+    }
 
     //  userLoginEntity user = new userLoginEntity(0,"Myname1", "testpassword1");
 
@@ -42,19 +48,19 @@ public class App
     //  System.out.println(user.getuserName());
     //  System.out.println(user.getPassword());
 
-    userRegisterEntity new_user = new userRegisterEntity(0, 2, "mr.", "birdie"
-                                    , "birdie@gmail.com", "657 street", 1234567890);
+    // userRegisterEntity new_user = new userRegisterEntity(0, 2, "mr.", "birdie"
+    //                                 , "birdie@gmail.com", "657 street", 1234567890);
 
     
-    System.out.println("New User");
-    System.out.println(new_user.getFirst_name());
-    System.out.println(new_user.getLast_name());
-    System.out.println(new_user.getEmail());
-    System.out.println(new_user.getAddress());
-    System.out.println(new_user.getPhone_number());
+    // System.out.println("New User");
+    // System.out.println(new_user.getFirst_name());
+    // System.out.println(new_user.getLast_name());
+    // System.out.println(new_user.getEmail());
+    // System.out.println(new_user.getAddress());
+    // System.out.println(new_user.getPhone_number());
 
-    userRegisterDao user_new = new userRegisterDao();
-    user_new.insert(new_user);
+    // userRegisterDao user_new = new userRegisterDao();
+    // user_new.insert(new_user);
     //user_new.delete(1);
     
     // postEntity post = new postEntity(1, "making a new post");
@@ -77,7 +83,7 @@ public class App
     //  }
 
     
-        }
+    //     }
 
-    }
+    // }
 
