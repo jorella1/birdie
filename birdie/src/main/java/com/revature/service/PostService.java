@@ -11,6 +11,11 @@ public class PostService {
 
     private postDao Posts= new postDao();
 
+    public void makePost(postEntity newpost) throws PostNotFoundException {
+        Posts.insert(newpost);
+        // return convertPostModel(Posts.select(id));
+    }
+
 
 
     public Post getPost(int id) throws PostNotFoundException {

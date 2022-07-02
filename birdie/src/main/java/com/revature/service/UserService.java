@@ -23,6 +23,14 @@ public class UserService {
          return testuser;
     }
 
+    public void registerUser(userLoginEntity newuser) {
+
+        userLogin.insert(newuser);
+        // return convertUserModel(userLoginDao.select(id));
+        // return convertUserModel(userLoginDao.select(id));
+
+    }
+
     // public void deleteUser(int id) throws UserNotFoundException {
     //     userLoginDao.delete(id);
     // }

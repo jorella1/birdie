@@ -48,10 +48,12 @@ public class App
         app.routes(() -> {
             path("posting", () -> {
                 get("all", PostController.allPostsHandler);
+                get("make", PostController.make);
                 get("{id}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
                 get("flag/{id}", PostController.flagPost);
+                
                 // get("update/{id}", PostController.update);
                 // get("report/{id}", PostController.report);
                 // get("delete/{id}", PostController.delete);
@@ -66,6 +68,7 @@ public class App
             path("user", () -> {
                 get("all", UserController.allUserHandler);
                 get("{id}", UserController.getUser);
+                get("register", UserController.register);
                 // get("report/{id}", UserController.report);
                 // get("delete/{id}", UserController.delete);
                 
@@ -87,12 +90,6 @@ public class App
         System.out.println(posterE.getLikes());
         poster.updateLikes(1);
         poster.delete(4);
-
-
-
-     
-
-
 
         }
 
