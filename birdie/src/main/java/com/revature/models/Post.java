@@ -44,7 +44,29 @@ public class Post {
         this.flag=flag;
 
     }
+    @Override
+    public boolean equals(Object obj) {
 
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Post other = (Post) obj;
+        if(postid != other.postid){
+            return false;
+        }
+        if (post == null) {
+            if (other.post != null)
+                return false;
+        } else if (!post.equals(other.post))
+            return false;
+        if (flag != other.flag){
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public String toString() { 

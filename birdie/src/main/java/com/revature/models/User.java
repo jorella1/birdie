@@ -39,12 +39,42 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+    
+    @Override
+    public boolean equals(Object obj) {
 
-    // @Override
-    // public String toString() { 
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        User other = (User) obj;
+        if(userid != other.userid){
+            return false;
+        }
+        if (username == null) {
+            if (other.username != null)
+                return false;
+        } else if (!username.equals(other.username))
+            return false;
+        if (password == null) {
+            if (other.password != null)
+                return false;
+        } else if (!password.equals(other.password))
+            return false;
+        /* if (role == null) {
+            if (other.role != null)
+                return false;
+        } else if (!role.equals(other.role))
+            return false; */
+        return true;
+    }
+    @Override
+    public String toString() { 
         
-    //     return "Userid: "+ userid + " Username: "+ username + " Password: "+password;
+         return "Userid: "+ userid + " Username: "+ username + " Password: "+password;
 
-    // }
+    }
     
 }

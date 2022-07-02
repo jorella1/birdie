@@ -13,7 +13,7 @@ public class UserService {
 
     private static User User = new User(4,"hello", "test", "user");
 
-    public User getUser(int id) {
+    public User getUser(int id) throws UserNotFoundException{
         System.out.println("I'm in user service");
         User testuser= convertUserModel(userLogin.select(id));
         System.out.println(testuser);
@@ -47,10 +47,10 @@ public class UserService {
         return UserModels;
     }
 
-    private static User convertUserModel(userLoginEntity userLoginEntity){
-        System.out.println("in convert model");
+    private static User convertUserModel(userLoginEntity userLoginEntity) throws UserNotFoundException {
+        
         if(userLoginEntity == null){
-            System.out.println("testing convert");
+            throw new UserNotFoundException();
         }
         return new User(
             userLoginEntity.getId(), 
@@ -58,6 +58,10 @@ public class UserService {
             userLoginEntity.getPassword(),
             userLoginEntity.getRole() 
             );
+    }
+    //for mocking and testing purposes
+    public void setLoginDao(userLoginDao loginDao){
+        this.userLogin = loginDao;
     }
 
 

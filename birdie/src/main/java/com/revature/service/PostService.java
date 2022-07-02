@@ -63,8 +63,10 @@ public class PostService {
             PostEntity.getLikes() 
             );
     }
-
-    
+    //for mocking and testing purposes
+    public void setPostDao(postDao PostDao){
+        this.Posts = PostDao;
+    }
 
 
 }
