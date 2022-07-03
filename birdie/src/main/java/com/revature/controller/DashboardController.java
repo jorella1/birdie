@@ -13,7 +13,7 @@ public class DashboardController {
         temp.put("test", Integer.parseInt(ctx.pathParam("id")));
         temp.put("test1",5);
         //  newvar = temp.get(1);
-        ctx.render("/templates/javascript.vm", temp);
+        ctx.render("/templates/dashboard.vm", temp);
     };
     public static Handler myList = ctx -> {
         // System.out.println("the parameter id is "+ctx.pathParam("id"));

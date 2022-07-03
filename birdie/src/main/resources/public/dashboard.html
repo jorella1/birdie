@@ -69,7 +69,11 @@
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
                     <div class="col-10 mb-2 col-xl-11">
-                        <textarea class="form-control"></textarea>
+                        <form action="/make" method ="post">
+                            <input type="text" name="userid" disabled>
+                            <textarea class="form-control" name="text"></textarea>
+                            <input type="submit">Tweet</button>
+                        </form>
                     </div>
                     <hr>
                     <div class="row">

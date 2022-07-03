@@ -29,7 +29,7 @@ fetch("./tweets.json")
         const para = document.createElement('p');
         para.innerHTML = jsondata.tweets[i].description;
         divCol2.appendChild(para);
-    
+
         if(jsondata.tweets[i].media != 'null'){
             const divSrc = document.createElement('div');
             const media = document.createElement('img');
@@ -38,7 +38,18 @@ fetch("./tweets.json")
             divSrc.appendChild(media);
             divCol2.appendChild(divSrc);
         }
+        const likeButton = document.createElement('input');
+        likeButton.type = 'checkbox';
+        likeButton.className = 'check_box';
+        likeButton.name = 'likeCheckbox';
+        const likeLabel = document.createElement('label');
+        likeLabel.htmlFor = 'likeButton';
+        likeButton.appendChild(likeLabel);
+        divCol2.appendChild(likeButton);
+
         divRow.appendChild(divCol2);
+
+
         //document.body.appendChild(elem);
         const tweetCol = document.getElementById('tweetCol');
         tweetCol.appendChild(divTweet);
