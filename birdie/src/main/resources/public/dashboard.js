@@ -1,3 +1,5 @@
+//fetch("/posting/all")
+
 fetch("./tweets.json")
 .then(response => {
    return response.json();
