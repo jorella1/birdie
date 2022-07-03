@@ -70,7 +70,7 @@ label, input {
    // id={{userid}}; 
   // const id={{userid}};
    //console.log("my id:",id);
-    console.log($list_id);
+    console.log("my list id is ",$list_id);
 
  //  const response = await fetch(`http://localhost:9090/user/all`)
  // .then(response => response.json())
