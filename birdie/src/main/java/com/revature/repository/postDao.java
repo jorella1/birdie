@@ -17,7 +17,7 @@ public class postDao implements postDaoInterface {
     @Override
     public void insert (postEntity postEntity) {
         Connection connection = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO project2.posts (userid, texts) VALUES (?, ?);";
+        String sql = "INSERT INTO project2.posts (userid, texts, username) VALUES (?, ?,?);";
 
 
         // TODO Auto-generated method stub
@@ -27,6 +27,32 @@ public class postDao implements postDaoInterface {
 
             preparedStatement.setInt(1, postEntity.getId());
             preparedStatement.setString(2, postEntity.getText());
+            preparedStatement.setString(3, postEntity.getUsername());
+            int row = preparedStatement.executeUpdate();
+
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+        
+    }
+
+    @Override
+    public void insert_comment(postEntity postEntity) {
+        Connection connection = ConnectionFactory.getConnection();
+        String sql = "INSERT INTO project2.posts (userid, texts, commentid, username) VALUES (?, ?,?);";
+
+
+        // TODO Auto-generated method stub
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1, postEntity.getId());
+            preparedStatement.setString(2, postEntity.getText());
+            preparedStatement.setInt(1, postEntity.getcommentId());
+            preparedStatement.setString(3, postEntity.getUsername());
             int row = preparedStatement.executeUpdate();
 
 
@@ -57,7 +83,8 @@ public class postDao implements postDaoInterface {
                     resultSet.getInt(2), 
                     resultSet.getString(3),
                     resultSet.getInt(4),
-                    resultSet.getBoolean(5));
+                    resultSet.getBoolean(5),
+                    resultSet.getString(6));
             }
 
         }catch(SQLException e){
@@ -66,6 +93,33 @@ public class postDao implements postDaoInterface {
         return null;
     }
 
+    public postEntity select_comments(int postid) {
+        Connection connection = ConnectionFactory.getConnection();
+                // TODO Auto-generated catch block
+        String sql = "SELECT * FROM project2.posts WHERE commentid=?;";
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, postid);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                
+                return new postEntity(
+                    resultSet.getInt(1), 
+                    resultSet.getInt(2), 
+                    resultSet.getString(3),
+                    resultSet.getInt(4),
+                    resultSet.getBoolean(5),
+                    resultSet.getString(6));
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
     @Override
     public List<postEntity> selectAll() {
         Connection connection = ConnectionFactory.getConnection();
@@ -87,7 +141,8 @@ public class postDao implements postDaoInterface {
                     resultSet.getInt(2),
                     resultSet.getString(3),
                     resultSet.getInt(4),
-                    resultSet.getBoolean(5)
+                    resultSet.getBoolean(5),
+                    resultSet.getString(6)
                     ));
             }
         
@@ -99,7 +154,39 @@ public class postDao implements postDaoInterface {
     }
 
 
+    @Override
+    public List<postEntity> selectReplies(int postid) {
+        Connection connection = ConnectionFactory.getConnection();
+                // TODO Auto-generated catch block
+        String sql = "SELECT * FROM project2.posts WHERE commentid=?;";
 
+
+        List<postEntity> replies = new ArrayList<>();
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, postid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next()){
+
+
+                replies.add(new postEntity(
+                    resultSet.getInt(1), 
+                    resultSet.getInt(2),
+                    resultSet.getString(3),
+                    resultSet.getInt(4),
+                    resultSet.getBoolean(5),
+                    resultSet.getString(6)
+                    ));
+            }
+        
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return replies;
+    }
     @Override
     public void updateText(int postid, String text){
 

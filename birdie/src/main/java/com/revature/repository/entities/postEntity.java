@@ -6,23 +6,38 @@ public class postEntity {
     private String text;
     private int likes;
     private boolean flag;
+    private int commentid=0;
+    private String username;
 
-    public postEntity(int textid, int userid, String text, int likes, boolean flag) {
+    public postEntity(int textid, int userid, String text, int likes, boolean flag, String username) {
         this.textid = textid;
         this.userid = userid;
         this.text = text;
         this.likes = likes;
         this.flag = flag;
+        this.username =username;
     }
 
     
-    public postEntity(int userid, String text) {
+    public postEntity(int userid, String text, String username) {
         this.textid = 0;
         this.userid = userid;
         this.text = text;
         this.likes = 0;
         this.flag = false;
+        this.username=username;
     }
+
+    public postEntity(int userid, String text, int commentid, String username) {
+        this.textid = 0;
+        this.userid = userid;
+        this.text = text;
+        this.likes = 0;
+        this.flag = false;
+        this.commentid=commentid;
+        this.username =username;
+    }
+
     public int getTid() {
         return textid;
     }
@@ -37,11 +52,25 @@ public class postEntity {
         this.userid = userid;
     }
 
+    public int getcommentId() {
+        return commentid;
+    }
+    public void setcommentId(int commentid) {
+        this.commentid = commentid;
+    }
+
     public String getText() {
         return text;
     }
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getLikes() {

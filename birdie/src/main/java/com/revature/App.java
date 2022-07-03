@@ -61,8 +61,9 @@ public class App
         app.routes(() -> {
             path("posting", () -> {
                 get("all", PostController.allPostsHandler);
+                post("reply",PostController.Reply);
                 post("make", PostController.make);
-                get("{id}", PostController.getPost);
+                get("{postid}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
                 get("flag/{id}", PostController.flagPost);
@@ -89,9 +90,9 @@ public class App
             });
         });
 
-
+       String username="sdfsdf";
         
-        postEntity post = new postEntity(1,"13th post");
+        postEntity post = new postEntity(1,"13th post", username);
 
         System.out.println("testing");
         System.out.println(post);

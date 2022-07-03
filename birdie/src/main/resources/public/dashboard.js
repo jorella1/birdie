@@ -1,4 +1,4 @@
-//fetch("/posting/all")
+//fetch("http://localhost:9090/posting/all")
 
 fetch("./tweets.json")
 .then(response => {
