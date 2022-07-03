@@ -55,5 +55,14 @@ fetch("./tweets.json")
         tweetCol.appendChild(divTweet);
         const hr = document.createElement('hr');
         tweetCol.appendChild(hr);
+
+        const replyForm = document.createElement('form');
+        const replyButton = document.createElement('button');
+        replyButton.value = jsondata.tweets[i].id;
+        replyButton.type = 'submit';
+        replyButton.innerHTML = 'Reply';
+        replyButton.formAction = '{postid}'
+        replyForm.appendChild(replyButton);
+        tweetCol.appendChild(replyForm);
     }
 });
