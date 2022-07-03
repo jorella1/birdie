@@ -1,11 +1,12 @@
 package com.revature.controller;
 
 
-import com.revature.repository.postDao;
 import com.revature.repository.entities.postEntity;
+import com.revature.repository.entities.userLoginEntity;
 import com.revature.service.PostNotFoundException;
 import com.revature.service.PostService;
 import com.revature.models.*;
+import com.revature.repository.*;
 
 import io.javalin.http.Handler;
 import java.util.*;
@@ -21,7 +22,11 @@ public class PostController {
         // System.out.println(Integer.parseInt(ctx.formParam("username")));
         String text = ctx.formParam("text");
         int userid = Integer.parseInt(ctx.formParam("userid")); 
-        String username=ctx.formParam("username");
+        userLoginDao userDao = new userLoginDao();
+        userLoginEntity user = userDao.select(userid);
+        System.out.println(user.getuserName());
+        // String username=ctx.formParam("username");
+        String username = user.getuserName();
         postEntity newPost= new postEntity(userid, text,username);
 
 

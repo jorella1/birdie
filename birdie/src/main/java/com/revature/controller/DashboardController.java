@@ -1,6 +1,7 @@
 package com.revature.controller;
 import io.javalin.http.Handler;
 import java.util.*;
+import com.revature.repository.*;
 public class DashboardController {
     public static Handler Dashboard = ctx -> {
         // System.out.println("the parameter id is "+ctx.pathParam("id"));
@@ -10,7 +11,9 @@ public class DashboardController {
         // ArrayList<Integer> newarray = new ArrayList();
         // newarray.add(1);
         // newarray.add(2);
-        temp.put("test", Integer.parseInt(ctx.pathParam("id")));
+        
+        temp.put("userid", Integer.parseInt(ctx.pathParam("id")));
+        
         temp.put("test1",5);
         //  newvar = temp.get(1);
         ctx.render("/templates/dashboard.vm", temp);

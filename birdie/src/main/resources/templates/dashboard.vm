@@ -69,8 +69,9 @@
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
                     <div class="col-10 mb-2 col-xl-11">
+                    
                         <form action="/posting/make" method ="post">
-                            <input type="hidden" name="userid">
+                            <input type="hidden" name="userid" value=$userid>
                             <textarea class="form-control" name="text"></textarea>
                             <input type="submit"></button>
                         </form>

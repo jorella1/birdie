@@ -26,8 +26,8 @@ public class Post {
     public int getId() {
         return postid;
     }
-    public void setId(int id) {
-        this.postid =id;
+    public void setId(int postid) {
+        this.postid =postid;
     }
 
 
@@ -45,10 +45,10 @@ public class Post {
         this.likes = likes;
     }
 
-    public int getcommentId() {
+    public int getcommentid() {
         return commentid;
     }
-    public void setcommentId(int commentid) {
+    public void setcommentid(int commentid) {
         this.commentid = commentid;
     }
 

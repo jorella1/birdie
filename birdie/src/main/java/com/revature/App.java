@@ -108,9 +108,11 @@ public class App
         poster.delete(4);
         poster.updateFlag(5, true);
         poster.updateFlag(10, true);
-        List<postEntity> posterF = poster.selectAllFlagged();
+        List<postEntity> posterF = poster.selectAll();
         System.out.println(posterF);
         System.out.println(posterF.get(0).getFlag());
+        
+        System.out.println(posterF);
         }
 
 
