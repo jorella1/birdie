@@ -52,7 +52,7 @@ label, input {
 
 </style>
    <body>
-  <h1>testing the javascript rendered page $list_id</h1>
+  <h1>testing the javascript rendered page $test and $test1</h1>
    
 
 

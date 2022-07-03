@@ -10,8 +10,8 @@ public class DashboardController {
         // ArrayList<Integer> newarray = new ArrayList();
         // newarray.add(1);
         // newarray.add(2);
-        temp.put("list_id", Integer.parseInt(ctx.pathParam("id")));
         temp.put("test", Integer.parseInt(ctx.pathParam("id")));
+        temp.put("test1",5);
         //  newvar = temp.get(1);
         ctx.render("/templates/javascript.vm", temp);
     };
@@ -23,8 +23,8 @@ public class DashboardController {
         // ArrayList<Integer> newarray = new ArrayList();
         // newarray.add(1);
         // newarray.add(2);
-        temp.put("list_id", Integer.parseInt(ctx.pathParam("id")));
-        temp.put("test", Integer.parseInt(ctx.pathParam("id")));
+        temp.put("testing", Integer.parseInt(ctx.pathParam("id")));
+        temp.put("testing1",5);
         //  newvar = temp.get(1);
         ctx.render("/templates/javascript.vm", temp);
     };
