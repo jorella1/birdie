@@ -20,7 +20,9 @@ public class PostController {
         // System.out.println(Integer.parseInt(ctx.formParam("username")));
         String text = ctx.formParam("text");
         int userid = Integer.parseInt(ctx.formParam("id")); 
+        
         postEntity newPost= new postEntity(userid, text);
+
 
         PostServe.makePost(newPost);
         try{
