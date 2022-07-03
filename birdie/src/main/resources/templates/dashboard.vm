@@ -222,7 +222,9 @@ fetch("/posting/all")
         replyButton.value = jsondata[i].id;
         replyButton.type = 'submit';
         replyButton.innerHTML = 'Reply';
-        replyButton.formAction = '{postid}'
+        let id=jsondata[i].id;
+        replyButton.formAction = `http://localhost:9090/posting/${id}`;
+        replyButton.method ="get";
         replyForm.appendChild(replyButton);
         tweetCol.appendChild(replyForm);
     }
