@@ -13,6 +13,7 @@ public interface postDaoInterface{
     postEntity select(int id);
 
     List<postEntity> selectAll();
+    List<postEntity> selectAllFlagged();
     List<postEntity> selectReplies(int postid);
     void updateText(int textid, String text);
     void updateLikes(int textid);
