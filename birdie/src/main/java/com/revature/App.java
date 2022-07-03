@@ -49,6 +49,8 @@ public class App
                 // ctx.render("/templates/index.vm", temp);
 
         app.get("/my-list/{id}", DashboardController.myList);
+        app.get("/registration", RegistrationController.registrationPage);
+        app.get("/login", LoginController.loginPage);
         Connection connection = ConnectionFactory.getConnection();
         System.out.println(connection);
 
@@ -57,7 +59,7 @@ public class App
         app.routes(() -> {
             path("posting", () -> {
                 get("all", PostController.allPostsHandler);
-                get("make", PostController.make);
+                post("make", PostController.make);
                 get("{id}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
@@ -78,6 +80,7 @@ public class App
                 get("all", UserController.allUserHandler);
                 get("{id}", UserController.getUser);
                 get("register", UserController.register);
+                
                 // get("report/{id}", UserController.report);
                 // get("delete/{id}", UserController.delete);
                 
