@@ -1,8 +1,12 @@
 package com.revature.controller;
 import io.javalin.http.Handler;
 import java.util.*;
+import com.revature.repository.*;
+import com.revature.repository.entities.userLoginEntity;
+
 public class LoginController {
 
+    
     public static Handler loginPage = ctx -> {
         // System.out.println("the parameter id is "+ctx.pathParam("id"));
         // ctx.render("/dashboard.html");
@@ -20,8 +24,13 @@ public class LoginController {
     public static Handler login = ctx -> {
         // System.out.println("the parameter id is "+ctx.pathParam("id"));
         // ctx.render("/dashboard.html");
-        // String username = ctx.formParam("username");
-        // String password = ctx.formParam("password");
+        String username = ctx.formParam("username");
+        String password = ctx.formParam("password");
+
+        userLoginDao user = new  userLoginDao();
+        
+        userLoginEntity myuser = user.select_by_username(username);
+        int id = myuser.getId();
 
         // Map<String,Integer> temp = new HashMap<>();
         // System.out.println(ctx.pathParam("id"));
@@ -34,8 +43,7 @@ public class LoginController {
         // int id =1;
         String template = "status is %s, data key is %s";
        
-        String url = "/my-list/%s";
-        int id = 1;
+        String url = "/dashboard/%s";
         String result = String.format(url, id);
 
         ctx.redirect(result);    

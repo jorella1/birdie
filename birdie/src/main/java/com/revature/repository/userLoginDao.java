@@ -71,6 +71,34 @@ public class userLoginDao implements userLoginDaoInterface{
     }
 
     @Override
+    public userLoginEntity select_by_username(String username) {
+        Connection connection = ConnectionFactory.getConnection();
+                // TODO Auto-generated catch block
+        String sql = "SELECT * FROM project2.userlogin WHERE username=?;";
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                
+                return new userLoginEntity(
+                    resultSet.getInt(1), 
+                    resultSet.getString(2), 
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+                    );
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public List<userLoginEntity> selectAll() {
         Connection connection = ConnectionFactory.getConnection();
                 // TODO Auto-generated catch block

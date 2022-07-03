@@ -43,16 +43,16 @@ public class App
         String myhtml = "<h1>testing</h1>";
         // app.get("/", HomeController.homePageEntered);
         int id =1;
-        app.get("/", ctx -> ctx.render(Path.Template.HELLO));
+        app.get("/", ctx -> ctx.redirect("index.html"));
         app.get("/dashboard/{id}", DashboardController.Dashboard);
         // Map<String,Integer> temp = new HashMap<>();
         //         temp.put("list_id", Integer.parseInt(ctx.formParam("list_id")));
                 // ctx.render("/templates/index.vm", temp);
 
         app.get("/my-list/{id}", DashboardController.myList);
-        app.get("/registration", RegistrationController.registrationPage);
+        app.post("/registration", RegistrationController.register);
         app.get("/loginpage", LoginController.loginPage);
-        app.get("/login", LoginController.login);
+        app.post("/login", LoginController.login);
         Connection connection = ConnectionFactory.getConnection();
         System.out.println(connection);
 

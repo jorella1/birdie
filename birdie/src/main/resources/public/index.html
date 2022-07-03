@@ -41,9 +41,9 @@
                           <div class="slider-tab"></div>
                        </div>
                        <div class="form-inner">
-                          <form action="#" class="login">
+                          <form action="/login" class="login" method ="post">
                              <div class="field">
-                                <input type="text" placeholder="Email Address" required>
+                                <input type="text" placeholder="Username" name="username" required>
                              </div>
                              <div class="field">
                                 <input type="password" placeholder="Password" required>
@@ -59,12 +59,12 @@
                                 Not a member? <a href="">Signup now</a>
                              </div>
                           </form>
-                          <form action="#" class="signup">
+                          <form action="/registration" class="signup" method ="post">
                              <div class="field">
-                                <input type="text" placeholder="Email Address" required>
+                                <input type="text" placeholder="username" name="username" required>
                              </div>
                              <div class="field">
-                                <input type="password" placeholder="Password" required>
+                                <input type="password" placeholder="Password" name ="password" required>
                              </div>
                              <div class="field">
                                 <input type="password" placeholder="Confirm password" required>
