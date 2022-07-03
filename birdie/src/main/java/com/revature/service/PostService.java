@@ -53,6 +53,7 @@ public class PostService {
 
         for (postEntity PostEntity : PostEntities){
             PostModels.add(convertPostModel(PostEntity));
+        
         }
 
         return PostModels;
@@ -72,6 +73,7 @@ public class PostService {
     }
 
     private static Post convertPostModel(postEntity PostEntity) throws PostNotFoundException {
+        
         if(PostEntity == null){
             throw new PostNotFoundException();
         }
