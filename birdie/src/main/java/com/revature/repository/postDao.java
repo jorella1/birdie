@@ -186,6 +186,40 @@ public class postDao implements postDaoInterface {
         return posts;
     }
 
+    @Override
+    public List<postEntity> selectAllFlagged() {
+        Connection connection = ConnectionFactory.getConnection();
+                // TODO Auto-generated catch block
+        String sql = "SELECT * FROM project2.posts where flag=true;";
+
+        List<postEntity> posts = new ArrayList<>();
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next()){
+
+
+                posts.add(new postEntity(
+                    resultSet.getInt(1), 
+                    resultSet.getInt(2),
+                    resultSet.getString(3),
+                    resultSet.getInt(4),
+                    resultSet.getBoolean(5),
+                    resultSet.getInt(6),
+                    resultSet.getString(7)
+                    ));
+            }
+        
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return posts;
+    }
+
 
     @Override
     public List<postEntity> selectReplies(int postid) {
@@ -278,7 +312,7 @@ public class postDao implements postDaoInterface {
 
         Connection connection = ConnectionFactory.getConnection();
         // String sql = "INSERT INTO project2.posts (userid, texts) VALUES (?, ?});";
-        String sql = "UPDATE project2.posts SET flagged=? WHERE postid=?;";
+        String sql = "UPDATE project2.posts SET flag=? WHERE postid=?;";
 
 
         // TODO Auto-generated method stub

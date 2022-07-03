@@ -92,7 +92,7 @@ public class App
 
        String username="sdfsdf";
         
-        postEntity post = new postEntity(1,"19th post", 5, username);
+        postEntity post = new postEntity(1,"24th post", 5, username);
 
         System.out.println("testing");
         System.out.println(post);
@@ -106,7 +106,11 @@ public class App
         System.out.println(posterE.getLikes());
         poster.updateLikes(1);
         poster.delete(4);
-
+        poster.updateFlag(5, true);
+        poster.updateFlag(10, true);
+        List<postEntity> posterF = poster.selectAllFlagged();
+        System.out.println(posterF);
+        System.out.println(posterF.get(0).getFlag());
         }
 
 
