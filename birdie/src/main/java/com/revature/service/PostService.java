@@ -18,7 +18,7 @@ public class PostService {
 
 
     public void makeReply(postEntity newpost) throws PostNotFoundException {
-        Posts.insert(newpost);
+        Posts.insert_reply(newpost);
         // return convertPostModel(Posts.select(id));
     }
 

@@ -38,6 +38,32 @@ public class postDao implements postDaoInterface {
         
     }
 
+    public void insert_reply(postEntity postEntity) {
+        Connection connection = ConnectionFactory.getConnection();
+        String sql = "INSERT INTO project2.posts (userid, text, username, commentid) VALUES (?, ?,?,?);";
+
+
+        // TODO Auto-generated method stub
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1, postEntity.getId());
+            preparedStatement.setString(2, postEntity.getText());
+            preparedStatement.setString(3, postEntity.getUsername());
+            preparedStatement.setInt(4, postEntity.getcommentId());
+            int row = preparedStatement.executeUpdate();
+
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+        
+    }
+
+
+
     @Override
     public void insert_comment(postEntity postEntity) {
         Connection connection = ConnectionFactory.getConnection();

@@ -92,12 +92,13 @@ public class App
 
        String username="sdfsdf";
         
-        postEntity post = new postEntity(1,"15th post", username);
+        postEntity post = new postEntity(1,"19th post", 5, username);
 
         System.out.println("testing");
         System.out.println(post);
         postDao poster = new postDao();
-        poster.insert(post); 
+        System.out.println("my commentid "+post.getcommentId());
+        poster.insert_reply(post); 
         poster.updateLikes(1);
         postEntity posterE = poster.select(1);
         System.out.println("My ilkes are");
