@@ -78,7 +78,8 @@ public class PostService {
         return new Post(
             PostEntity.getTid(), 
             PostEntity.getText(), 
-            PostEntity.getLikes() 
+            PostEntity.getLikes(),
+            PostEntity.getUsername()
             );
     }
     //for mocking and testing purposes

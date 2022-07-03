@@ -92,13 +92,13 @@ public class App
 
        String username="sdfsdf";
         
-        postEntity post = new postEntity(1,"13th post", username);
+        postEntity post = new postEntity(1,"15th post", username);
 
         System.out.println("testing");
         System.out.println(post);
         postDao poster = new postDao();
-        // poster.insert(post); 
-        // poster.updateLikes(1);
+        poster.insert(post); 
+        poster.updateLikes(1);
         postEntity posterE = poster.select(1);
         System.out.println("My ilkes are");
         int likes= posterE.getLikes()+1;

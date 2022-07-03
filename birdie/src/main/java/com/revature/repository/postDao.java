@@ -17,7 +17,7 @@ public class postDao implements postDaoInterface {
     @Override
     public void insert (postEntity postEntity) {
         Connection connection = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO project2.posts (userid, texts, username) VALUES (?, ?,?);";
+        String sql = "INSERT INTO project2.posts (userid, text, username) VALUES (?, ?,?);";
 
 
         // TODO Auto-generated method stub
@@ -41,7 +41,7 @@ public class postDao implements postDaoInterface {
     @Override
     public void insert_comment(postEntity postEntity) {
         Connection connection = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO project2.posts (userid, texts, commentid, username) VALUES (?, ?,?);";
+        String sql = "INSERT INTO project2.posts (userid, text, commentid, username) VALUES (?, ?,?);";
 
 
         // TODO Auto-generated method stub
@@ -84,7 +84,10 @@ public class postDao implements postDaoInterface {
                     resultSet.getString(3),
                     resultSet.getInt(4),
                     resultSet.getBoolean(5),
-                    resultSet.getString(6));
+                    resultSet.getInt(6),
+                    resultSet.getString(7)
+                    
+                    );
             }
 
         }catch(SQLException e){
@@ -112,7 +115,10 @@ public class postDao implements postDaoInterface {
                     resultSet.getString(3),
                     resultSet.getInt(4),
                     resultSet.getBoolean(5),
-                    resultSet.getString(6));
+                    resultSet.getInt(6),
+                    resultSet.getString(7)
+                    
+                    );
             }
 
         }catch(SQLException e){
@@ -142,7 +148,8 @@ public class postDao implements postDaoInterface {
                     resultSet.getString(3),
                     resultSet.getInt(4),
                     resultSet.getBoolean(5),
-                    resultSet.getString(6)
+                    resultSet.getInt(6),
+                    resultSet.getString(7)
                     ));
             }
         
@@ -173,12 +180,14 @@ public class postDao implements postDaoInterface {
 
                 replies.add(new postEntity(
                     resultSet.getInt(1), 
-                    resultSet.getInt(2),
+                    resultSet.getInt(2), 
                     resultSet.getString(3),
                     resultSet.getInt(4),
                     resultSet.getBoolean(5),
-                    resultSet.getString(6)
-                    ));
+                    resultSet.getInt(6),
+                    resultSet.getString(7)
+                    
+                ));
             }
         
 
