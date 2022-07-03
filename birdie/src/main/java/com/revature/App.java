@@ -45,6 +45,8 @@ public class App
         int id =1;
         app.get("/", ctx -> ctx.redirect("index.html"));
         app.get("/dashboard/{id}", DashboardController.Dashboard);
+        // app.get("/{postid}",PostController.getPostPage);
+       
         // Map<String,Integer> temp = new HashMap<>();
         //         temp.put("list_id", Integer.parseInt(ctx.formParam("list_id")));
                 // ctx.render("/templates/index.vm", temp);
@@ -63,10 +65,12 @@ public class App
                 get("all", PostController.allPostsHandler);
                 post("reply",PostController.Reply);
                 post("make", PostController.make);
-                get("{postid}", PostController.getPost);
+                get("post/{postid}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
                 get("flag/{id}", PostController.flagPost);
+                get("/{postid}",PostController.getPostPage);
+                get("makreply/{postid}", PostController.flagPost);
                 
                 // get("update/{id}", PostController.update);
                 // get("report/{id}", PostController.report);
@@ -75,6 +79,7 @@ public class App
             });
         
         });
+        
 
         ///User
 

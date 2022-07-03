@@ -25,12 +25,18 @@ public class PostController {
         userLoginDao userDao = new userLoginDao();
         userLoginEntity user = userDao.select(userid);
         System.out.println(user.getuserName());
-        // String username=ctx.formParam("username");
+        // String usernamFe=ctx.formParam("username");
         String username = user.getuserName();
         postEntity newPost= new postEntity(userid, text,username);
 
 
         PostServe.makePost(newPost);
+      
+       
+        String url = "/dashboard/%s";
+        String result = String.format(url, userid);
+
+        ctx.redirect(result);    
         try{
 
         }catch(Exception e){
@@ -77,6 +83,23 @@ public class PostController {
             ctx.status(400);
         }
     };
+
+    public static Handler getPostPage = ctx -> {
+        System.out.println("in the post");
+       System.out.println("post param");
+      System.out.println(ctx.pathParam("postid")); 
+        int id = Integer.parseInt(ctx.pathParam("postid"));
+        Map<String,Integer> temp = new HashMap<>();
+        temp.put("postid", Integer.parseInt(ctx.pathParam("postid")));
+        
+        // temp.put("test1",5);
+        //  newvar = temp.get(1);
+         ctx.render("/templates/post.vm", temp);
+        // ctx.html("testing");
+            // ctx.json(PostServe.getPost(id));
+
+    };
+
 
     public static Handler getReplies = ctx -> {
         int postid = Integer.parseInt(ctx.pathParam("postid")); 
