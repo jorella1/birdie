@@ -7,10 +7,21 @@ public class Post {
     private String post;
     private int likes=0;
     private boolean flag = false;
+    private int commentid=0;
 
-    public Post(int postid, String post, int likes) {
+    private String username;
+
+
+    public Post(int postid, String post, int likes,String username) {
         this.postid=postid;
         this.post=post;
+        this.username=username;
+    }
+    public Post(int postid, String post, int likes,String username,int commentid) {
+        this.postid=postid;
+        this.post=post;
+        this.username=username;
+        this.commentid=commentid;
     }
     public int getId() {
         return postid;
@@ -32,6 +43,26 @@ public class Post {
     }
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public int getcommentId() {
+        return commentid;
+    }
+    public void setcommentId(int commentid) {
+        this.commentid = commentid;
+    }
+
+
+
+    public void setUsername(String username) {
+
+        this.username=username;
+
+    }
+
+    public String getUsername(){
+
+        return username;
     }
 
     public boolean getFlag(){

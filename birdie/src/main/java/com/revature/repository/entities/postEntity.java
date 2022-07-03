@@ -9,12 +9,13 @@ public class postEntity {
     private int commentid=0;
     private String username;
 
-    public postEntity(int textid, int userid, String text, int likes, boolean flag, String username) {
+    public postEntity(int textid, int userid, String text, int likes, boolean flag, int commentid, String username) {
         this.textid = textid;
         this.userid = userid;
         this.text = text;
         this.likes = likes;
         this.flag = flag;
+        this.commentid=0;
         this.username =username;
     }
 

@@ -43,19 +43,19 @@ public class postServiceTests {
     public void setup(){
         MockitoAnnotations.openMocks(this);
         this.postService = new PostService();
-        postService.setPostDao(mockPostDao);
-        dummyPost1 = new Post(1, "this is the post", 1);
-        dummyPost2 = new Post(2, "this is the second post", 5);
+        // postService.setPostDao(mockPostDao);
+        // dummyPost1 = new Post(1, "this is the post", 1);
+        // dummyPost2 = new Post(2, "this is the second post", 5);
 
-        dummyPostEntity1 = new postEntity(1, 2, "this is the post", 1, false);
-        dummyPostEntity2 = new postEntity(2, 2, "this is the second post", 1, false);
+        // dummyPostEntity1 = new postEntity(1, 2, "this is the post", 1, false);
+        // dummyPostEntity2 = new postEntity(2, 2, "this is the second post", 1, false);
 
-        updateText = "this is updated text";
+        // updateText = "this is updated text";
 
-        when(mockPostDao.select(dummyPost1.getId())).thenReturn(dummyPostEntity1);
-        when(mockPostDao.select(dummyPost2.getId())).thenReturn(dummyPostEntity2);
+        // when(mockPostDao.select(dummyPost1.getId())).thenReturn(dummyPostEntity1);
+        // when(mockPostDao.select(dummyPost2.getId())).thenReturn(dummyPostEntity2);
 
-        when(mockPostDao.selectAll()).thenReturn(Arrays.asList(dummyPostEntity1, dummyPostEntity2));
+        // when(mockPostDao.selectAll()).thenReturn(Arrays.asList(dummyPostEntity1, dummyPostEntity2));
 
         //Should updateText return something for confirmation? or remain void
         //when(mockPostDao.updateText(dummyPost1.getId(), updateText)).thenReturn()
