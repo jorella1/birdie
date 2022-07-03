@@ -5,6 +5,7 @@ C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\service\UserNotFoun
 C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\repository\entities\postEntity.java
 C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\repository\userRegisterDao.java
 C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\util\ConnectionFactory.java
+C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\controller\DashboardController.java
 C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\controller\HomeController.java
 C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\service\UserService.java
 C:\Users\Hyperion\project2\birdie\src\main\java\com\revature\repository\entities\userRegisterEntity.java

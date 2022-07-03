@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#container {
+display:flex;
+flex-direction: row
+
+}
+
+#userinfo {
+
+
+}
+
+#requests {
+
+
+}
+
+
+#datacontainer{
+   display:flex;
+   flex-direction: row;
+
+
+}
+#container{
+
+    display:flex;
+    flex-direction: row;
+}
+#data{
+
+   display:flex;
+   flex-direction: row;
+
+}
+
+#element {
+
+   display:flex
+}
+
+
+label, input {
+  display: block; /* 1. oh noes, my inputs are styled as block... */
+}
+
+</style>
+   <body>
+  <h1>testing the javascript rendered page $list_id</h1>
+   
+
+
+
+   <script  >
+// const mydata=fetch('http://127.0.0.1:5000/get_request/1')
+//   .then(response => response.json())
+//   .then(data => console.log(data));
+
+//   console.log("my data ",mydata)
+// //   .then(data => console.log(data));
+
+//async function fetchrequests() {
+   // console.log("userid");
+   // id={{userid}}; 
+  // const id={{userid}};
+   //console.log("my id:",id);
+    console.log($list_id);
+
+ //  const response = await fetch(`http://localhost:9090/user/all`)
+ // .then(response => response.json())
+ // .then(function(data) { return data });
+
+
+async function fetchrequests() {
+   // console.log("userid");
+   // id={{userid}}; 
+  // const id={{userid}};
+   //console.log("my id:",id);
+
+    const response = await fetch(`http://localhost:9090/user/all`)
+  .then(response => response.json())
+  .then(function(data) { return data });
+
+//   console.log("my data ",response[5][0])
+const reqArray=[];
+const myvar=Object.keys(response).map(function(key, index) {
+   // console.log("start");
+   // console.log(index);
+//   console.log(response[key] );
+  reqArray.push(response[key])
+  console.log(response);
+//   console.log("end");
+});
+
+}
+
+setInterval(fetchrequests, 4000);
+
+   </script>
+   </body>
+</html>
