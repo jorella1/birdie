@@ -25,7 +25,7 @@ import com.revature.repository.postDao;
 import io.javalin.Javalin;
 import io.javalin.apibuilder.ApiBuilder;
 import io.javalin.http.staticfiles.Location;
-
+import com.revature.jte.*;
 import static io.javalin.apibuilder.ApiBuilder.*;
 
 
@@ -39,7 +39,16 @@ public class App
             }
         );
         app.start(9090);
-        app.get("/", HomeController.homePageEntered);
+        String myhtml = "<h1>testing</h1>";
+        // app.get("/", HomeController.homePageEntered);
+        int id =1;
+        app.get("/", ctx -> ctx.render(Path.Template.HELLO));
+        app.get("/dashboard", DashboardController.Dashboard);
+        // Map<String,Integer> temp = new HashMap<>();
+        //         temp.put("list_id", Integer.parseInt(ctx.formParam("list_id")));
+                // ctx.render("/templates/index.vm", temp);
+
+        app.get("/my-list/{id}", DashboardController.myList);
         Connection connection = ConnectionFactory.getConnection();
         System.out.println(connection);
 

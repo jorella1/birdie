@@ -1,0 +1,10 @@
+<ul>
+<h1>testing</h1>
+<h2>$list_id</h2>
+<h1>$test</h2>
+<h2>starting loop2</h2>
+#foreach ( $product in $temp )
+    <h1>in the loop</h1>
+    <li>$product</li>
+#end
+<ul>
