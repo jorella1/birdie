@@ -38,8 +38,8 @@ public class Post {
         this.post = post;
     }
 
-    public String getLikes() {
-        return post;
+    public int getLikes() {
+        return likes;
     }
     public void setLikes(int likes) {
         this.likes = likes;
