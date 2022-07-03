@@ -17,9 +17,27 @@ public class PostService {
     }
 
 
+    public void makeReply(postEntity newpost) throws PostNotFoundException {
+        Posts.insert(newpost);
+        // return convertPostModel(Posts.select(id));
+    }
+
 
     public Post getPost(int id) throws PostNotFoundException {
         return convertPostModel(Posts.select(id));
+    }
+
+    public List<Post> getReplies(int postid) throws PostNotFoundException {
+        System.out.println("in the get all posts");
+        List<postEntity> PostEntities = Posts.selectReplies(postid);
+        System.out.println(PostEntities);
+        List<Post> PostModels = new ArrayList<>();
+
+        for (postEntity PostEntity : PostEntities){
+            PostModels.add(convertPostModel(PostEntity));
+        }
+
+        return PostModels;
     }
 
     public void deletePost(int id) throws PostNotFoundException {

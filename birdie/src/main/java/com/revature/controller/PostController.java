@@ -8,6 +8,7 @@ import com.revature.service.PostService;
 import com.revature.models.*;
 
 import io.javalin.http.Handler;
+import java.util.*;
 
 public class PostController {
 
@@ -20,8 +21,8 @@ public class PostController {
         // System.out.println(Integer.parseInt(ctx.formParam("username")));
         String text = ctx.formParam("text");
         int userid = Integer.parseInt(ctx.formParam("id")); 
-        
-        postEntity newPost= new postEntity(userid, text);
+        String username=ctx.formParam("username");
+        postEntity newPost= new postEntity(userid, text,username);
 
 
         PostServe.makePost(newPost);
@@ -33,6 +34,28 @@ public class PostController {
             ctx.status(400);
         }
     };
+
+    public static Handler Reply = ctx -> {
+        System.out.println("The user is updated");
+        // System.out.println(Integer.parseInt(ctx.formParam("username")));
+        String text = ctx.formParam("text");
+        int userid = Integer.parseInt(ctx.formParam("id")); 
+        String username=ctx.formParam("username");
+        int commentid = Integer.parseInt(ctx.formParam("postid"));
+        postEntity newPost= new postEntity(userid, text,commentid,username);
+
+
+        PostServe.makeReply(newPost);
+        try{
+
+        }catch(Exception e){
+            System.out.println("The error is here "+e);
+            ctx.result("Item Not Found");
+            ctx.status(400);
+        }
+    };
+
+
     public static Handler allPostsHandler = ctx -> {
         System.out.println("in the post server");
         
@@ -44,6 +67,16 @@ public class PostController {
         int id = Integer.parseInt(ctx.pathParam("id")); 
         try{
             ctx.json(PostServe.getPost(id));
+        }catch(PostNotFoundException e){
+            ctx.result("Item Not Found");
+            ctx.status(400);
+        }
+    };
+
+    public static Handler getReplies = ctx -> {
+        int postid = Integer.parseInt(ctx.pathParam("postid")); 
+        try{
+            ctx.json(PostServe.getReplies(postid));
         }catch(PostNotFoundException e){
             ctx.result("Item Not Found");
             ctx.status(400);
