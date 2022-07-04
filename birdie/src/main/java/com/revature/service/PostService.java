@@ -30,6 +30,7 @@ public class PostService {
     public List<Post> getReplies(int postid) throws PostNotFoundException {
         System.out.println("in the get all posts");
         List<postEntity> PostEntities = Posts.selectReplies(postid);
+        System.out.println("THIS IS THE POST ENTITIES");
         System.out.println(PostEntities);
         List<Post> PostModels = new ArrayList<>();
 
@@ -41,6 +42,9 @@ public class PostService {
     }
 
     public void deletePost(int id) throws PostNotFoundException {
+        if(getPost(id) == null){
+            throw new PostNotFoundException();
+        }
         Posts.delete(id);
     }
 
@@ -76,15 +80,24 @@ public class PostService {
     }
 
     public void editPost(int id, String text) throws PostNotFoundException {
+        if(getPost(id) == null){
+            throw new PostNotFoundException();
+        }
         Posts.updateText(id, text);
     }
     public void likePost(int id) throws PostNotFoundException {
         // postEntity post= Posts.select(id);
         // int newlikes=post.getLikes()+1;
+        if(getPost(id) == null){
+            throw new PostNotFoundException();
+        }
         Posts.updateLikes(id);
     }
 
     public void flagPost(int id) throws PostNotFoundException {
+        if(getPost(id) == null){
+            throw new PostNotFoundException();
+        }
         Posts.updateFlag(id,true);
     }
 
