@@ -65,6 +65,9 @@
                 </div>
                 <div class="row mt-4">
                     <div class="row">
+                        <div class="col-12" id="ogTweet">
+
+                        </div>
                         <div class="col-12" id="tweetCol">
 
                         </div>
@@ -122,11 +125,8 @@
         })
         .then(function(jsondata){
             console.log("in the promise");
-            console.log(jsondata);
 
-            const test = document.createElement('h1');
-            test.innerHTML  = 'testing';
-            document.body.appendChild(test);
+
             const divTweet = document.createElement('div');
             divTweet.className = 'tweet';
         
@@ -162,7 +162,7 @@
             
             divRow.appendChild(divCol2);
             //document.body.appendChild(elem);
-            const tweetCol = document.getElementById('tweetCol');
+            const tweetCol = document.getElementById('ogTweet');
             tweetCol.appendChild(divTweet);
 
             const hr = document.createElement('hr');
@@ -206,73 +206,48 @@ fetch(`/posting/reply/${postid}`)
             console.log("in the promise");
             console.log(jsondata);
 
-            const test = document.createElement('h1');
-            test.innerHTML  = 'testing';
-            document.body.appendChild(test);
-            const divTweet = document.createElement('div');
-            divTweet.className = 'tweet';
-        
-            const divRow = document.createElement('div');
-            divRow.className = 'row';
-            divTweet.appendChild(divRow);
-        
-            const divCol1 = document.createElement('div');
-            divCol1.className = 'col-2 col-xl-1';
-            const profilePic = document.createElement('img');
-            profilePic.src = 'https://placekitten.com/40/40';
-            profilePic.className = 'img-fluid profile-icon';
-            divCol1.appendChild(profilePic);
-            divRow.appendChild(divCol1);
-        
-            const divCol2 = document.createElement('div');
-            divCol2.className = 'col-10 col-xl-11';
-            const divUsername = document.createElement('div');
-            divUsername.innerHTML = '<strong>' + jsondata.username + '</strong>';
-            divCol2.appendChild(divUsername);
-            const para = document.createElement('p');
-            para.innerHTML = jsondata.post;
-            divCol2.appendChild(para);
+            for(let i = 0; i < jsondata.length; i++){
+                const divTweet = document.createElement('div');
+                divTweet.className = 'tweet';
             
-            const likeButton = document.createElement('input');
-            likeButton.type = 'checkbox';
-            likeButton.id = 'likes';
-            likeButton.name = 'likeCheckbox';
-            const likeLabel = document.createElement('label');
-            likeLabel.htmlFor = 'likeCheckbox';
-            divCol2.appendChild(likeLabel);
-            divCol2.appendChild(likeButton);
+                const divRow = document.createElement('div');
+                divRow.className = 'row';
+                divTweet.appendChild(divRow);
             
-            divRow.appendChild(divCol2);
-            //document.body.appendChild(elem);
-            const tweetCol = document.getElementById('tweetCol');
-            tweetCol.appendChild(divTweet);
+                const divCol1 = document.createElement('div');
+                divCol1.className = 'col-2 col-xl-1';
+                const profilePic = document.createElement('img');
+                profilePic.src = 'https://placekitten.com/40/40';
+                profilePic.className = 'img-fluid profile-icon';
+                divCol1.appendChild(profilePic);
+                divRow.appendChild(divCol1);
+            
+                const divCol2 = document.createElement('div');
+                divCol2.className = 'col-10 col-xl-11';
+                const divUsername = document.createElement('div');
+                divUsername.innerHTML = '<strong>' + jsondata[i].username + '</strong>';
+                divCol2.appendChild(divUsername);
+                const para = document.createElement('p');
+                para.innerHTML = jsondata[i].post;
+                divCol2.appendChild(para);
+                
+                const likeButton = document.createElement('input');
+                likeButton.type = 'checkbox';
+                likeButton.id = 'likes';
+                likeButton.name = 'likeCheckbox';
+                const likeLabel = document.createElement('label');
+                likeLabel.htmlFor = 'likeCheckbox';
+                divCol2.appendChild(likeLabel);
+                divCol2.appendChild(likeButton);
+                
+                divRow.appendChild(divCol2);
+                //document.body.appendChild(elem);
+                const tweetCol = document.getElementById('tweetCol');
+                tweetCol.appendChild(divTweet);
 
-            const hr = document.createElement('hr');
-            tweetCol.appendChild(hr);
-
-            const replyForm = document.createElement('form');
-            const username = document.createElement('input');
-            username.hidden = true;
-            username.name = 'username';
-            username.value = jsondata.username;
-            replyForm.appendChild(username);
-
-            const replyText = document.createElement('textarea');
-            replyText.name = 'text';
-            replyText.placeholder = 'Type your reply';
-            replyForm.appendChild(replyText);
-
-            const replyButton = document.createElement('button');
-            replyButton.name = 'button';
-            replyButton.value = jsondata.id;
-            replyButton.type = 'submit';
-            replyButton.innerHTML = 'Reply';
-
-            let id=jsondata.id;
-            replyForm.action = `http://localhost:9090/posting/reply/${id}`;
-            replyForm.method ="POST";
-            replyForm.appendChild(replyButton);
-            tweetCol.appendChild(replyForm);
+                const hr = document.createElement('hr');
+                tweetCol.appendChild(hr);
+                }
 });
         </script>
 </body>
