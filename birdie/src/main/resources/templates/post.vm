@@ -25,7 +25,7 @@
                     </div>
                     <div class="my-3">
                         <i class="fa-solid fa-house fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Home</span>
+                        <span class="fs-4 d-none d-xl-inline">Home $userid and $postid</span>
                     </div>  <h1>$postid</h1>
                     <div class="my-3">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
@@ -118,7 +118,7 @@
   
         fetch(`/posting/post/${postid}`)
         .then(response => {
-            console.log("my post id is"+$postid);
+            console.log("my post id is"+${postid});
             console.log("responsejson");
             console.log(response.json);
             return response.json();
@@ -186,8 +186,9 @@
             replyButton.type = 'submit';
             replyButton.innerHTML = 'Reply';
 
-            let id=jsondata.id;
-            replyForm.action = `http://localhost:9090/posting/reply/${id}`;
+            let postid=jsondata.id;
+            let userid=$userid;
+            replyForm.action = `http://localhost:9090/posting/reply/${userid}/${postid}`;
             replyForm.method ="POST";
             replyForm.appendChild(replyButton);
             tweetCol.appendChild(replyForm);
