@@ -112,12 +112,15 @@
         </div>
     </div>
     <script>
-        fetch(`/posting/${postid}`)
+        fetch(`/posting/post/${postid}`)
         .then(response => {
         console.log("my post id is"+$postid);
+        console.log("responsejson");
+        console.log(response.json);
            return response.json();
         })
         .then(function(jsondata){
+        console.log("in the promise");
     console.log(jsondata);
     for(let i = 0; i < jsondata.length; i++){
         const divTweet = document.createElement('div');
