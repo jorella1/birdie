@@ -168,13 +168,23 @@
             tweetCol.appendChild(hr);
 
             const replyForm = document.createElement('form');
+            const username = document.createElement('input');
+            username.hidden = true;
+            username.name = 'username';
+            username.value = jsondata.username;
+            replyForm.appendChild(username);
+
             const replyText = document.createElement('textarea');
+            replyText.name = 'post';
             replyText.placeholder = 'Type your reply';
             replyForm.appendChild(replyText);
+
             const replyButton = document.createElement('button');
+            replyButton.name = 'post';
             replyButton.value = jsondata.id;
             replyButton.type = 'submit';
             replyButton.innerHTML = 'Reply';
+
             let id=jsondata.id;
             replyForm.action = `http://localhost:9090/posting/make/post`;
             replyForm.method ="POST";
