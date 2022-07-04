@@ -48,22 +48,27 @@ public class PostController {
 
     public static Handler Reply = ctx -> {
         System.out.println("The user is updated");
-        // System.out.println(Integer.parseInt(ctx.formParam("username")));
-        // String text = ctx.formParam("text");
-        // int userid = Integer.parseInt(ctx.formParam("postid")); 
-        // String username=ctx.formParam("username");
-        // int commentid = Integer.parseInt(ctx.formParam("postid"));
-        // postEntity newPost= new postEntity(userid, text,commentid,username);
+        System.out.println(ctx.formParam("username"));
+        String text = ctx.formParam("text");
+        int postid = Integer.parseInt(ctx.formParam("button")); 
+        String username=ctx.formParam("username");
+        int commentid = Integer.parseInt(ctx.formParam("button"));
+        System.out.println("the commentid value is "+commentid);
+        userLoginDao userDao = new userLoginDao();
+        userLoginEntity newuser = userDao.select_by_username(username);
+        int userid = newuser.getId();
+        System.out.println("my user id is "+newuser.getId());
+        postEntity newPost= new postEntity(userid, text,commentid,username);
 
 
-        // PostServe.makeReply(newPost);
-        // try{
+        PostServe.makeReply(newPost);
+        try{
 
-        // }catch(Exception e){
-        //     System.out.println("The error is here "+e);
-        //     ctx.result("Item Not Found");
-        //     ctx.status(400);
-        // }
+        }catch(Exception e){
+            System.out.println("The error is here "+e);
+            ctx.result("Item Not Found");
+            ctx.status(400);
+        }
     };
 
 

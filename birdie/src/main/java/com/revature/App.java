@@ -63,9 +63,9 @@ public class App
         app.routes(() -> {
             path("posting", () -> {
                 get("all", PostController.allPostsHandler);
-                post("reply",PostController.getReplies);
+                get("reply/{postid}",PostController.getReplies);
                 post("make", PostController.make);
-                post("make/post", PostController.Reply);
+                post("reply/{postid}", PostController.Reply);
                 get("post/{postid}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
