@@ -9,6 +9,5 @@ com\revature\repository\userRegisterDao.class
 com\revature\repository\interfaces\userLoginDaoInterface.class
 com\revature\repository\entities\postEntity.class
 com\revature\util\ConnectionFactory.class
-com\revature\models\LoginPageFactory.class
 com\revature\repository\interfaces\postDaoInterface.class
 com\revature\repository\interfaces\userRegisterDaoInterface.class
