@@ -14,7 +14,7 @@ public class RegistrationController {
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
         String myrole = ctx.formParam("Role");
-        System.out.println("my role is "+myrole);
+        System.out.println("my role is: "+myrole);
 
         if (myrole == null ) {
       
