@@ -176,7 +176,8 @@ fetch("/posting/all")
 })
 .then(function(jsondata){
     console.log(jsondata);
-    if($role == 'admin'){
+    console.log("my role is ", $role);
+    if($role == 1){
         const hammerTab = document.createElement('div');
         hammerTab.className = 'my-3';
         hammerTab.id = 'adminButton';
