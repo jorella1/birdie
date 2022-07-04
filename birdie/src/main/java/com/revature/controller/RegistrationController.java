@@ -15,9 +15,11 @@ public class RegistrationController {
         String password = ctx.formParam("password");
         String myrole = ctx.formParam("Role");
         System.out.println("my role is "+myrole);
-        if (myrole== "admin"){
+        if (myrole.equals("admin")){
             userLoginEntity newuser = new userLoginEntity(username, password, myrole);
             userLoginDao mynewuser = new userLoginDao();
+            System.out.println("my role");
+            System.out.println(newuser.getRole());
             mynewuser.insert(newuser);
 
 
@@ -28,6 +30,8 @@ public class RegistrationController {
             String role ="user";
             userLoginEntity newuser = new userLoginEntity(username, password, role);
             userLoginDao mynewuser = new userLoginDao();
+            System.out.println("my role");
+            System.out.println(newuser.getRole());
             mynewuser.insert(newuser);
         }
         // String role = ctx.formParam("role");

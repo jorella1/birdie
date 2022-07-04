@@ -14,6 +14,7 @@ public class userLoginEntity {
     }
 
     public userLoginEntity( String username, String password, String role) {
+        System.out.println("in the userlogin entity role: "+role);
         this.username =username;
         this.password = password;
         this.role = role;
@@ -41,7 +42,7 @@ public class userLoginEntity {
 
 
     public String getRole() {
-        return password;
+        return role;
     }
     public void setRole(String role) {
         this.role = role;
