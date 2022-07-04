@@ -79,51 +79,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-12" id="tweetCol">
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
+
                         </div>
                     </div>
                 </div>
@@ -170,7 +126,7 @@
     </div>
 
     <script>
-fetch("/posting/all")
+fetch("/posting/flagged")
 .then(response => {
    return response.json();
 })
@@ -221,10 +177,9 @@ fetch("/posting/all")
         const deleteButton = document.createElement('button');
         deleteButton.value = jsondata[i].id;
         deleteButton.type = 'submit';
-        deleteButton.innerHTML = 'Reply';
+        deleteButton.innerHTML = 'Delete';
         let postid=jsondata[i].id;
-        let userid = $userid;
-        deleteForm.formAction = `http://localhost:9090/posting/delete/${postid}`;
+        deleteForm.formAction = `http://localhost:9090/posting/delete/postid`;
         deleteForm.method ="get";
         deleteForm.appendChild(deleteButton);
         tweetCol.appendChild(deleteForm);

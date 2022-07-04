@@ -18,7 +18,7 @@
     <div class="container-xxl">
         <div class="row">
             <div class="col-2 col-lg-1 col-xl-2 border-end">
-                <div class="left-navbar d-flex flex-column position-sticky align-items-end align-items-xl-start">
+                <div id="nav" class="left-navbar d-flex flex-column position-sticky align-items-end align-items-xl-start">
                     <div class="my-3">
                         <i class="fa-brands fa-twitter fs-3 mt-3 text-primary"></i>
                     </div>
@@ -182,14 +182,21 @@ fetch("/posting/all")
         hammerTab.className = 'my-3';
         hammerTab.id = 'adminButton';
 
+        const btn = document.createElement('a');
+        btn.href = '/admin';
+
         const hammerIcon = document.createElement('i');
         hammerIcon.className = 'fa-solid fa-hammer fs-4';
-        hammerTab.appendChild(hammerIcon);
+        btn.appendChild(hammerIcon);
 
         const sp = document.createElement('SPAN');
         sp.className = 'fs-4 d-none d-xl-inline';
         sp.innerHTML = 'Admin';
-        hammerTab.appendChild(sp);
+        btn.appendChild(sp);
+
+        hammerTab.appendChild(btn);
+        const navbar = document.getElementById('nav');
+        navbar.appendChild(hammerTab);
     }
     else{
     console.log('in the else statement');
