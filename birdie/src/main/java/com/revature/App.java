@@ -65,12 +65,12 @@ public class App
                 get("all", PostController.allPostsHandler);
                 get("reply/{postid}",PostController.getReplies);
                 post("make", PostController.make);
-                post("reply/{postid}", PostController.Reply);
+                post("reply/{userid}/{postid}", PostController.Reply);
                 get("post/{postid}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
                 get("flag/{id}", PostController.flagPost);
-                get("{postid}",PostController.getPostPage);
+                get("{userid}/{postid}",PostController.getPostPage);
                 get("makereply/{postid}", PostController.flagPost);
                 
                 // get("update/{id}", PostController.update);

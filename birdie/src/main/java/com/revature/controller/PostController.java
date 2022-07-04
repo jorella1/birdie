@@ -51,14 +51,15 @@ public class PostController {
         System.out.println(ctx.formParam("username"));
         String text = ctx.formParam("text");
         int postid = Integer.parseInt(ctx.formParam("button")); 
+        int userid =  Integer.parseInt(ctx.pathParam("userid")); 
         String username=ctx.formParam("username");
         int commentid = Integer.parseInt(ctx.formParam("button"));
         System.out.println("the commentid value is "+commentid);
         userLoginDao userDao = new userLoginDao();
-        userLoginEntity newuser = userDao.select_by_username(username);
-        int userid = newuser.getId();
-        System.out.println("my user id is "+newuser.getId());
-        postEntity newPost= new postEntity(userid, text,commentid,username);
+        userLoginEntity newuser = userDao.select(userid);
+        System.out.println("my user id is "+newuser.getuserName());
+        String userreply = newuser.getuserName();
+        postEntity newPost= new postEntity(userid, text,commentid,userreply);
 
 
         PostServe.makeReply(newPost);
@@ -96,6 +97,7 @@ public class PostController {
         int id = Integer.parseInt(ctx.pathParam("postid"));
         Map<String,Integer> temp = new HashMap<>();
         temp.put("postid", Integer.parseInt(ctx.pathParam("postid")));
+        temp.put("userid", Integer.parseInt(ctx.pathParam("userid")));
         
         // temp.put("test1",5);
         //  newvar = temp.get(1);
