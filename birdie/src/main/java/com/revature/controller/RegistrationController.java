@@ -11,20 +11,12 @@ public class RegistrationController {
         Map<String,Integer> temp = new HashMap<>();
         // System.out.println(ctx.pathParam("id"));
         // // ArrayList<Integer> newarray = new ArrayList();
-        
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
-        System.out.println(username);
-        System.out.println(password);
-        System.out.println("The new role is");
-        System.out.println(ctx.formParam("Role"));
         String myrole = ctx.formParam("Role");
-<<<<<<< HEAD
-        System.out.println("my role is: "+myrole);
-=======
         System.out.println("my role is "+myrole);
 
-        if (myrole == null){
+        if (myrole == null) {
 
             String role ="user";
             userLoginEntity newuser = new userLoginEntity(username, password, role);
@@ -33,32 +25,7 @@ public class RegistrationController {
             System.out.println(newuser.getRole());
             mynewuser.insert(newuser);
         }
-
-        else if (myrole.equals("admin") ) {
-            userLoginEntity newuser = new userLoginEntity(username, password, myrole);
-            userLoginDao mynewuser = new userLoginDao();
-            System.out.println("my role");
-            System.out.println(newuser.getRole());
-            mynewuser.insert(newuser);
->>>>>>> c400149508a11d18d6669862579053ea853475eb
-
-        if (myrole == null ) {
-      
-
-<<<<<<< HEAD
-
-            String role ="user";
-            userLoginEntity newuser = new userLoginEntity(username, password, role);
-            userLoginDao mynewuser = new userLoginDao();
-            System.out.println("my role");
-            System.out.println(newuser.getRole());
-            mynewuser.insert(newuser);
-        }
-
-        
-
         else {
-
             userLoginEntity newuser = new userLoginEntity(username, password, myrole);
             userLoginDao mynewuser = new userLoginDao();
             System.out.println("my role");
@@ -66,26 +33,8 @@ public class RegistrationController {
             mynewuser.insert(newuser);
 
 
-            // String role ="user";
-            // userLoginEntity newuser = new userLoginEntity(username, password, role);
-            // userLoginDao mynewuser = new userLoginDao();
-            // System.out.println("my role");
-            // System.out.println(newuser.getRole());
-            // mynewuser.insert(newuser);
-        }
-=======
         }
 
-    //    if (myrole == null){
-
-    //         String role ="user";
-    //         userLoginEntity newuser = new userLoginEntity(username, password, role);
-    //         userLoginDao mynewuser = new userLoginDao();
-    //         System.out.println("my role");
-    //         System.out.println(newuser.getRole());
-    //         mynewuser.insert(newuser);
-    //     }
->>>>>>> c400149508a11d18d6669862579053ea853475eb
         // String role = ctx.formParam("role");
 
         // // newarray.add(1);
