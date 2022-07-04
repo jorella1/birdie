@@ -46,10 +46,16 @@
                         <i class="fa-solid fa-list fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">List</span>
                     </div>
-                    <div class="my-3">
+                    <div class="my-3" id="profileButton">
                         <i class="fa-solid fa-user fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Profile</span>
                     </div>
+                    if(${role} == admin}{
+                        <div class="my-3" id="profileButton">
+                            <i class="fa-solid fa-hammer fs-4"></i>
+                            <span class="fs-4 d-none d-xl-inline">Admin</span>
+                        </div>
+                    }
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
