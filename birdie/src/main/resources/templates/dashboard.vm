@@ -234,8 +234,8 @@ fetch("/posting/all")
         reportButton.value = jsondata[i].id;
         reportButton.type = 'submit';
         reportButton.innerHTML = 'Report';
-        reportForm.formAction = `http://localhost:9090/posting/flag/${id}`;
-        reportForm.method ="PUT";
+        reportForm.action = `http://localhost:9090/posting/flag/${postid}`;
+        reportForm.method ="get";
         reportForm.appendChild(reportButton);
         tweetCol.appendChild(reportForm);
     }
