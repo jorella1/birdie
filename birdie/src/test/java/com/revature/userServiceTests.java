@@ -16,6 +16,7 @@ import com.revature.models.User;
 import com.revature.service.UserService;
 import com.revature.repository.userLoginDao;
 import com.revature.repository.entities.userLoginEntity;
+import com.revature.repository.entities.userRegisterEntity;
 import com.revature.service.UserNotFoundException;
 
 public class userServiceTests {
@@ -35,6 +36,7 @@ public class userServiceTests {
     private userLoginEntity userTestEntity1;
     private userLoginEntity userTestEntity2;
 
+    private userRegisterEntity userRegEntity1;
 
     @BeforeClass
    public void setup(){
@@ -48,6 +50,7 @@ public class userServiceTests {
        dummyUserEntity1 = new userLoginEntity(1, "fakeuserone", "Pa$sword123", "user");
        dummyUserEntity2 = new userLoginEntity(4, "fakeuser4", "Fak4password!", "user");
 
+       userRegEntity1 = new userRegisterEntity(1, 1, "testname", "testlastname", "user@twitter.com", "123 fake street", 1234567890);
 
        when(mockUserLoginDao.select(dummyUser1.getId())).thenReturn(dummyUserEntity1);
        when(mockUserLoginDao.select(dummyUserEntity2.getId())).thenReturn(dummyUserEntity2);
@@ -77,6 +80,37 @@ public class userServiceTests {
     Assert.assertEquals(userTestEntity2.getRole(), "admin");
 
    }
+   //Register Entity tests for sake of completion
+   @Test
+   public void testRegisterEntityObject() {
+    Assert.assertEquals(userRegEntity1.getInfoid(), 1);
+    Assert.assertEquals(userRegEntity1.getUserid(), 1);
+    Assert.assertEquals(userRegEntity1.getFirst_name(), "testname");
+    Assert.assertEquals(userRegEntity1.getLast_name(), "testlastname");
+    Assert.assertEquals(userRegEntity1.getEmail(), "user@twitter.com");
+    Assert.assertEquals(userRegEntity1.getAddress(), "123 fake street");
+    Assert.assertEquals(userRegEntity1.getPhone_number(), 1234567890);
+
+    userRegEntity1.setInfoid(5);
+    userRegEntity1.setUserid(5);
+    userRegEntity1.setFirst_name("newtestname");
+    userRegEntity1.setLast_name("newlastname");
+    userRegEntity1.setEmail("fake@birdie.com");
+    userRegEntity1.setAddress("321 unfake street");
+    userRegEntity1.setPhone_number(1087654321);
+
+    Assert.assertEquals(userRegEntity1.getInfoid(), 5);
+    Assert.assertEquals(userRegEntity1.getUserid(), 5);
+    Assert.assertEquals(userRegEntity1.getFirst_name(), "newtestname");
+    Assert.assertEquals(userRegEntity1.getLast_name(), "newlastname");
+    Assert.assertEquals(userRegEntity1.getEmail(), "fake@birdie.com");
+    Assert.assertEquals(userRegEntity1.getAddress(), "321 unfake street");
+    Assert.assertEquals(userRegEntity1.getPhone_number(), 1087654321);
+
+    
+
+   }
+
 
     @Test
     public void testGetUser() throws UserNotFoundException {
@@ -98,15 +132,5 @@ public class userServiceTests {
         Assert.assertEquals(userService.getAllUsers(), Arrays.asList(dummyUser1, dummyUser2));
     }
 
-    /* @Test
-    public void testConvertUserModel() throws UserNotFoundException {
-        Assert.assertEquals(userService.convertUserModel(dummyUserEntity1), dummyUser1);
-    }
 
-    @Test
-    public void testConvertUserModelNotNull() throws UserNotFoundException {
-        nullUser = null;
-        Assert.assertThrows(UserNotFoundException.class, () -> UserService.convertUserModel(nullUser));
-
-    } */
 }

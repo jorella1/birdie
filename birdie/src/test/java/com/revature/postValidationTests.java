@@ -7,7 +7,7 @@ import com.revature.service.validationService;
 
 public class postValidationTests {
     validationService vs = new validationService();
-    public static final int MAX_LENGTH = 280;
+    public static final int MAX_LENGTH = 250;
 
     @BeforeSuite
     public void testStart(){
