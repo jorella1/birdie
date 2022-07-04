@@ -66,64 +66,7 @@
                 <div class="row mt-4">
                     <div class="row">
                         <div class="col-12" id="tweetCol">
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div>                                 
-                                            <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                             <strong>Username</strong>
-                                            </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-2 col-xl-1">
-                                    <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
-                                </div>
-                                <div class="col-10 mb-2 col-xl-11">
-                                    <form action="/reply" method ="post">
-                                        <input type="hidden" name="userid">
-                                        <textarea class="form-control" name="text" placeholder="type your reply"></textarea>
-                                        <input type="submit" name="Reply" class="mt-2"></button>
-                                    </form>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
+
                         </div>
                     </div>
                 </div>
@@ -175,91 +118,62 @@
            return response.json();
         })
         .then(function(jsondata){
-            //create Original post html elements
-            const divTweet = document.createElement('div');
-            divTweet.className = 'tweet';
+    console.log(jsondata);
+    for(let i = 0; i < jsondata.length; i++){
+        const divTweet = document.createElement('div');
+        divTweet.className = 'tweet';
+    
+        const divRow = document.createElement('div');
+        divRow.className = 'row';
+        divTweet.appendChild(divRow);
+    
+        const divCol1 = document.createElement('div');
+        divCol1.className = 'col-2 col-xl-1';
+        const profilePic = document.createElement('img');
+        profilePic.src = 'https://placekitten.com/40/40';
+        profilePic.className = 'img-fluid profile-icon';
+        divCol1.appendChild(profilePic);
+        divRow.appendChild(divCol1);
+    
+        const divCol2 = document.createElement('div');
+        divCol2.className = 'col-10 col-xl-11';
+        const divUsername = document.createElement('div');
+        divUsername.innerHTML = '<strong>' + jsondata[i].username + '</strong>';
+        divCol2.appendChild(divUsername);
+        const para = document.createElement('p');
+        para.innerHTML = jsondata[i].post;
+        divCol2.appendChild(para);
         
-            const divRow = document.createElement('div');
-            divRow.className = 'row';
-            divTweet.appendChild(divRow);
-            const divCol = document.createElement('div');
-            divCol.className = 'col-12';
-            divRow.appendChild(divCol);
-
-            const divHead = document.createElement('div');
-            divCol.appendChild(divHead);
-
-            const profilePic = document.createElement('img');
-            profilePic.src = 'https://placekitten.com/40/40';
-            profilePic.className = 'img-fluid profile-icon';
-            divHead.appendChild(profilePic);
-            const divUsername = document.createElement('div');
-            divUsername.innerHTML = '<strong>' + jsondata[0].username + '</strong>';
-            divHead.appendChild(divUsername);
-
-            const para = document.createElement('p');
-            para.innerHTML = jsondata[0].post;
-            divCol.appendChild(para);
-
-            const tweetCol = document.getElementById('tweetCol');
-            tweetCol.appendChild(divTweet);
-            const hr = document.createElement('hr');
-            tweetCol.appendChild(hr);
-
-
-
-
-    });
+        const likeButton = document.createElement('input');
+        likeButton.type = 'checkbox';
+        likeButton.id = 'likes' + i;
+        likeButton.name = 'likeCheckbox';
+        const likeLabel = document.createElement('label');
+        likeLabel.htmlFor = 'likeCheckbox' + i;
+        divCol2.appendChild(likeLabel);
+        divCol2.appendChild(likeButton);
         
-        fetch(`/makereply/${postid}`)
-        .then(response =>{
-            return response.json();
-        })
-        .then(function(replydata){
-            //create reply html elements
-            console.log(jsondata);
-            for(let i = 0; i < replydata.length; i++){
-                const divTweet = document.createElement('div');
-                divTweet.className = 'tweet';
-            
-                const divRow = document.createElement('div');
-                divRow.className = 'row';
-                divTweet.appendChild(divRow);
-            
-                const divCol1 = document.createElement('div');
-                divCol1.className = 'col-2 col-xl-1';
-                const profilePic = document.createElement('img');
-                profilePic.src = 'https://placekitten.com/40/40';
-                profilePic.className = 'img-fluid profile-icon';
-                divCol1.appendChild(profilePic);
-                divRow.appendChild(divCol1);
-            
-                const divCol2 = document.createElement('div');
-                divCol2.className = 'col-10 col-xl-11';
-                const divUsername = document.createElement('div');
-                divUsername.innerHTML = '<strong>' + replydata[i].username + '</strong>';
-                divCol2.appendChild(divUsername);
-                const para = document.createElement('p');
-                para.innerHTML = replydata[i].post;
-                divCol2.appendChild(para);
-                
-                const likeButton = document.createElement('input');
-                likeButton.type = 'checkbox';
-                likeButton.id = 'likes' + i;
-                likeButton.name = 'likeCheckbox';
-                const likeLabel = document.createElement('label');
-                likeLabel.htmlFor = 'likeCheckbox' + i;
-                divCol2.appendChild(likeLabel);
-                divCol2.appendChild(likeButton);
-                
-                divRow.appendChild(divCol2);
-                //document.body.appendChild(elem);
-                const tweetCol = document.getElementById('tweetCol');
-                tweetCol.appendChild(divTweet);
-                const hr = document.createElement('hr');
-                tweetCol.appendChild(hr);
-            }
-        });
+        divRow.appendChild(divCol2);
+        //document.body.appendChild(elem);
+        const tweetCol = document.getElementById('tweetCol');
+        tweetCol.appendChild(divTweet);
+        const hr = document.createElement('hr');
+        tweetCol.appendChild(hr);
+
+        const replyForm = document.createElement('form');
+        const replyButton = document.createElement('button');
+        replyButton.value = jsondata[i].id;
+        replyButton.type = 'submit';
+        replyButton.innerHTML = 'Reply';
+        let id=jsondata[i].id;
+        replyButton.formAction = `http://localhost:9090/posting/${id}`;
+        replyButton.method ="get";
+        replyForm.appendChild(replyButton);
+        tweetCol.appendChild(replyForm);
+    }
+});
+        
+     
         </script>
 </body>
 
