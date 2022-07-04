@@ -144,18 +144,18 @@
             const divCol2 = document.createElement('div');
             divCol2.className = 'col-10 col-xl-11';
             const divUsername = document.createElement('div');
-            divUsername.innerHTML = '<strong>' + jsondata[0].username + '</strong>';
+            divUsername.innerHTML = '<strong>' + jsondata.username + '</strong>';
             divCol2.appendChild(divUsername);
             const para = document.createElement('p');
-            para.innerHTML = jsondata[0].post;
+            para.innerHTML = jsondata.post;
             divCol2.appendChild(para);
             
             const likeButton = document.createElement('input');
             likeButton.type = 'checkbox';
-            likeButton.id = 'likes' + 0;
+            likeButton.id = 'likes';
             likeButton.name = 'likeCheckbox';
             const likeLabel = document.createElement('label');
-            likeLabel.htmlFor = 'likeCheckbox' + 0;
+            likeLabel.htmlFor = 'likeCheckbox';
             divCol2.appendChild(likeLabel);
             divCol2.appendChild(likeButton);
             
@@ -163,20 +163,23 @@
             //document.body.appendChild(elem);
             const tweetCol = document.getElementById('tweetCol');
             tweetCol.appendChild(divTweet);
+
             const hr = document.createElement('hr');
             tweetCol.appendChild(hr);
 
             const replyForm = document.createElement('form');
+            const replyText = document.createElement('textarea');
+            replyText.placeholder = 'Type your reply';
+            replyForm.appendChild(replyText);
             const replyButton = document.createElement('button');
-            replyButton.value = jsondata[0].id;
+            replyButton.value = jsondata.id;
             replyButton.type = 'submit';
             replyButton.innerHTML = 'Reply';
-            let id=jsondata[0].id;
-            replyButton.formAction = `http://localhost:9090/posting/${id}`;
-            replyButton.method ="get";
+            let id=jsondata.id;
+            replyButton.formAction = `http://localhost:9090/posting/make/${id}`;
+            replyButton.method ="post";
             replyForm.appendChild(replyButton);
             tweetCol.appendChild(replyForm);
-    }
 });
         </script>
 </body>
