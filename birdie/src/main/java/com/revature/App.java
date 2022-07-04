@@ -65,6 +65,7 @@ public class App
                 get("all", PostController.allPostsHandler);
                 post("reply",PostController.getReplies);
                 post("make", PostController.make);
+                post("make/{postid}", PostController.Reply);
                 get("post/{postid}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);

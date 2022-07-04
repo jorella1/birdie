@@ -50,7 +50,7 @@ public class PostController {
         System.out.println("The user is updated");
         // System.out.println(Integer.parseInt(ctx.formParam("username")));
         String text = ctx.formParam("text");
-        int userid = Integer.parseInt(ctx.formParam("id")); 
+        int userid = Integer.parseInt(ctx.formParam("postid")); 
         String username=ctx.formParam("username");
         int commentid = Integer.parseInt(ctx.formParam("postid"));
         postEntity newPost= new postEntity(userid, text,commentid,username);
