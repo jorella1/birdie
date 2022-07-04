@@ -179,7 +179,7 @@ fetch("/posting/flagged")
         deleteButton.type = 'submit';
         deleteButton.innerHTML = 'Delete';
         let postid=jsondata[i].id;
-        deleteForm.formAction = `http://localhost:9090/posting/delete/postid`;
+        deleteForm.action = `http://localhost:9090/posting/delete/${postid}`;
         deleteForm.method ="get";
         deleteForm.appendChild(deleteButton);
         tweetCol.appendChild(deleteForm);
