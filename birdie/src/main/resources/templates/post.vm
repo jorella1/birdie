@@ -176,8 +176,8 @@
             replyButton.type = 'submit';
             replyButton.innerHTML = 'Reply';
             let id=jsondata.id;
-            replyButton.formAction = `http://localhost:9090/posting/make/post`;
-            replyButton.method ="post";
+            replyForm.action = `http://localhost:9090/posting/make/post`;
+            replyForm.method ="POST";
             replyForm.appendChild(replyButton);
             tweetCol.appendChild(replyForm);
 });
