@@ -25,7 +25,7 @@
                     <div class="my-3">
                         <i class="fa-solid fa-house fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Home</span>
-                    </div>git 
+                    </div>
                     <div class="my-3">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
@@ -69,10 +69,11 @@
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
                     <div class="col-10 mb-2 col-xl-11">
-                        <form action="/make" method ="post">
-                            <input type="text" name="userid" disabled>
+                    
+                        <form action="/posting/make" method ="post">
+                            <input type="hidden" name="userid" value=$userid>
                             <textarea class="form-control" name="text"></textarea>
-                            <input type="submit">Tweet</button>
+                            <input type="submit"></button>
                         </form>
                     </div>
                     <hr>
@@ -168,7 +169,70 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="dashboard.js"></script>
+    <script>
+fetch("/posting/all")
+.then(response => {
+   return response.json();
+})
+.then(function(jsondata){
+    console.log(jsondata);
+    for(let i = 0; i < jsondata.length; i++){
+        const divTweet = document.createElement('div');
+        divTweet.className = 'tweet';
+    
+        const divRow = document.createElement('div');
+        divRow.className = 'row';
+        divTweet.appendChild(divRow);
+    
+        const divCol1 = document.createElement('div');
+        divCol1.className = 'col-2 col-xl-1';
+        const profilePic = document.createElement('img');
+        profilePic.src = 'https://placekitten.com/40/40';
+        profilePic.className = 'img-fluid profile-icon';
+        divCol1.appendChild(profilePic);
+        divRow.appendChild(divCol1);
+    
+        const divCol2 = document.createElement('div');
+        divCol2.className = 'col-10 col-xl-11';
+        const divUsername = document.createElement('div');
+        divUsername.innerHTML = '<strong>' + jsondata[i].username + '</strong>';
+        divCol2.appendChild(divUsername);
+        const para = document.createElement('p');
+        para.innerHTML = jsondata[i].post;
+        divCol2.appendChild(para);
+        
+        const likeButton = document.createElement('input');
+        likeButton.type = 'checkbox';
+        likeButton.id = 'likes' + i;
+        likeButton.name = 'likeCheckbox';
+        const likeLabel = document.createElement('label');
+        likeLabel.htmlFor = 'likeCheckbox' + i;
+        divCol2.appendChild(likeLabel);
+        divCol2.appendChild(likeButton);
+        
+        divRow.appendChild(divCol2);
+        //document.body.appendChild(elem);
+        const tweetCol = document.getElementById('tweetCol');
+        tweetCol.appendChild(divTweet);
+        const hr = document.createElement('hr');
+        tweetCol.appendChild(hr);
+
+        const deleteForm = document.createElement('form');
+        const deleteButton = document.createElement('button');
+        deleteButton.value = jsondata[i].id;
+        deleteButton.type = 'submit';
+        deleteButton.innerHTML = 'Reply';
+        let postid=jsondata[i].id;
+        let userid = $userid;
+        deleteForm.formAction = `http://localhost:9090/posting/delete/${postid}`;
+        deleteForm.method ="get";
+        deleteForm.appendChild(deleteButton);
+        tweetCol.appendChild(deleteForm);
+
+    }
+});
+
+</script>
 </body>
 
 </html>
