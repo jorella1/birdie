@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/index.css" rel="stylesheet" type="text/css">
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="col-lg-7 col-xl-6 col-10">
-                <div class="row align-items-center">
+                <div class="row align-items-center ">
                     <div class="col">
                         <strong class="fs-4">Home</strong>
                     </div>
@@ -72,58 +72,14 @@
                     
                         <form action="/posting/make" method ="post">
                             <input type="hidden" name="userid" value=$userid>
-                            <textarea class="form-control" name="text"></textarea>
-                            <input type="submit"></button>
+                            <textarea class="form-control" name="text" placeholder="What's on your mind?..."></textarea>
+                            <input class="mt-2 btn btn-dark" type="submit" value='Post'></button>
                         </form>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-12" id="tweetCol">
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="tweet">
-                                <div class="row">
-                                    <div class="col-2 col-xl-1">
-                                        <img src="https://placekitten.com/40/40" class="img-fluid profile-icon">
-                                    </div>
-                                    <div class="col-10 col-xl-11">
-                                        <div> <strong>Username</strong><span>@user123</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras
-                                            adipiscing enim. Eget dolor morbi non arcu.</p>
-                                        <div> <img src="https://placekitten.com/600/400" class="img-fluid"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
+
                         </div>
                     </div>
                 </div>
@@ -226,43 +182,54 @@ fetch("/posting/all")
         para.innerHTML = jsondata[i].post;
         divCol2.appendChild(para);
         
-        const likeButton = document.createElement('input');
-        likeButton.type = 'checkbox';
-        likeButton.id = 'likes' + i;
-        likeButton.name = 'likeCheckbox';
-        const likeLabel = document.createElement('label');
-        likeLabel.htmlFor = 'likeCheckbox' + i;
-        divCol2.appendChild(likeLabel);
-        divCol2.appendChild(likeButton);
-        
         divRow.appendChild(divCol2);
         //document.body.appendChild(elem);
         const tweetCol = document.getElementById('tweetCol');
         tweetCol.appendChild(divTweet);
-        const hr = document.createElement('hr');
-        tweetCol.appendChild(hr);
 
-        const replyForm = document.createElement('form');
+
+
+        const form = document.createElement('form');
+        form.className ='d-flex justify-content-around';
+
+        const likeButton = document.createElement('button');
+        let postid=jsondata[i].id;
+        likeButton.id = `likes + ${postid}`;
+        likeButton.name = 'likeBtn';
+        likeButton.type = 'submit';
+        likeButton.title = 'like';
+        const likeIcon = document.createElement('i');
+        likeIcon.className = 'fa-solid fa-thumbs-up mx-4';
+        likeButton.appendChild(likeIcon);
+        form.appendChild(likeButton);
+
         const replyButton = document.createElement('button');
         replyButton.value = jsondata[i].id;
         replyButton.type = 'submit';
-        replyButton.innerHTML = 'Reply';
-        let postid=jsondata[i].id;
+        replyButton.title = 'Comment on Post';
         let userid = $userid;
         replyButton.formAction = `http://localhost:9090/posting/${userid}/${postid}`;
         replyButton.method ="get";
-        replyForm.appendChild(replyButton);
-        tweetCol.appendChild(replyForm);
+        const replyIcon = document.createElement('i');
+        replyIcon.className = 'fa-solid fa-comment mx-4';
+        replyButton.appendChild(replyIcon);
+        form.appendChild(replyButton);
 
-        const reportForm = document.createElement('form');
+
         const reportButton = document.createElement('button');
         reportButton.value = jsondata[i].id;
         reportButton.type = 'submit';
-        reportButton.innerHTML = 'Report';
-        reportForm.action = `http://localhost:9090/posting/flag/${postid}`;
-        reportForm.method ="get";
-        reportForm.appendChild(reportButton);
-        tweetCol.appendChild(reportForm);
+        reportButton.title = 'Report Post';
+        reportButton.formAction = `http://localhost:9090/posting/flag/${postid}`;
+        reportButton.method ="get";
+        const reportIcon = document.createElement('i');
+        reportIcon.className = 'fa-solid fa-flag mx-4';
+        reportButton.appendChild(reportIcon);
+        form.appendChild(reportButton);
+        divCol2.appendChild(form);
+
+        const hr = document.createElement('hr');
+        tweetCol.appendChild(hr);
     }
 });
 
