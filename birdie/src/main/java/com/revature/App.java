@@ -55,6 +55,7 @@ public class App
         app.post("/registration", RegistrationController.register);
         app.get("/loginpage", LoginController.loginPage);
         app.post("/login", LoginController.login);
+        app.get("/admin", DashboardController.adminPage);
         Connection connection = ConnectionFactory.getConnection();
         System.out.println(connection);
 

@@ -13,11 +13,25 @@ public class RegistrationController {
         // // ArrayList<Integer> newarray = new ArrayList();
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
+        String myrole = ctx.formParam("Role");
+        System.out.println("my role is "+myrole);
+        if (myrole== "admin"){
+            userLoginEntity newuser = new userLoginEntity(username, password, myrole);
+            userLoginDao mynewuser = new userLoginDao();
+            mynewuser.insert(newuser);
+
+
+        }
+
+        else {
+
+            String role ="user";
+            userLoginEntity newuser = new userLoginEntity(username, password, role);
+            userLoginDao mynewuser = new userLoginDao();
+            mynewuser.insert(newuser);
+        }
         // String role = ctx.formParam("role");
-        String role ="Admin";
-        userLoginEntity newuser = new userLoginEntity(username, password, role);
-        userLoginDao mynewuser = new userLoginDao();
-        mynewuser.insert(newuser);
+
         // // newarray.add(1);
         // // newarray.add(2);
         // temp.put("list_id", Integer.parseInt(ctx.pathParam("id")));
