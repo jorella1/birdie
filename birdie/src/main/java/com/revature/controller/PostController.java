@@ -79,6 +79,12 @@ public class PostController {
         ctx.json(PostServe.getAllPosts());
     };
 
+    public static Handler allFlaggedPostsHandler = ctx -> {
+        System.out.println("in the post server");
+        
+        ctx.json(PostServe.getFlaggedPosts());
+    };
+
 
     public static Handler getPost = ctx -> {
         int id = Integer.parseInt(ctx.pathParam("postid")); 
