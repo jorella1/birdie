@@ -31,6 +31,11 @@ public class userServiceTests {
 
     private User dummyUser1;
     private User dummyUser2;
+
+    private userLoginEntity userTestEntity1;
+    private userLoginEntity userTestEntity2;
+
+
     @BeforeClass
    public void setup(){
        MockitoAnnotations.openMocks(this);
@@ -48,6 +53,29 @@ public class userServiceTests {
        when(mockUserLoginDao.select(dummyUserEntity2.getId())).thenReturn(dummyUserEntity2);
         
        when(mockUserLoginDao.selectAll()).thenReturn(Arrays.asList(dummyUserEntity1, dummyUserEntity2));
+   }
+   //USER TESTS
+   @Test
+   public void testUserObject(){
+     userTestEntity1 = new userLoginEntity("username", "password", "user");
+     userTestEntity2 = new userLoginEntity(2,"username", "password", "user");
+
+    Assert.assertEquals(dummyUserEntity1.toString(), "Userid: 1 Username: fakeuserone Password: Pa$sword123");
+    Assert.assertEquals(userTestEntity2.getId(), 2);
+    Assert.assertEquals(userTestEntity2.getuserName(), "username");
+    Assert.assertEquals(userTestEntity2.getPassword(), "password");
+    Assert.assertEquals(userTestEntity2.getRole(), "user");
+
+    userTestEntity2.setId(5);
+    userTestEntity2.setuserName("newusername");
+    userTestEntity2.setPassword("password444");
+    userTestEntity2.setRole("admin");
+
+    Assert.assertEquals(userTestEntity2.getId(), 5);
+    Assert.assertEquals(userTestEntity2.getuserName(), "newusername");
+    Assert.assertEquals(userTestEntity2.getPassword(), "password444");
+    Assert.assertEquals(userTestEntity2.getRole(), "admin");
+
    }
 
     @Test

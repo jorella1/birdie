@@ -81,6 +81,63 @@ public class postServiceTests {
         //same with updateLikes
         //when(mockPostDao.updateLikes(dummyPost1.getId(), 5)).thenReturn();
     }
+    //TEST FOR POSTS
+    @Test
+    public void testPostObject(){
+        Post dummyTest = new Post(5, "this is a test post", 15, "TestNG", 14);
+        Assert.assertEquals(dummyTest.getId(), 5);
+        Assert.assertEquals(dummyTest.getPost(), "this is a test post");
+        //Known defect, defect_005
+        //Assert.assertEquals(dummyTest.getLikes(), 15);
+        Assert.assertEquals(dummyTest.getLikes(), 0);
+        Assert.assertFalse(dummyTest.getFlag());
+
+        dummyTest.setPost("updated text");
+        dummyTest.setLikes(16);
+        dummyTest.setFlag(true);
+
+        Assert.assertEquals(dummyTest.getId(), 5);
+        Assert.assertEquals(dummyTest.getPost(), "updated text");
+        Assert.assertEquals(dummyTest.getLikes(), 16);
+        Assert.assertTrue(dummyTest.getFlag());
+    }
+
+    //TEST FOR POST ENTITY
+    @Test
+    public void testPostEntity(){
+        postEntity dummyPEntity = new postEntity(1, 1, "post entity text", 0, false, 0, "TestNG");
+        postEntity dummyTestConstructor = new postEntity(0, "text", "username");
+        postEntity dummyTestConstructor1 = new postEntity(0, "text", 1, "username");
+
+        Assert.assertEquals(dummyPEntity.getId(), 1);
+        Assert.assertEquals(dummyPEntity.getTid(), 1);
+        Assert.assertEquals(dummyPEntity.getcommentId(), 0);
+        Assert.assertFalse(dummyPEntity.getFlag());
+        Assert.assertEquals(dummyPEntity.getText(), "post entity text");
+        Assert.assertEquals(dummyPEntity.getUsername(), "TestNG");
+        Assert.assertEquals(dummyPEntity.getLikes(), 0);
+
+        dummyPEntity.setTid(2);
+        dummyPEntity.setId(2);
+        dummyPEntity.setcommentId(2);
+        dummyPEntity.setFlag(true);
+
+        Assert.assertEquals(dummyPEntity.getId(), 2);
+        Assert.assertEquals(dummyPEntity.getTid(), 2);
+        Assert.assertEquals(dummyPEntity.getcommentId(), 2);
+        Assert.assertTrue(dummyPEntity.getFlag());
+        
+        dummyPEntity.setText("updated text");
+        dummyPEntity.setUsername("Javalinfun");
+        dummyPEntity.setLikes(12);
+
+        Assert.assertEquals(dummyPEntity.getText(), "updated text");
+        Assert.assertEquals(dummyPEntity.getUsername(), "Javalinfun");
+        Assert.assertEquals(dummyPEntity.getLikes(), 12);
+
+    }
+
+    //SERVICE TESTS
     @Test
     public void testGetPost() throws PostNotFoundException{
         Assert.assertEquals(postService.getPost(1), dummyPost1);
