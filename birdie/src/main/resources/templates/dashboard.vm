@@ -50,12 +50,6 @@
                         <i class="fa-solid fa-user fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Profile</span>
                     </div>
-                    if(${role} == admin}{
-                        <div class="my-3" id="profileButton">
-                            <i class="fa-solid fa-hammer fs-4"></i>
-                            <span class="fs-4 d-none d-xl-inline">Admin</span>
-                        </div>
-                    }
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
@@ -182,6 +176,23 @@ fetch("/posting/all")
 })
 .then(function(jsondata){
     console.log(jsondata);
+    if($role == 'admin'){
+        const hammerTab = document.createElement('div');
+        hammerTab.className = 'my-3';
+        hammerTab.id = 'adminButton';
+
+        const hammerIcon = document.createElement('i');
+        hammerIcon.className = 'fa-solid fa-hammer fs-4';
+        hammerTab.appendChild(hammerIcon);
+
+        const sp = document.createElement('SPAN');
+        sp.className = 'fs-4 d-none d-xl-inline';
+        sp.innerHTML = 'Admin';
+        hammerTab.appendChild(sp);
+    }
+    else{
+    console.log('in the else statement');
+    }
     for(let i = 0; i < jsondata.length; i++){
         const divTweet = document.createElement('div');
         divTweet.className = 'tweet';
