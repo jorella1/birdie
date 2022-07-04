@@ -114,69 +114,70 @@
     <script>
         fetch(`/posting/post/${postid}`)
         .then(response => {
-        console.log("my post id is"+$postid);
-        console.log("responsejson");
-        console.log(response.json);
-           return response.json();
+            console.log("my post id is"+$postid);
+            console.log("responsejson");
+            console.log(response.json);
+            return response.json();
         })
         .then(function(jsondata){
-        console.log("in the promise");
-    console.log(jsondata);
-    for(let i = 0; i < jsondata.length; i++){
-        const divTweet = document.createElement('div');
-        divTweet.className = 'tweet';
-    
-        const divRow = document.createElement('div');
-        divRow.className = 'row';
-        divTweet.appendChild(divRow);
-    
-        const divCol1 = document.createElement('div');
-        divCol1.className = 'col-2 col-xl-1';
-        const profilePic = document.createElement('img');
-        profilePic.src = 'https://placekitten.com/40/40';
-        profilePic.className = 'img-fluid profile-icon';
-        divCol1.appendChild(profilePic);
-        divRow.appendChild(divCol1);
-    
-        const divCol2 = document.createElement('div');
-        divCol2.className = 'col-10 col-xl-11';
-        const divUsername = document.createElement('div');
-        divUsername.innerHTML = '<strong>' + jsondata[i].username + '</strong>';
-        divCol2.appendChild(divUsername);
-        const para = document.createElement('p');
-        para.innerHTML = jsondata[i].post;
-        divCol2.appendChild(para);
-        
-        const likeButton = document.createElement('input');
-        likeButton.type = 'checkbox';
-        likeButton.id = 'likes' + i;
-        likeButton.name = 'likeCheckbox';
-        const likeLabel = document.createElement('label');
-        likeLabel.htmlFor = 'likeCheckbox' + i;
-        divCol2.appendChild(likeLabel);
-        divCol2.appendChild(likeButton);
-        
-        divRow.appendChild(divCol2);
-        //document.body.appendChild(elem);
-        const tweetCol = document.getElementById('tweetCol');
-        tweetCol.appendChild(divTweet);
-        const hr = document.createElement('hr');
-        tweetCol.appendChild(hr);
+            console.log("in the promise");
+            console.log(jsondata);
 
-        const replyForm = document.createElement('form');
-        const replyButton = document.createElement('button');
-        replyButton.value = jsondata[i].id;
-        replyButton.type = 'submit';
-        replyButton.innerHTML = 'Reply';
-        let id=jsondata[i].id;
-        replyButton.formAction = `http://localhost:9090/posting/${id}`;
-        replyButton.method ="get";
-        replyForm.appendChild(replyButton);
-        tweetCol.appendChild(replyForm);
+            const test = document.createElement('h1');
+            test.innerHTML  = 'testing';
+            document.body.appendChild(test);
+            const divTweet = document.createElement('div');
+            divTweet.className = 'tweet';
+        
+            const divRow = document.createElement('div');
+            divRow.className = 'row';
+            divTweet.appendChild(divRow);
+        
+            const divCol1 = document.createElement('div');
+            divCol1.className = 'col-2 col-xl-1';
+            const profilePic = document.createElement('img');
+            profilePic.src = 'https://placekitten.com/40/40';
+            profilePic.className = 'img-fluid profile-icon';
+            divCol1.appendChild(profilePic);
+            divRow.appendChild(divCol1);
+        
+            const divCol2 = document.createElement('div');
+            divCol2.className = 'col-10 col-xl-11';
+            const divUsername = document.createElement('div');
+            divUsername.innerHTML = '<strong>' + jsondata[0].username + '</strong>';
+            divCol2.appendChild(divUsername);
+            const para = document.createElement('p');
+            para.innerHTML = jsondata[0].post;
+            divCol2.appendChild(para);
+            
+            const likeButton = document.createElement('input');
+            likeButton.type = 'checkbox';
+            likeButton.id = 'likes' + 0;
+            likeButton.name = 'likeCheckbox';
+            const likeLabel = document.createElement('label');
+            likeLabel.htmlFor = 'likeCheckbox' + 0;
+            divCol2.appendChild(likeLabel);
+            divCol2.appendChild(likeButton);
+            
+            divRow.appendChild(divCol2);
+            //document.body.appendChild(elem);
+            const tweetCol = document.getElementById('tweetCol');
+            tweetCol.appendChild(divTweet);
+            const hr = document.createElement('hr');
+            tweetCol.appendChild(hr);
+
+            const replyForm = document.createElement('form');
+            const replyButton = document.createElement('button');
+            replyButton.value = jsondata[0].id;
+            replyButton.type = 'submit';
+            replyButton.innerHTML = 'Reply';
+            let id=jsondata[0].id;
+            replyButton.formAction = `http://localhost:9090/posting/${id}`;
+            replyButton.method ="get";
+            replyForm.appendChild(replyButton);
+            tweetCol.appendChild(replyForm);
     }
 });
-        
-     
         </script>
 </body>
 
