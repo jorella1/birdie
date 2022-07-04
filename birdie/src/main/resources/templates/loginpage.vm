@@ -69,6 +69,10 @@
                              <div class="field">
                                 <input type="password" placeholder="Confirm password" required>
                              </div>
+                              <div class="field">
+                                 <input type="checkbox" id="admin" name="Role" value="admin">
+                                 <label for="Role">Admin</label><br>
+                             </div>
                              <div class="field btn">
                                 <div class="btn-layer"></div>
                                 <input type="submit" value="Signup">
