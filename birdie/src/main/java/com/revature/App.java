@@ -70,7 +70,7 @@ public class App
                 get("like/{id}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
                 get("flag/{id}", PostController.flagPost);
-                get("/{postid}",PostController.getPostPage);
+                get("{postid}",PostController.getPostPage);
                 get("makreply/{postid}", PostController.flagPost);
                 
                 // get("update/{id}", PostController.update);

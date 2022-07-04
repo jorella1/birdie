@@ -75,7 +75,7 @@ public class PostController {
 
 
     public static Handler getPost = ctx -> {
-        int id = Integer.parseInt(ctx.pathParam("id")); 
+        int id = Integer.parseInt(ctx.pathParam("postid")); 
         try{
             ctx.json(PostServe.getPost(id));
         }catch(PostNotFoundException e){
