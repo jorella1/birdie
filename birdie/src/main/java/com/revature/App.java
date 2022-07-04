@@ -63,7 +63,7 @@ public class App
         app.routes(() -> {
             path("posting", () -> {
                 get("all", PostController.allPostsHandler);
-                post("reply",PostController.Reply);
+                post("reply",PostController.getReplies);
                 post("make", PostController.make);
                 get("post/{postid}", PostController.getPost);
                 get("like/{id}", PostController.likePost);
