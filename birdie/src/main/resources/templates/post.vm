@@ -16,6 +16,7 @@
 
 <body>
     <div class="container-xxl">
+  
         <div class="row">
             <div class="col-2 col-lg-1 col-xl-2 border-end">
                 <div class="left-navbar d-flex flex-column position-sticky align-items-end align-items-xl-start">
@@ -25,7 +26,7 @@
                     <div class="my-3">
                         <i class="fa-solid fa-house fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Home</span>
-                    </div>git 
+                    </div>  <h1>$postid</h1>
                     <div class="my-3">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
@@ -168,8 +169,9 @@
         </div>
     </div>
     <script>
-        fetch("/post/{postid}")
+        fetch(`/posting/${postid}`)
         .then(response => {
+        console.log("my post id is"+$postid);
            return response.json();
         })
         .then(function(jsondata){
@@ -209,7 +211,7 @@
 
     });
         
-        fetch("/makereply/{postid}")
+        fetch(`/makereply/${postid}`)
         .then(response =>{
             return response.json();
         })
