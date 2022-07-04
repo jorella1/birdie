@@ -79,6 +79,14 @@ public class PostController {
         ctx.json(PostServe.getAllPosts());
     };
 
+
+    public static Handler Search = ctx -> {
+        System.out.println("in the post server");
+        
+        ctx.json(PostServe.getAllPosts());
+    };
+
+
     public static Handler allFlaggedPostsHandler = ctx -> {
         System.out.println("in the post server");
         
@@ -168,6 +176,7 @@ public class PostController {
 
     public static Handler deletePost = ctx -> {
         int id = Integer.parseInt(ctx.pathParam("id")); 
+        System.out.println("deleting");
         try{
             PostServe.deletePost(id);
         }catch(PostNotFoundException e){

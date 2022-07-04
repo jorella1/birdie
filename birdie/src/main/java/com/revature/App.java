@@ -74,6 +74,7 @@ public class App
                 get("{userid}/{postid}",PostController.getPostPage);
                 get("makereply/{postid}", PostController.flagPost);
                 get("/flagged", PostController.allFlaggedPostsHandler);
+                get("search", PostController.Search);
                 
                 // get("update/{id}", PostController.update);
                 // get("report/{id}", PostController.report);
