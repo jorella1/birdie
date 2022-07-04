@@ -63,6 +63,22 @@ public class PostService {
         return PostModels;
     }
 
+    // public List<Post> getSearchedPosts() throws PostNotFoundException {
+    //     System.out.println("in the get all posts");
+    //     List<postEntity> PostEntities = Posts.selectAll();
+    //     System.out.println(PostEntities);
+    //     For (postEntity)
+    //     List<Post> PostModels = new ArrayList<>();
+
+    //     for (postEntity PostEntity : PostEntities){
+    //         PostModels.add(convertPostModel(PostEntity));
+        
+    //     }
+
+    //     return PostModels;
+    // }
+
+
    
 
     public List<Post> getFlaggedPosts() throws PostNotFoundException {
