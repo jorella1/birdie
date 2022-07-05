@@ -16,12 +16,14 @@ public class Post {
         this.postid=postid;
         this.post=post;
         this.username=username;
+        this.likes=likes;
     }
     public Post(int postid, String post, int likes,String username,int commentid) {
         this.postid=postid;
         this.post=post;
         this.username=username;
         this.commentid=commentid;
+        this.likes=likes;
     }
     public int getId() {
         return postid;

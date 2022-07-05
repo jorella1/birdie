@@ -75,9 +75,18 @@ public class PostController {
 
     public static Handler allPostsHandler = ctx -> {
         System.out.println("in the post server");
-        
+        System.out.println("****************************************");
+        System.out.println(PostServe.getAllPosts());
+        System.out.println("printing out all the posts");
         ctx.json(PostServe.getAllPosts());
     };
+
+    public static Handler searchPostsHandler = ctx -> {
+        System.out.println("in the post server");
+        String search = ctx.pathParam("search");
+        ctx.json(PostServe.getSearchedPosts(search));
+    };
+
 
 
     public static Handler Search = ctx -> {
@@ -143,9 +152,10 @@ public class PostController {
     // };
 
     public static Handler likePost = ctx -> {
-        int id = Integer.parseInt(ctx.pathParam("id")); 
+        int postid = Integer.parseInt(ctx.pathParam("postid")); 
+        int userid =  Integer.parseInt(ctx.pathParam("userid")); 
         try{
-           PostServe.likePost(id);
+           PostServe.likePost(postid,userid);
         }catch(PostNotFoundException e){
             ctx.result("Item Not Found");
             ctx.status(400);

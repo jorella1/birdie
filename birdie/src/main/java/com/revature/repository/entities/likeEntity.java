@@ -14,7 +14,12 @@ public class likeEntity {
         this.hash = hash;
     }
 
-    
+    public likeEntity( int postid, int userid, String hash) {
+        this.postid=postid;
+        this.userid = userid;
+        this.hash = hash;
+    }
+
 
     public int getLid() {
         return likeid;
@@ -40,7 +45,7 @@ public class likeEntity {
     public String getHash() {
         return hash;
     }
-    public void setText(String hash) {
+    public void setHash(String hash) {
         this.hash = hash;
     }
 
