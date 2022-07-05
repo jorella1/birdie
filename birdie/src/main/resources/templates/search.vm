@@ -66,7 +66,7 @@
                         <form id="searchForm" method="post">
                             <div class="row">
                                 <div class="col-10">
-                                    <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie">
+                                    <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie" required>
                                 </div>
                                 <div class="col-2">
                                     <button type="submit" name="searchBtn" onclick="getValueInput()"> 

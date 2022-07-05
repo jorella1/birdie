@@ -72,7 +72,7 @@
                     
                         <form action="/posting/make" method ="post">
                             <input type="hidden" name="userid" value=$userid>
-                            <textarea class="form-control" name="text" placeholder="What's on your mind?..."></textarea>
+                            <textarea class="form-control" name="text" placeholder="What's on your mind?..." maxlength="250" required></textarea>
                             <input id="post" class="mt-2 btn btn-dark" type="submit" value='Post'></button>
                         </form>
                     </div>
@@ -91,7 +91,7 @@
                     <form id="searchForm" method="post">
                         <div class="row">
                             <div class="col-10">
-                                <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie">
+                                <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie" required>
                             </div>
                             <div class="col-2">
                                 <button type="submit" name="searchBtn" onclick="getValueInput()"> 
