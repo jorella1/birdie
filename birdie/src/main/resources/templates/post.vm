@@ -236,6 +236,7 @@ fetch(`/posting/reply/${postid}`)
                 likeButton.type = 'checkbox';
                 likeButton.id = 'likes';
                 likeButton.name = 'likeCheckbox';
+                likeButton.className = 'btn';
                 const likeLabel = document.createElement('label');
                 likeLabel.htmlFor = 'likeCheckbox';
                 divCol2.appendChild(likeLabel);
