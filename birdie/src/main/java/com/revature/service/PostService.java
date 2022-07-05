@@ -67,8 +67,10 @@ public class PostService {
 
 
     public List<Post> getSearchedPosts(String search) throws PostNotFoundException {
-        System.out.println("in the get all posts");
+        System.out.println("*************************************************************");
+        System.out.println("in the get all search posts");
         List<postEntity> PostEntities = Posts.selectAll();
+        System.out.println("post entities");
         System.out.println(PostEntities);
         List<Post> PostModels = new ArrayList<>();
 
