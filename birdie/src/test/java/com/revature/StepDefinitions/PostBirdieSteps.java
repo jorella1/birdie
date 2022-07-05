@@ -15,7 +15,7 @@ public class PostBirdieSteps {
 
  @Given("a user is on dashboard page")
  public void a_user_is_on_dashboard_page(){
-
+   driver.navigate().to("http://localhost:9090/dashboard/21");
  }
     
  @When("a user writes a post")
