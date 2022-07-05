@@ -31,8 +31,13 @@
                         </form>
                     </div>
                     <div class="my-3">
+                    <form id="goSearch" method="post">
+                    <button class="btn" type="submit">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
+                        <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" hidden>
+                        </button>
+                        </form>
                     </div>
 
                     <div class="position-absolute" style="bottom: 20px;">
@@ -133,8 +138,12 @@ fetch("/posting/all")
 
     const homeForm = document.getElementById('goHome');
     homeForm.action = `/dashboard/${userid}`;
-    const searchButton = document.getElementById('searchForm');
+    const searchForm = document.getElementById('searchForm');
     searchForm.action = `/searchpage/${userid}`
+
+    const searchSideButton = document.getElementById('goSearch');
+    searchSideButton.value = 'test';
+    searchSideButton.action = `/searchpage/${userid}`
 
     if($role == 1){
         const hammerTab = document.createElement('div');
