@@ -28,7 +28,8 @@ public class LoginController {
         String password = ctx.formParam("password");
 
         userLoginDao user = new  userLoginDao();
-        
+        System.out.println("my user name");
+        System.out.println(username);
         userLoginEntity myuser = user.select_by_username(username);
         int id = myuser.getId();
 

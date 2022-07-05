@@ -72,7 +72,7 @@ public class App
                 get("post/{postid}", PostController.getPost);
                 get("like/{userid}/{postid}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
-                get("flag/{id}", PostController.flagPost);
+                get("flag/{postid}", PostController.flagPost);
                 get("{userid}/{postid}",PostController.getPostPage);
                 get("makereply/{postid}", PostController.flagPost);
                 get("/flagged", PostController.allFlaggedPostsHandler);

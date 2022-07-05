@@ -5,9 +5,9 @@ public class Post {
     private int postid;
     // private int userid;
     private String post;
-    private int likes=0;
+    private int likes;
     private boolean flag = false;
-    private int commentid=0;
+    private int commentid;
 
     private String username;
 
