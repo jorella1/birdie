@@ -88,7 +88,18 @@
             <div class="col-lg-4 mt-1 border-start d-none d-lg-block">
                 <div class="position-sticky" style="top:0px">
                     <div class="mt-4">
-                        <input type="text" class="form-control" placeholder="Search Birdie" />
+                    <form action = "/posting/search/$userid">
+                    <div class="row">
+                    <div class="col-10">
+                        <input type="text" class="form-control" placeholder="Search Birdie">
+                        </div>
+                    <div class="col-2">
+                        <button type="submit" name="searchBtn"> 
+                            <i class="fa-solid fa-magnifying-glass fs-2"></i>
+                        </button>
+                        </div>
+                        </div>
+                    </form>
                     </div>
                     <div class="happening_box mt-5 p-3">
                         <div>
