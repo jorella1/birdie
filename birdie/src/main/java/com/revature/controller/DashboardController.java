@@ -20,8 +20,10 @@ public class DashboardController {
         // newarray.add(1);
         // newarray.add(2);
         userLoginDao newuser = new userLoginDao();
+        System.out.println("my new user id is "+id);
         userLoginEntity user = newuser.select(id);
         System.out.println("my role in dashboard is");
+        System.out.println(user);
         System.out.println(user.getRole());
         String myrole = user.getRole();
         int adminid;

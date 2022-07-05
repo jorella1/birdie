@@ -203,6 +203,13 @@ public class PostController {
     public static Handler likePost = ctx -> {
         int postid = Integer.parseInt(ctx.pathParam("postid")); 
         int userid =  Integer.parseInt(ctx.pathParam("userid")); 
+
+        String template = "status is %s, data key is %s";
+       
+        String url = "/dashboard/%s";
+        String result = String.format(url, userid);
+
+        ctx.redirect(result);    
         try{
            PostServe.likePost(postid,userid);
         }catch(PostNotFoundException e){
@@ -223,9 +230,22 @@ public class PostController {
     };
 
     public static Handler flagPost = ctx -> {
-        int id = Integer.parseInt(ctx.pathParam("id")); 
+        int postid = Integer.parseInt(ctx.pathParam("postid")); 
+
+        String template = "status is %s, data key is %s";
+       
+
+        // System.out.println("my result is");
+        // System.out.println(result);
+        postDao post = new postDao();
+        postEntity mypost = post.select(postid);
+        int userid = mypost.getId();
+        String url = "/dashboard/%s";
+        String result = String.format(url, userid);
+
+        ctx.redirect(result);    
         try{
-            PostServe.flagPost(id);
+            PostServe.flagPost(postid);
         }catch(PostNotFoundException e){
             ctx.result("Item Not Found");
             ctx.status(400);
