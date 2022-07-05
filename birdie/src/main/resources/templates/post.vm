@@ -25,7 +25,7 @@
                     </div>
                     <div class="my-3">
                         <i class="fa-solid fa-house fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Home $userid and $postid</span>
+                        <span class="fs-4 d-none d-xl-inline">Home</span>
                     </div>
                     <div class="my-3">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
@@ -59,7 +59,9 @@
             <div class="col-lg-7 col-xl-6 col-10">
                 <div class="row align-items-center">
                     <div class="col">
-                        <button onclick="history.back()">Go Back</button>
+                        <button class="btn" onclick="history.back()">
+                            <i class="fa-solid fa-arrow-left fs-2"></i>
+                        </button>
                         <strong class="fs-4">Tweet</strong>
                     </div>
                 </div>
@@ -151,22 +153,38 @@
             para.innerHTML = jsondata.post;
             divCol2.appendChild(para);
             
-            const likeButton = document.createElement('input');
-            likeButton.type = 'checkbox';
-            likeButton.id = 'likes';
-            likeButton.name = 'likeCheckbox';
-            const likeLabel = document.createElement('label');
-            likeLabel.htmlFor = 'likeCheckbox';
-            divCol2.appendChild(likeLabel);
-            divCol2.appendChild(likeButton);
+
             
+
+        const form = document.createElement('form');
+        form.className ='d-flex justify-content-around';
+
+  
             divRow.appendChild(divCol2);
             //document.body.appendChild(elem);
             const tweetCol = document.getElementById('ogTweet');
             tweetCol.appendChild(divTweet);
 
-            const hr = document.createElement('hr');
-            tweetCol.appendChild(hr);
+            const hr1 = document.createElement('hr');
+            tweetCol.appendChild(hr1);
+
+
+            const divReplyRow = document.createElement('div');
+            divReplyRow.className = 'row';
+            tweetCol.appendChild(divReplyRow);
+
+            const divReplyCol1 = document.createElement('div');
+            divReplyCol1.className = 'col-2';
+            divReplyRow.appendChild(divReplyCol1);
+
+            const divReplyCol2 = document.createElement('div');
+            divReplyCol2.className = 'col-10';
+            divReplyRow.appendChild(divReplyCol2);
+
+            const yourProfilePic = document.createElement('img');
+            yourProfilePic.src = 'https://placekitten.com/40/40';
+            yourProfilePic.className = 'img-fluid profile-icon';
+            divReplyCol1.appendChild(yourProfilePic);
 
             const replyForm = document.createElement('form');
             const username = document.createElement('input');
@@ -178,12 +196,15 @@
             const replyText = document.createElement('textarea');
             replyText.name = 'text';
             replyText.placeholder = 'Type your reply';
+            replyText.className ='form-control';
+            replyText.maxlength = '250';
             replyForm.appendChild(replyText);
 
             const replyButton = document.createElement('button');
             replyButton.name = 'button';
             replyButton.value = jsondata.id;
             replyButton.type = 'submit';
+            replyButton.className = 'btn btn-dark mt-2';
             replyButton.innerHTML = 'Reply';
 
             let postid=jsondata.id;
@@ -191,7 +212,12 @@
             replyForm.action = `http://localhost:9090/posting/reply/${userid}/${postid}`;
             replyForm.method ="POST";
             replyForm.appendChild(replyButton);
-            tweetCol.appendChild(replyForm);
+            divReplyCol2.appendChild(replyForm);
+
+            const hr2 = document.createElement('hr');
+            tweetCol.appendChild(hr2);
+
+            
 });
 
 ///////get replies
@@ -231,16 +257,6 @@ fetch(`/posting/reply/${postid}`)
                 const para = document.createElement('p');
                 para.innerHTML = jsondata[i].post;
                 divCol2.appendChild(para);
-                
-                const likeButton = document.createElement('input');
-                likeButton.type = 'checkbox';
-                likeButton.id = 'likes';
-                likeButton.name = 'likeCheckbox';
-                likeButton.className = 'btn';
-                const likeLabel = document.createElement('label');
-                likeLabel.htmlFor = 'likeCheckbox';
-                divCol2.appendChild(likeLabel);
-                divCol2.appendChild(likeButton);
                 
                 divRow.appendChild(divCol2);
                 //document.body.appendChild(elem);
