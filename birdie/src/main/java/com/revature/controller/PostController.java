@@ -82,18 +82,20 @@ public class PostController {
     };
 
     public static Handler searchPostsHandler = ctx -> {
-        System.out.println("in the post server");
-        String search = ctx.pathParam("search");
-        ctx.json(PostServe.getSearchedPosts(search));
+        System.out.println("in the searchposthandler server ---------------------------------------------");
+        int userid = Integer.parseInt(ctx.pathParam("userid"));
+        String search = ctx.formParam("searchField");
+        System.out.println(search);
+        // ctx.json(PostServe.getSearchedPosts(search));
     };
 
 
 
-    public static Handler Search = ctx -> {
-        System.out.println("in the post server");
+    // public static Handler Search = ctx -> {
+    //     System.out.println("in the post server");
         
-        ctx.json(PostServe.getAllPosts());
-    };
+    //     ctx.json(PostServe.getAllPosts());
+    // };
 
 
     public static Handler allFlaggedPostsHandler = ctx -> {
@@ -114,9 +116,10 @@ public class PostController {
     };
 
     public static Handler getPostPage = ctx -> {
-        System.out.println("in the post");
+        System.out.println("in the get postpage");
        System.out.println("post param");
       System.out.println(ctx.pathParam("postid")); 
+      System.out.println(ctx.pathParam("userid")); 
         int id = Integer.parseInt(ctx.pathParam("postid"));
         Map<String,Integer> temp = new HashMap<>();
         temp.put("postid", Integer.parseInt(ctx.pathParam("postid")));

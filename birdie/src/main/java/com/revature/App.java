@@ -56,6 +56,7 @@ public class App
         app.get("/loginpage", LoginController.loginPage);
         app.post("/login", LoginController.login);
         app.get("/admin", DashboardController.adminPage);
+        app.get("/search/${userid}", PostController.searchPostsHandler);
         Connection connection = ConnectionFactory.getConnection();
         System.out.println(connection);
 
@@ -64,7 +65,6 @@ public class App
         app.routes(() -> {
             path("posting", () -> {
                 get("all", PostController.allPostsHandler);
-                get("search/${userid}", PostController.searchPostsHandler);
                 get("reply/{postid}",PostController.getReplies);
                 post("make", PostController.make);
                 post("reply/{userid}/{postid}", PostController.Reply);
