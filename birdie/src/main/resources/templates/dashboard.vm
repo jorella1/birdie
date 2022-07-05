@@ -91,7 +91,7 @@
                     <form id="searchForm" method="get">
                         <div class="row">
                             <div class="col-10">
-                    
+                                <input type="text" name="searchField" class="form-control" placeholder="Search Birdie">
                             </div>
                             <div class="col-2">
                                 <button type="submit" name="searchBtn"> 
@@ -145,8 +145,7 @@ fetch("/posting/all")
     console.log(jsondata);
     console.log("my role is ", $role);
     const searchForm = document.getElementById('searchForm');
-    searchForm.action = `http://localhost:9090/posting/search/${userid}`;
-    searchForm.method="get";
+    searchForm.action = `/posting/search/${userid}`;
     if($role == 1){
         const hammerTab = document.createElement('div');
         hammerTab.className = 'my-3';
