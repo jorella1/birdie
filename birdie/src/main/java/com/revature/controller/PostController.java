@@ -75,16 +75,73 @@ public class PostController {
 
     public static Handler allPostsHandler = ctx -> {
         System.out.println("in the post server");
-        
+        System.out.println("****************************************");
+        System.out.println(PostServe.getAllPosts());
+        System.out.println("printing out all the posts");
         ctx.json(PostServe.getAllPosts());
     };
 
+    public static Handler searchPostsHandler = ctx -> {
+        System.out.println("in the searchposthandler server ---------------------------------------------");
+        String search = ctx.pathParam("search");
+        // String search = ctx.formParam("searchField");
+        System.out.println(search);
 
-    public static Handler Search = ctx -> {
-        System.out.println("in the post server");
-        
-        ctx.json(PostServe.getAllPosts());
+        // Map<String,String> temp = new HashMap<>();
+        // temp.put("searches", search);
+
+    
+        // // temp.put("test1",5);
+        // //  newvar = temp.get(1);
+        //  ctx.render("/templates/search.vm", temp);
+
+   
+        ctx.json(PostServe.getSearchedPosts(search));
     };
+
+    public static Handler searchHandler = ctx -> {
+        System.out.println("in the searchposthandler server ---------------------------------------------");
+        int userid = Integer.parseInt(ctx.pathParam("userid"));
+        String search = ctx.formParam("searchField");
+        System.out.println(search);
+
+        Map<String,String> temp = new HashMap<>();
+        temp.put("searches", search);
+
+        
+        // temp.put("test1",5);
+        //  newvar = temp.get(1);
+         ctx.render("/templates/search.vm", temp);
+
+   
+        // ctx.json(PostServe.getSearchedPosts(search));
+    };
+
+    // public static Handler searchPage = ctx -> {
+    //     System.out.println("in the get postpage");
+    //    System.out.println("post param");
+    //   System.out.println(ctx.pathParam("postid")); 
+    //   System.out.println(ctx.pathParam("userid")); 
+    //     int id = Integer.parseInt(ctx.pathParam("postid"));
+    //     Map<String,Integer> temp = new HashMap<>();
+    //     temp.put("postid", Integer.parseInt(ctx.pathParam("postid")));
+    //     temp.put("userid", Integer.parseInt(ctx.pathParam("userid")));
+        
+    //     // temp.put("test1",5);
+    //     //  newvar = temp.get(1);
+    //      ctx.render("/templates/post.vm", temp);
+    //     // ctx.html("testing");
+    //         // ctx.json(PostServe.getPost(id));
+
+    // };
+
+
+
+    // public static Handler Search = ctx -> {
+    //     System.out.println("in the post server");
+        
+    //     ctx.json(PostServe.getAllPosts());
+    // };
 
 
     public static Handler allFlaggedPostsHandler = ctx -> {
@@ -105,9 +162,10 @@ public class PostController {
     };
 
     public static Handler getPostPage = ctx -> {
-        System.out.println("in the post");
+        System.out.println("in the get postpage");
        System.out.println("post param");
       System.out.println(ctx.pathParam("postid")); 
+      System.out.println(ctx.pathParam("userid")); 
         int id = Integer.parseInt(ctx.pathParam("postid"));
         Map<String,Integer> temp = new HashMap<>();
         temp.put("postid", Integer.parseInt(ctx.pathParam("postid")));
@@ -120,6 +178,7 @@ public class PostController {
             // ctx.json(PostServe.getPost(id));
 
     };
+
 
 
     public static Handler getReplies = ctx -> {
@@ -143,9 +202,10 @@ public class PostController {
     // };
 
     public static Handler likePost = ctx -> {
-        int id = Integer.parseInt(ctx.pathParam("id")); 
+        int postid = Integer.parseInt(ctx.pathParam("postid")); 
+        int userid =  Integer.parseInt(ctx.pathParam("userid")); 
         try{
-           PostServe.likePost(id);
+           PostServe.likePost(postid,userid);
         }catch(PostNotFoundException e){
             ctx.result("Item Not Found");
             ctx.status(400);

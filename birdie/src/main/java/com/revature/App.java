@@ -56,6 +56,8 @@ public class App
         app.get("/loginpage", LoginController.loginPage);
         app.post("/login", LoginController.login);
         app.get("/admin", DashboardController.adminPage);
+        app.post("/search/{search}", PostController.searchPostsHandler);
+        app.post("/searchpage", PostController.searchHandler);
         Connection connection = ConnectionFactory.getConnection();
         System.out.println(connection);
 
@@ -68,7 +70,7 @@ public class App
                 post("make", PostController.make);
                 post("reply/{userid}/{postid}", PostController.Reply);
                 get("post/{postid}", PostController.getPost);
-                get("like/{id}", PostController.likePost);
+                get("like/{userid}/{postid}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
                 get("flag/{id}", PostController.flagPost);
                 get("{userid}/{postid}",PostController.getPostPage);

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/index.css" rel="stylesheet" type="text/css">
@@ -18,7 +18,7 @@
     <div class="container-xxl">
         <div class="row">
             <div class="col-2 col-lg-1 col-xl-2 border-end">
-                <div id="nav" class="left-navbar d-flex flex-column position-sticky align-items-end align-items-xl-start">
+                <div class="left-navbar d-flex flex-column position-sticky align-items-end align-items-xl-start">
                     <div class="my-3">
                         <i class="fa-brands fa-twitter fs-3 mt-3 text-primary"></i>
                     </div>
@@ -46,7 +46,7 @@
                         <i class="fa-solid fa-list fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">List</span>
                     </div>
-                    <div class="my-3" id="profileButton">
+                    <div class="my-3">
                         <i class="fa-solid fa-user fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Profile</span>
                     </div>
@@ -56,24 +56,24 @@
                 </div>
             </div>
             <div class="col-lg-7 col-xl-6 col-10">
-                <div class="row align-items-center ">
-                    <div class="col">
-                        <strong class="fs-4">Home</strong>
-                    </div>
-                    <div class="col text-end">
-                        <i class="fa-solid fa-bell"></i>
-                    </div>
-                </div>
                 <div class="row mt-4">
                     <div class="col-2 col-xl-1">
-                        <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
+                        <button onclick="history.back()">
+                            <i class="fa-solid fa-arrow-left fs-2"></i>
+                        </button>
                     </div>
                     <div class="col-10 mb-2 col-xl-11">
-                    
-                        <form action="/posting/make" method ="post">
-                            <input type="hidden" name="userid" value=$userid>
-                            <textarea class="form-control" name="text" placeholder="What's on your mind?..."></textarea>
-                            <input id="post" class="mt-2 btn btn-dark" type="submit" value='Post'></button>
+                        <form id="searchForm" method="get">
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="text" class="form-control" placeholder="Search Birdie">
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" name="searchBtn"> 
+                                        <i class="fa-solid fa-magnifying-glass fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <hr>
@@ -88,18 +88,7 @@
             <div class="col-lg-4 mt-1 border-start d-none d-lg-block">
                 <div class="position-sticky" style="top:0px">
                     <div class="mt-4">
-                    <form id="searchForm" method="post">
-                        <div class="row">
-                            <div class="col-10">
-                                <input type="text" name="searchField" class="form-control" placeholder="Search Birdie">
-                            </div>
-                            <div class="col-2">
-                                <button type="submit" name="searchBtn"> 
-                                    <i class="fa-solid fa-magnifying-glass fs-2"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        <input type="text" class="form-control" placeholder="Search Birdie" />
                     </div>
                     <div class="happening_box mt-5 p-3">
                         <div>
@@ -137,6 +126,7 @@
     </div>
 
     <script>
+    
 fetch("/posting/all")
 .then(response => {
    return response.json();
@@ -258,7 +248,6 @@ fetch("/posting/all")
         tweetCol.appendChild(hr);
     }
 });
-
 </script>
 </body>
 
