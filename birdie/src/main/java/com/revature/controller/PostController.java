@@ -102,10 +102,12 @@ public class PostController {
     public static Handler searchHandler = ctx -> {
         System.out.println("in the searchposthandler server ---------------------------------------------");
         String search = ctx.formParam("searchField");
+        String userid= ctx.pathParam("userid");
         System.out.println(search);
 
         Map<String,String> temp = new HashMap<>();
         temp.put("searches", search);
+        temp.put("userid", userid);
 
         
         // temp.put("test1",5);
