@@ -156,7 +156,7 @@ public class postDao implements postDaoInterface {
     public List<postEntity> selectAll() {
         Connection connection = ConnectionFactory.getConnection();
                 // TODO Auto-generated catch block
-        String sql = "SELECT * FROM project2.posts;";
+        String sql = "SELECT * FROM project2.posts where commentid=0;";
 
         List<postEntity> posts = new ArrayList<>();
 
