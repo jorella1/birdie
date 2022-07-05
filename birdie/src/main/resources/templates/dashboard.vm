@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard $userid</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/index.css" rel="stylesheet" type="text/css">
@@ -34,26 +34,7 @@
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
                     </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-bell fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Notifications</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-envelope fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Messages</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-bookmark fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Bookmark</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-list fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">List</span>
-                    </div>
-                    <div class="my-3" id="profileButton">
-                        <i class="fa-solid fa-user fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Profile</span>
-                    </div>
+
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
@@ -151,10 +132,10 @@ fetch("/posting/all")
     console.log("my role is ", $role);
 
     const homeForm = document.getElementById('goHome');
-    homeForm.action = `/dashboard/${8}`;
+    homeForm.action = `/dashboard/${userid}`;
     const searchButton = document.getElementById('searchForm');
     searchForm.action = `/searchpage/${userid}`
-    
+
     if($role == 1){
         const hammerTab = document.createElement('div');
         hammerTab.className = 'my-3';

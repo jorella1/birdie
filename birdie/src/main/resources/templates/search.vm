@@ -19,37 +19,22 @@
         <div class="row">
             <div class="col-2 col-lg-1 col-xl-2 border-end">
                 <div class="left-navbar d-flex flex-column position-sticky align-items-end align-items-xl-start">
-                    <div class="my-3">
+                                       <div class="my-3">
                         <i class="fa-brands fa-twitter fs-3 mt-3 text-primary"></i>
                     </div>
                     <div class="my-3">
-                        <i class="fa-solid fa-house fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Home</span>
+                    <form id="goHome">
+                        <button class="btn">
+                            <i class="fa-solid fa-house fs-4"></i>
+                            <span class="fs-4 d-none d-xl-inline">Home</span>
+                        </button>
+                        </form>
                     </div>
                     <div class="my-3">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
                     </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-bell fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Notifications</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-envelope fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Messages</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-bookmark fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Bookmark</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-list fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">List</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-user fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Profile</span>
-                    </div>
+
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
@@ -134,6 +119,10 @@ fetch(`/search/${searches}`)
             console.log("in the promise");
             console.log(jsondata);
 
+    const homeForm = document.getElementById('goHome');
+    homeForm.action = `/dashboard/${userid}`;
+    const searchButton = document.getElementById('searchForm');
+    searchForm.action = `/searchpage/${userid}`
             const getValueInput = () =>{
                 const searchForm = document.getElementById('searchForm');
                 searchForm.action = `http://localhost:9090/searchpage`; 
@@ -142,33 +131,41 @@ fetch(`/search/${searches}`)
             var searchVal = document.getElementById('searchVal');
             document.getElementById("searchVal").placeholder = `Search results for ${searches}`;
             for(let i = 0; i < jsondata.length; i++){
-                let userid = $userid;
-                let postid=jsondata[i].id;
-                const divTweet = document.createElement('div');
-                divTweet.className = 'tweet';
-            
-                const divRow = document.createElement('div');
-                divRow.className = 'row';
-                divTweet.appendChild(divRow);
-            
-                const divCol1 = document.createElement('div');
-                divCol1.className = 'col-2 col-xl-1';
-                const profilePic = document.createElement('img');
-                profilePic.src = 'https://placekitten.com/40/40';
-                profilePic.className = 'img-fluid profile-icon';
-                divCol1.appendChild(profilePic);
-                divRow.appendChild(divCol1);
-            
-                const divCol2 = document.createElement('div');
-                divCol2.className = 'col-10 col-xl-11';
-                const divUsername = document.createElement('div');
-                divUsername.innerHTML = '<strong>' + jsondata[i].username + '</strong>';
-                divCol2.appendChild(divUsername);
-                const para = document.createElement('p');
-                para.innerHTML = jsondata[i].post;
-                divCol2.appendChild(para);
-                
-  const form = document.createElement('form');
+                     let userid = $userid;
+        let postid=jsondata[i].id;
+
+        const divTweet = document.createElement('div');
+        divTweet.className = 'tweet';
+    
+        const divRow = document.createElement('div');
+        divRow.className = 'row';
+        divTweet.appendChild(divRow);
+    
+        const divCol1 = document.createElement('div');
+        divCol1.className = 'col-2 col-xl-1';
+        const profilePic = document.createElement('img');
+        profilePic.src = 'https://placekitten.com/40/40';
+        profilePic.className = 'img-fluid profile-icon';
+        divCol1.appendChild(profilePic);
+        divRow.appendChild(divCol1);
+    
+        const divCol2 = document.createElement('div');
+        divCol2.className = 'col-10 col-xl-11';
+        const divUsername = document.createElement('div');
+        divUsername.innerHTML = '<strong>' + jsondata[i].username +'&nbsp;&nbsp;&nbsp;' + 'Likes: '+'&nbsp;'+jsondata[i].likes + '</strong>';
+        divCol2.appendChild(divUsername);
+        const para = document.createElement('p');
+        para.innerHTML = jsondata[i].post;
+        divCol2.appendChild(para);
+        
+        divRow.appendChild(divCol2);
+        //document.body.appendChild(elem);
+        const tweetCol = document.getElementById('tweetCol');
+        tweetCol.appendChild(divTweet);
+
+
+
+        const form = document.createElement('form');
         form.className ='d-flex justify-content-around';
 
         const likeButton = document.createElement('button');
