@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-2 col-lg-1 col-xl-2 border-end">
+                <div class="left-navbar d-flex flex-column position-sticky align-items-end align-items-xl-start">
+                    <div class="my-3">
+                        <i class="fa-brands fa-twitter fs-3 mt-3 text-primary"></i>
+                    </div>
+                    <div class="my-3">
+                        <i class="fa-solid fa-house fs-4"></i>
+                        <span class="fs-4 d-none d-xl-inline">Home</span>
+                    </div>
+                    <div class="my-3">
+                        <i class="fa-solid fa-magnifying-glass fs-4"></i>
+                        <span class="fs-4 d-none d-xl-inline">Search</span>
+                    </div>
+                    <div class="my-3">
+                        <i class="fa-solid fa-bell fs-4"></i>
+                        <span class="fs-4 d-none d-xl-inline">Notifications</span>
+                    </div>
+                    <div class="my-3">
+                        <i class="fa-solid fa-envelope fs-4"></i>
+                        <span class="fs-4 d-none d-xl-inline">Messages</span>
+                    </div>
+                    <div class="my-3">
+                        <i class="fa-solid fa-bookmark fs-4"></i>
+                        <span class="fs-4 d-none d-xl-inline">Bookmark</span>
+                    </div>
+                    <div class="my-3">
+                        <i class="fa-solid fa-list fs-4"></i>
+                        <span class="fs-4 d-none d-xl-inline">List</span>
+                    </div>
+                    <div class="my-3">
+                        <i class="fa-solid fa-user fs-4"></i>
+                        <span class="fs-4 d-none d-xl-inline">Profile</span>
+                    </div>
+                    <div class="position-absolute" style="bottom: 20px;">
+                        <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-xl-6 col-10">
+                <div class="row mt-4">
+                    <div class="col-2 col-xl-1">
+                        <button onclick="history.back()">
+                            <i class="fa-solid fa-arrow-left fs-2"></i>
+                        </button>
+                    </div>
+                    <div class="col-10 mb-2 col-xl-11">
+                        <form id="searchForm" method="get">
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="text" class="form-control" placeholder="Search Birdie">
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" name="searchBtn"> 
+                                        <i class="fa-solid fa-magnifying-glass fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12" id="tweetCol">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 mt-1 border-start d-none d-lg-block">
+                <div class="position-sticky" style="top:0px">
+                    <div class="mt-4">
+                        <input type="text" class="form-control" placeholder="Search Birdie" />
+                    </div>
+                    <div class="happening_box mt-5 p-3">
+                        <div>
+                            <h3 class="fs-3">What's happening?</h3>
+                        </div>
+
+                        <div class="row align-items-center my-4">
+                            <div class="col-9">
+                                <div class="text">
+                                    <div><small>COVID-19</small></div>
+                                    <div><strong>COVID-19: News and updates for California</strong></div>
+                                    <div class="fs-6">Updates from Senate</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <img src="https://placekitten.com/400/400" class="img-fluid" />
+                            </div>
+                        </div>
+                        <div class="row align-items-center my-4">
+                            <div class="col-9">
+                                <div class="text">
+                                    <div><small>COVID-19</small></div>
+                                    <div><strong>COVID-19: News and updates for California</strong></div>
+                                    <div class="fs-6">Updates from Senate</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <img src="https://placekitten.com/400/400" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    
+fetch("/posting/all")
+.then(response => {
+   return response.json();
+})
+.then(function(jsondata){
+    console.log(jsondata);
+    console.log("my role is ", $role);
+    const searchForm = document.getElementById('searchForm');
+    searchForm.action = `http://localhost:9090/search/${userid}`;
+    if($role == 1){
+        const hammerTab = document.createElement('div');
+        hammerTab.className = 'my-3';
+        hammerTab.id = 'adminButton';
+
+        const btn = document.createElement('a');
+        btn.href = '/admin';
+
+        const hammerIcon = document.createElement('i');
+        hammerIcon.className = 'fa-solid fa-hammer fs-4';
+        btn.appendChild(hammerIcon);
+
+        const sp = document.createElement('SPAN');
+        sp.className = 'fs-4 d-none d-xl-inline';
+        sp.innerHTML = 'Admin';
+        btn.appendChild(sp);
+
+        hammerTab.appendChild(btn);
+        const navbar = document.getElementById('nav');
+        navbar.appendChild(hammerTab);
+    }
+    else{
+    console.log('in the else statement');
+    }
+    for(let i = 0; i < jsondata.length; i++){
+        let userid = $userid;
+        let postid=jsondata[i].id;
+
+        const divTweet = document.createElement('div');
+        divTweet.className = 'tweet';
+    
+        const divRow = document.createElement('div');
+        divRow.className = 'row';
+        divTweet.appendChild(divRow);
+    
+        const divCol1 = document.createElement('div');
+        divCol1.className = 'col-2 col-xl-1';
+        const profilePic = document.createElement('img');
+        profilePic.src = 'https://placekitten.com/40/40';
+        profilePic.className = 'img-fluid profile-icon';
+        divCol1.appendChild(profilePic);
+        divRow.appendChild(divCol1);
+    
+        const divCol2 = document.createElement('div');
+        divCol2.className = 'col-10 col-xl-11';
+        const divUsername = document.createElement('div');
+        divUsername.innerHTML = '<strong>' + jsondata[i].username +'&nbsp;&nbsp;&nbsp;' + 'Likes: '+'&nbsp;'+jsondata[i].likes + '</strong>';
+        divCol2.appendChild(divUsername);
+        const para = document.createElement('p');
+        para.innerHTML = jsondata[i].post;
+        divCol2.appendChild(para);
+        
+        divRow.appendChild(divCol2);
+        //document.body.appendChild(elem);
+        const tweetCol = document.getElementById('tweetCol');
+        tweetCol.appendChild(divTweet);
+
+
+
+        const form = document.createElement('form');
+        form.className ='d-flex justify-content-around';
+
+        const likeButton = document.createElement('button');
+      
+  
+        likeButton.id = `likes + ${postid}`;
+        likeButton.name = 'likeBtn';
+        likeButton.type = 'submit';
+        likeButton.title = 'like';
+        const likeIcon = document.createElement('i');
+        likeButton.formAction = `http://localhost:9090/posting/like/${userid}/${postid}`;
+        likeIcon.className = 'fa-solid fa-thumbs-up mx-4';
+        likeButton.appendChild(likeIcon);
+        form.appendChild(likeButton);
+
+        const replyButton = document.createElement('button');
+        replyButton.value = jsondata[i].id;
+        replyButton.type = 'submit';
+        replyButton.title = 'Comment on Post';
+      
+        replyButton.formAction = `http://localhost:9090/posting/${userid}/${postid}`;
+        replyButton.method ="get";
+        const replyIcon = document.createElement('i');
+        replyIcon.className = 'fa-solid fa-comment mx-4';
+        replyButton.appendChild(replyIcon);
+        form.appendChild(replyButton);
+  
+
+
+        //////////////// making a like button
+        
+
+
+        //////////////////
+
+
+        const reportButton = document.createElement('button');
+        reportButton.value = jsondata[i].id;
+        reportButton.type = 'submit';
+        reportButton.title = 'Report Post';
+        reportButton.formAction = `http://localhost:9090/posting/flag/${postid}`;
+        reportButton.method ="get";
+        const reportIcon = document.createElement('i');
+        reportIcon.className = 'fa-solid fa-flag mx-4';
+        reportButton.appendChild(reportIcon);
+        form.appendChild(reportButton);
+        divCol2.appendChild(form);
+
+        const hr = document.createElement('hr');
+        tweetCol.appendChild(hr);
+    }
+});
+</script>
+</body>
+
+</html>
