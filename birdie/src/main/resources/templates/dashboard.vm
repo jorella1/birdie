@@ -73,7 +73,7 @@
                         <form action="/posting/make" method ="post">
                             <input type="hidden" name="userid" value=$userid>
                             <textarea class="form-control" name="text" placeholder="What's on your mind?..."></textarea>
-                            <input class="mt-2 btn btn-dark" type="submit" value='Post'></button>
+                            <input id="post" class="mt-2 btn btn-dark" type="submit" value='Post'></button>
                         </form>
                     </div>
                     <hr>

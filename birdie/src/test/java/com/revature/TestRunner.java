@@ -15,21 +15,21 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
     plugin = {"pretty", "html:target/cucumber.html"},
-    features = "src/test/resources/features/LoginFeature.feature",
+    features ="src/test/resources/features/LoginFeature.feature",
     glue = {"com/revature/StepDefinitions"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    private TestNGCucumberRunner testNGCucumberRunner;
+     private TestNGCucumberRunner testNGCucumberRunner;
     @BeforeSuite
     public void testStart(){
         System.out.println("Starting cucumber tests.");
-    }
+    } 
 
-    @BeforeClass(alwaysRun = true)
+    /* @BeforeClass(alwaysRun = true)
     public void setupClass(){
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    }
+    } */
 
    /*  @Test(dataProvider = "features")
     public void feature(PickleWrapper pickleWrapper, FeatureWrapper feature){
@@ -41,8 +41,8 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         return testNGCucumberRunner.provideScenarios();
     } */
 
-    @AfterClass(alwaysRun = true)
+    /* @AfterClass(alwaysRun = true)
     public void tearDownClass(){
         testNGCucumberRunner.finish();
-    }
+    } */
 }
