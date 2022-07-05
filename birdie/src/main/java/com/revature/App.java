@@ -64,11 +64,12 @@ public class App
         app.routes(() -> {
             path("posting", () -> {
                 get("all", PostController.allPostsHandler);
+                get("search/${userid}", PostController.searchPostsHandler);
                 get("reply/{postid}",PostController.getReplies);
                 post("make", PostController.make);
                 post("reply/{userid}/{postid}", PostController.Reply);
                 get("post/{postid}", PostController.getPost);
-                get("like/{id}", PostController.likePost);
+                get("like/{userid}/{postid}", PostController.likePost);
                 get("delete/{id}", PostController.deletePost);
                 get("flag/{id}", PostController.flagPost);
                 get("{userid}/{postid}",PostController.getPostPage);

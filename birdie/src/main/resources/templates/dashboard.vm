@@ -158,6 +158,9 @@ fetch("/posting/all")
     console.log('in the else statement');
     }
     for(let i = 0; i < jsondata.length; i++){
+        let userid = $userid;
+        let postid=jsondata[i].id;
+
         const divTweet = document.createElement('div');
         divTweet.className = 'tweet';
     
@@ -176,7 +179,7 @@ fetch("/posting/all")
         const divCol2 = document.createElement('div');
         divCol2.className = 'col-10 col-xl-11';
         const divUsername = document.createElement('div');
-        divUsername.innerHTML = '<strong>' + jsondata[i].username + '</strong>';
+        divUsername.innerHTML = '<strong>' + jsondata[i].username +'&nbsp;&nbsp;&nbsp;' + 'Likes: '+'&nbsp;'+jsondata[i].likes + '</strong>';
         divCol2.appendChild(divUsername);
         const para = document.createElement('p');
         para.innerHTML = jsondata[i].post;
@@ -193,12 +196,14 @@ fetch("/posting/all")
         form.className ='d-flex justify-content-around';
 
         const likeButton = document.createElement('button');
-        let postid=jsondata[i].id;
+      
+  
         likeButton.id = `likes + ${postid}`;
         likeButton.name = 'likeBtn';
         likeButton.type = 'submit';
         likeButton.title = 'like';
         const likeIcon = document.createElement('i');
+        likeButton.formAction = `http://localhost:9090/posting/like/${userid}/${postid}`;
         likeIcon.className = 'fa-solid fa-thumbs-up mx-4';
         likeButton.appendChild(likeIcon);
         form.appendChild(likeButton);
@@ -207,13 +212,21 @@ fetch("/posting/all")
         replyButton.value = jsondata[i].id;
         replyButton.type = 'submit';
         replyButton.title = 'Comment on Post';
-        let userid = $userid;
+      
         replyButton.formAction = `http://localhost:9090/posting/${userid}/${postid}`;
         replyButton.method ="get";
         const replyIcon = document.createElement('i');
         replyIcon.className = 'fa-solid fa-comment mx-4';
         replyButton.appendChild(replyIcon);
         form.appendChild(replyButton);
+  
+
+
+        //////////////// making a like button
+        
+
+
+        //////////////////
 
 
         const reportButton = document.createElement('button');
