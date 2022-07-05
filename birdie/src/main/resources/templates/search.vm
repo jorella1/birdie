@@ -58,7 +58,7 @@
             <div class="col-lg-7 col-xl-6 col-10">
                 <div class="row mt-4">
                     <div class="col-2 col-xl-1">
-                        <button onclick="history.back()">
+                        <button class="btn" onclick="history.back()">
                             <i class="fa-solid fa-arrow-left fs-2"></i>
                         </button>
                     </div>
@@ -66,10 +66,10 @@
                         <form id="searchForm" method="post">
                             <div class="row">
                                 <div class="col-10">
-                                    <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie" required>
+                                    <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" required>
                                 </div>
                                 <div class="col-2">
-                                    <button type="submit" name="searchBtn" onclick="getValueInput()"> 
+                                    <button class="btn fs-4" type="submit" name="searchBtn" onclick="getValueInput()"> 
                                         <i class="fa-solid fa-magnifying-glass fs-2"></i>
                                     </button>
                                 </div>
@@ -142,6 +142,8 @@ fetch(`/search/${searches}`)
             var searchVal = document.getElementById('searchVal');
             document.getElementById("searchVal").placeholder = `Search results for ${searches}`;
             for(let i = 0; i < jsondata.length; i++){
+                let userid = $userid;
+                let postid=jsondata[i].id;
                 const divTweet = document.createElement('div');
                 divTweet.className = 'tweet';
             
@@ -166,23 +168,63 @@ fetch(`/search/${searches}`)
                 para.innerHTML = jsondata[i].post;
                 divCol2.appendChild(para);
                 
-                const likeButton = document.createElement('input');
-                likeButton.type = 'checkbox';
-                likeButton.id = 'likes';
-                likeButton.name = 'likeCheckbox';
-                const likeLabel = document.createElement('label');
-                likeLabel.htmlFor = 'likeCheckbox';
-                divCol2.appendChild(likeLabel);
-                divCol2.appendChild(likeButton);
-                
-                divRow.appendChild(divCol2);
-                //document.body.appendChild(elem);
-                const tweetCol = document.getElementById('tweetCol');
-                tweetCol.appendChild(divTweet);
+  const form = document.createElement('form');
+        form.className ='d-flex justify-content-around';
 
-                const hr = document.createElement('hr');
-                tweetCol.appendChild(hr);
-                }
+        const likeButton = document.createElement('button');
+      
+  
+        likeButton.id = `likes + ${postid}`;
+        likeButton.name = 'likeBtn';
+        likeButton.type = 'submit';
+        likeButton.title = 'like';
+        likeButton.innerHTML = 'Like';
+        likeButton.className = 'btn btn-outline-primary postButtons';
+        const likeIcon = document.createElement('i');
+        likeButton.formAction = `http://localhost:9090/posting/like/${userid}/${postid}`;
+        likeIcon.className = 'fa-solid fa-thumbs-up mx-4';
+        likeButton.appendChild(likeIcon);
+        form.appendChild(likeButton);
+
+        const replyButton = document.createElement('button');
+        replyButton.value = jsondata[i].id;
+        replyButton.type = 'submit';
+        replyButton.title = 'Comment on Post';
+        replyButton.innerHTML = 'Comment';
+        replyButton.className = 'btn btn-outline-secondary postButtons';
+        replyButton.formAction = `http://localhost:9090/posting/${userid}/${postid}`;
+        replyButton.method ="get";
+        const replyIcon = document.createElement('i');
+        replyIcon.className = 'fa-solid fa-comment mx-4';
+        replyButton.appendChild(replyIcon);
+        form.appendChild(replyButton);
+  
+
+
+        //////////////// making a like button
+        
+
+
+        //////////////////
+
+
+        const reportButton = document.createElement('button');
+        reportButton.value = jsondata[i].id;
+        reportButton.type = 'submit';
+        reportButton.title = 'Report Post';
+        reportButton.innerHTML = 'Report';
+        reportButton.className = 'btn btn-outline-danger postButtons';
+        reportButton.formAction = `http://localhost:9090/posting/flag/${postid}`;
+        reportButton.method ="get";
+        const reportIcon = document.createElement('i');
+        reportIcon.className = 'fa-solid fa-flag mx-4';
+        reportButton.appendChild(reportIcon);
+        form.appendChild(reportButton);
+        divCol2.appendChild(form);
+
+        const hr = document.createElement('hr');
+        tweetCol.appendChild(hr);
+        }
 });
 </script>
 </body>
