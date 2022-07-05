@@ -88,16 +88,16 @@
             <div class="col-lg-4 mt-1 border-start d-none d-lg-block">
                 <div class="position-sticky" style="top:0px">
                     <div class="mt-4">
-                    <form action = "/posting/search/$userid">
-                    <div class="row">
-                    <div class="col-10">
-                        <input type="text" class="form-control" placeholder="Search Birdie">
-                        </div>
-                    <div class="col-2">
-                        <button type="submit" name="searchBtn"> 
-                            <i class="fa-solid fa-magnifying-glass fs-2"></i>
-                        </button>
-                        </div>
+                    <form id="searchForm" method="get">
+                        <div class="row">
+                            <div class="col-10">
+                                <input type="text" class="form-control" placeholder="Search Birdie">
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" name="searchBtn"> 
+                                    <i class="fa-solid fa-magnifying-glass fs-2"></i>
+                                </button>
+                            </div>
                         </div>
                     </form>
                     </div>
@@ -144,6 +144,8 @@ fetch("/posting/all")
 .then(function(jsondata){
     console.log(jsondata);
     console.log("my role is ", $role);
+    const searchForm = document.getElementById('searchForm');
+    searchForm.action = `/posting/search/${userid}`;
     if($role == 1){
         const hammerTab = document.createElement('div');
         hammerTab.className = 'my-3';
