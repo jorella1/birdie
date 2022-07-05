@@ -5,6 +5,7 @@
     - View Birdies
     - Like Birdies
     - Comment on Birdies
+    - Search Birdies
 Admin:
 
     - Delete Birdies
