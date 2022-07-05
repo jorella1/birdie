@@ -63,13 +63,13 @@
                         </button>
                     </div>
                     <div class="col-10 mb-2 col-xl-11">
-                        <form id="searchForm" method="get">
+                        <form id="searchForm" method="post">
                             <div class="row">
                                 <div class="col-10">
-                                    <input type="text" class="form-control" placeholder="Search Birdie">
+                                    <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie">
                                 </div>
                                 <div class="col-2">
-                                    <button type="submit" name="searchBtn"> 
+                                    <button type="submit" name="searchBtn" onclick="getValueInput()"> 
                                         <i class="fa-solid fa-magnifying-glass fs-2"></i>
                                     </button>
                                 </div>
@@ -87,10 +87,7 @@
             </div>
             <div class="col-lg-4 mt-1 border-start d-none d-lg-block">
                 <div class="position-sticky" style="top:0px">
-                    <div class="mt-4">
-                        <input type="text" class="form-control" placeholder="Search Birdie" />
-                    </div>
-                    <div class="happening_box mt-5 p-3">
+                    <div class="happening_box mt-3 p-3">
                         <div>
                             <h3 class="fs-3">What's happening?</h3>
                         </div>
@@ -126,127 +123,66 @@
     </div>
 
     <script>
-    
-fetch("/posting/all")
-.then(response => {
-   return response.json();
-})
-.then(function(jsondata){
-    console.log(jsondata);
-    console.log("my role is ", $role);
-    const searchForm = document.getElementById('searchForm');
-    searchForm.action = `http://localhost:9090/search/${userid}`;
-    if($role == 1){
-        const hammerTab = document.createElement('div');
-        hammerTab.className = 'my-3';
-        hammerTab.id = 'adminButton';
+fetch(`/search/${searches}`)
+        .then(response => {
 
-        const btn = document.createElement('a');
-        btn.href = '/admin';
+            console.log("responsejson");
+            console.log(response.json);
+            return response.json();
+        })
+        .then(function(jsondata){
+            console.log("in the promise");
+            console.log(jsondata);
 
-        const hammerIcon = document.createElement('i');
-        hammerIcon.className = 'fa-solid fa-hammer fs-4';
-        btn.appendChild(hammerIcon);
-
-        const sp = document.createElement('SPAN');
-        sp.className = 'fs-4 d-none d-xl-inline';
-        sp.innerHTML = 'Admin';
-        btn.appendChild(sp);
-
-        hammerTab.appendChild(btn);
-        const navbar = document.getElementById('nav');
-        navbar.appendChild(hammerTab);
-    }
-    else{
-    console.log('in the else statement');
-    }
-    for(let i = 0; i < jsondata.length; i++){
-        let userid = $userid;
-        let postid=jsondata[i].id;
-
-        const divTweet = document.createElement('div');
-        divTweet.className = 'tweet';
-    
-        const divRow = document.createElement('div');
-        divRow.className = 'row';
-        divTweet.appendChild(divRow);
-    
-        const divCol1 = document.createElement('div');
-        divCol1.className = 'col-2 col-xl-1';
-        const profilePic = document.createElement('img');
-        profilePic.src = 'https://placekitten.com/40/40';
-        profilePic.className = 'img-fluid profile-icon';
-        divCol1.appendChild(profilePic);
-        divRow.appendChild(divCol1);
-    
-        const divCol2 = document.createElement('div');
-        divCol2.className = 'col-10 col-xl-11';
-        const divUsername = document.createElement('div');
-        divUsername.innerHTML = '<strong>' + jsondata[i].username +'&nbsp;&nbsp;&nbsp;' + 'Likes: '+'&nbsp;'+jsondata[i].likes + '</strong>';
-        divCol2.appendChild(divUsername);
-        const para = document.createElement('p');
-        para.innerHTML = jsondata[i].post;
-        divCol2.appendChild(para);
+            const getValueInput = () =>{
+                const searchForm = document.getElementById('searchForm');
+                searchForm.action = `http://localhost:9090/searchpage`; 
+            }
         
-        divRow.appendChild(divCol2);
-        //document.body.appendChild(elem);
-        const tweetCol = document.getElementById('tweetCol');
-        tweetCol.appendChild(divTweet);
+            var searchVal = document.getElementById('searchVal');
+            document.getElementById("searchVal").placeholder = `Search results for ${searches}`;
+            for(let i = 0; i < jsondata.length; i++){
+                const divTweet = document.createElement('div');
+                divTweet.className = 'tweet';
+            
+                const divRow = document.createElement('div');
+                divRow.className = 'row';
+                divTweet.appendChild(divRow);
+            
+                const divCol1 = document.createElement('div');
+                divCol1.className = 'col-2 col-xl-1';
+                const profilePic = document.createElement('img');
+                profilePic.src = 'https://placekitten.com/40/40';
+                profilePic.className = 'img-fluid profile-icon';
+                divCol1.appendChild(profilePic);
+                divRow.appendChild(divCol1);
+            
+                const divCol2 = document.createElement('div');
+                divCol2.className = 'col-10 col-xl-11';
+                const divUsername = document.createElement('div');
+                divUsername.innerHTML = '<strong>' + jsondata[i].username + '</strong>';
+                divCol2.appendChild(divUsername);
+                const para = document.createElement('p');
+                para.innerHTML = jsondata[i].post;
+                divCol2.appendChild(para);
+                
+                const likeButton = document.createElement('input');
+                likeButton.type = 'checkbox';
+                likeButton.id = 'likes';
+                likeButton.name = 'likeCheckbox';
+                const likeLabel = document.createElement('label');
+                likeLabel.htmlFor = 'likeCheckbox';
+                divCol2.appendChild(likeLabel);
+                divCol2.appendChild(likeButton);
+                
+                divRow.appendChild(divCol2);
+                //document.body.appendChild(elem);
+                const tweetCol = document.getElementById('tweetCol');
+                tweetCol.appendChild(divTweet);
 
-
-
-        const form = document.createElement('form');
-        form.className ='d-flex justify-content-around';
-
-        const likeButton = document.createElement('button');
-      
-  
-        likeButton.id = `likes + ${postid}`;
-        likeButton.name = 'likeBtn';
-        likeButton.type = 'submit';
-        likeButton.title = 'like';
-        const likeIcon = document.createElement('i');
-        likeButton.formAction = `http://localhost:9090/posting/like/${userid}/${postid}`;
-        likeIcon.className = 'fa-solid fa-thumbs-up mx-4';
-        likeButton.appendChild(likeIcon);
-        form.appendChild(likeButton);
-
-        const replyButton = document.createElement('button');
-        replyButton.value = jsondata[i].id;
-        replyButton.type = 'submit';
-        replyButton.title = 'Comment on Post';
-      
-        replyButton.formAction = `http://localhost:9090/posting/${userid}/${postid}`;
-        replyButton.method ="get";
-        const replyIcon = document.createElement('i');
-        replyIcon.className = 'fa-solid fa-comment mx-4';
-        replyButton.appendChild(replyIcon);
-        form.appendChild(replyButton);
-  
-
-
-        //////////////// making a like button
-        
-
-
-        //////////////////
-
-
-        const reportButton = document.createElement('button');
-        reportButton.value = jsondata[i].id;
-        reportButton.type = 'submit';
-        reportButton.title = 'Report Post';
-        reportButton.formAction = `http://localhost:9090/posting/flag/${postid}`;
-        reportButton.method ="get";
-        const reportIcon = document.createElement('i');
-        reportIcon.className = 'fa-solid fa-flag mx-4';
-        reportButton.appendChild(reportIcon);
-        form.appendChild(reportButton);
-        divCol2.appendChild(form);
-
-        const hr = document.createElement('hr');
-        tweetCol.appendChild(hr);
-    }
+                const hr = document.createElement('hr');
+                tweetCol.appendChild(hr);
+                }
 });
 </script>
 </body>

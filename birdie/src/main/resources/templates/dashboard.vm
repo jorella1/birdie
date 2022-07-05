@@ -91,10 +91,10 @@
                     <form id="searchForm" method="post">
                         <div class="row">
                             <div class="col-10">
-                                <input type="text" name="searchField" class="form-control" placeholder="Search Birdie">
+                                <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie">
                             </div>
                             <div class="col-2">
-                                <button type="submit" name="searchBtn"> 
+                                <button type="submit" name="searchBtn" onclick="getValueInput()"> 
                                     <i class="fa-solid fa-magnifying-glass fs-2"></i>
                                 </button>
                             </div>
@@ -137,6 +137,12 @@
     </div>
 
     <script>
+        const getValueInput = () =>{
+        var searchVal = document.getElementById('searchVal').value;
+        document.getElementById("searchVal").innerHTML = searchVal;
+        searchForm.action = `http://localhost:9090/searchpage`; 
+    }
+    console.log("search: ", searchVal);
 fetch("/posting/all")
 .then(response => {
    return response.json();
@@ -144,8 +150,6 @@ fetch("/posting/all")
 .then(function(jsondata){
     console.log(jsondata);
     console.log("my role is ", $role);
-    const searchForm = document.getElementById('searchForm');
-    searchForm.action = `http://localhost:9090/search/${userid}`;
     if($role == 1){
         const hammerTab = document.createElement('div');
         hammerTab.className = 'my-3';

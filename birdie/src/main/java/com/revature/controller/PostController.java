@@ -101,7 +101,6 @@ public class PostController {
 
     public static Handler searchHandler = ctx -> {
         System.out.println("in the searchposthandler server ---------------------------------------------");
-        int userid = Integer.parseInt(ctx.pathParam("userid"));
         String search = ctx.formParam("searchField");
         System.out.println(search);
 

@@ -56,7 +56,7 @@ public class App
         app.get("/loginpage", LoginController.loginPage);
         app.post("/login", LoginController.login);
         app.get("/admin", DashboardController.adminPage);
-        app.post("/search/{search}", PostController.searchPostsHandler);
+        app.get("/search/{search}", PostController.searchPostsHandler);
         app.post("/searchpage", PostController.searchHandler);
         Connection connection = ConnectionFactory.getConnection();
         System.out.println(connection);
