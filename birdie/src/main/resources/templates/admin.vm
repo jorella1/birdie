@@ -30,26 +30,7 @@
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
                     </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-bell fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Notifications</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-envelope fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Messages</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-bookmark fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Bookmark</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-list fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">List</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fa-solid fa-user fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Profile</span>
-                    </div>
+                   
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
@@ -72,8 +53,8 @@
                     
                         <form action="/posting/make" method ="post">
                             <input type="hidden" name="userid" value=$userid>
-                            <textarea class="form-control" name="text"></textarea>
-                            <input type="submit"></button>
+                            <textarea class="form-control" name="text" maxlength="250" placeholder="What's going on?..." required></textarea>
+                            <input type="submit" class="btn btn-dark mt-2"></button>
                         </form>
                     </div>
                     <hr>
@@ -157,14 +138,6 @@ fetch("/posting/flagged")
         para.innerHTML = jsondata[i].post;
         divCol2.appendChild(para);
         
-        const likeButton = document.createElement('input');
-        likeButton.type = 'checkbox';
-        likeButton.id = 'likes' + i;
-        likeButton.name = 'likeCheckbox';
-        const likeLabel = document.createElement('label');
-        likeLabel.htmlFor = 'likeCheckbox' + i;
-        divCol2.appendChild(likeLabel);
-        divCol2.appendChild(likeButton);
         
         divRow.appendChild(divCol2);
         //document.body.appendChild(elem);
@@ -178,11 +151,12 @@ fetch("/posting/flagged")
         deleteButton.value = jsondata[i].id;
         deleteButton.type = 'submit';
         deleteButton.innerHTML = 'Delete';
+        deleteButton.className='btn btn-danger';
         let postid=jsondata[i].id;
         deleteForm.action = `http://localhost:9090/posting/delete/${postid}`;
         deleteForm.method ="get";
         deleteForm.appendChild(deleteButton);
-        tweetCol.appendChild(deleteForm);
+        divCol2.appendChild(deleteForm);
 
     }
 });
