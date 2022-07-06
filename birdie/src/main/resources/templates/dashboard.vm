@@ -157,7 +157,7 @@ fetch("/posting/all")
         hammerTab.className = 'my-3';
 
         const adminForm = document.createElement('form');
-        adminForm.action = 'http://localhost:9090/admin';
+        adminForm.action = `http://localhost:9090/admin/${userid}`;
 
         adminForm.id = 'adminButton';
         hammerTab.appendChild(adminForm);

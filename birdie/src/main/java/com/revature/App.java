@@ -55,7 +55,7 @@ public class App
         app.post("/registration", RegistrationController.register);
         app.get("/loginpage", LoginController.loginPage);
         app.post("/login", LoginController.login);
-        app.get("/admin", DashboardController.adminPage);
+        app.get("/admin/{userid}", DashboardController.adminPage);
         app.get("/search/{search}", PostController.searchPostsHandler);
         app.post("/searchpage/{userid}", PostController.searchHandler);
         Connection connection = ConnectionFactory.getConnection();
