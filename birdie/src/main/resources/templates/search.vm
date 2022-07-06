@@ -35,6 +35,15 @@
                     <button class="btn">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
+                        <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" value=$userid hidden>
+                        </button>
+                        </form>
+                    </div>
+                    <div class="my-3">
+                    <form id="signOut" action="http://localhost:9090/index.html">
+                        <button class="btn">
+                            <i class="fa-solid fa-door-open fs-4"></i>
+                            <span class="fs-4 d-none d-xl-inline">Log Out</span>
                         </button>
                         </form>
                     </div>
@@ -123,11 +132,12 @@ fetch(`/search/${searches}`)
             console.log(jsondata);
 
     const homeForm = document.getElementById('goHome');
-    homeForm.action = `/dashboard/${userid}`;
+    homeForm.action = `http://localhost:9090/dashboard/${userid}`;
+
 
 
     const searchSideButton = document.getElementById('goSearch');
-    searchSideButton.action = `http://localhost:9090/searchpage`
+    searchSideButton.action = `/searchpage/${userid}`
 
             const getValueInput = () =>{
                 const searchForm = document.getElementById('searchForm');

@@ -35,11 +35,18 @@
                     <button class="btn" type="submit">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
-                        <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" hidden>
+                        <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" value=$userid hidden>
                         </button>
                         </form>
                     </div>
-
+                    <div class="my-3">
+                    <form id="signOut" action="http://localhost:9090/index.html">
+                        <button class="btn">
+                            <i class="fa-solid fa-door-open fs-4"></i>
+                            <span class="fs-4 d-none d-xl-inline">Log Out</span>
+                        </button>
+                        </form>
+                    </div>
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
@@ -137,21 +144,26 @@ fetch("/posting/all")
     console.log("my role is ", $role);
 
     const homeForm = document.getElementById('goHome');
-    homeForm.action = `/dashboard/${userid}`;
+    homeForm.action = `http://localhost:9090/dashboard/${userid}`;
+
     const searchForm = document.getElementById('searchForm');
-    searchForm.action = `/searchpage/${userid}`
+    searchForm.action = `http://localhost:9090/searchpage/${userid}`
 
     const searchSideButton = document.getElementById('goSearch');
-    searchSideButton.value = 'test';
-    searchSideButton.action = `/searchpage/${userid}`
+    searchSideButton.action = `http://localhost:9090/searchpage/${userid}`
 
     if($role == 1){
         const hammerTab = document.createElement('div');
         hammerTab.className = 'my-3';
-        hammerTab.id = 'adminButton';
 
-        const btn = document.createElement('a');
-        btn.href = '/admin';
+        const adminForm = document.createElement('form');
+        adminForm.action = `http://localhost:9090/admin/${userid}`;
+
+        adminForm.id = 'adminButton';
+        hammerTab.appendChild(adminForm);
+        
+        const btn = document.createElement('button');
+        btn.className = 'btn';
 
         const hammerIcon = document.createElement('i');
         hammerIcon.className = 'fa-solid fa-hammer fs-4';
@@ -162,7 +174,7 @@ fetch("/posting/all")
         sp.innerHTML = 'Admin';
         btn.appendChild(sp);
 
-        hammerTab.appendChild(btn);
+        adminForm.appendChild(btn);
         const navbar = document.getElementById('nav');
         navbar.appendChild(hammerTab);
     }

@@ -89,7 +89,7 @@ public class postServiceTests {
         Assert.assertEquals(dummyTest.getPost(), "this is a test post");
         //Known defect, defect_005
         //Assert.assertEquals(dummyTest.getLikes(), 15);
-        Assert.assertEquals(dummyTest.getLikes(), 0);
+        Assert.assertEquals(dummyTest.getLikes(), 15);
         Assert.assertFalse(dummyTest.getFlag());
 
         dummyTest.setPost("updated text");
