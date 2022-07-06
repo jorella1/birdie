@@ -23,14 +23,30 @@
                         <i class="fa-brands fa-twitter fs-3 mt-3 text-primary"></i>
                     </div>
                     <div class="my-3">
-                        <i class="fa-solid fa-house fs-4"></i>
-                        <span class="fs-4 d-none d-xl-inline">Home</span>
+                    <form id="goHome">
+                        <button class="btn">
+                            <i class="fa-solid fa-house fs-4"></i>
+                            <span class="fs-4 d-none d-xl-inline">Home</span>
+                        </button>
+                        </form>
                     </div>
                     <div class="my-3">
+                    <form id="goSearch" method="post">
+                    <button class="btn" type="submit">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
+                        <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" value=$userid hidden>
+                        </button>
+                        </form>
                     </div>
-                   
+                    <div class="my-3">
+                    <form id="signOut" action="http://localhost:9090/index.html">
+                        <button class="btn">
+                            <i class="fa-solid fa-door-open fs-4"></i>
+                            <span class="fs-4 d-none d-xl-inline">Log Out</span>
+                        </button>
+                        </form>
+                    </div>
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>

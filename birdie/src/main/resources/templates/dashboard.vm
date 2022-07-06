@@ -39,7 +39,14 @@
                         </button>
                         </form>
                     </div>
-
+                    <div class="my-3">
+                    <form id="signOut" action="http://localhost:9090/index.html">
+                        <button class="btn">
+                            <i class="fa-solid fa-door-open fs-4"></i>
+                            <span class="fs-4 d-none d-xl-inline">Log Out</span>
+                        </button>
+                        </form>
+                    </div>
                     <div class="position-absolute" style="bottom: 20px;">
                         <img src="https://placekitten.com/50/50" class="img-fluid profile-icon">
                     </div>
@@ -148,10 +155,15 @@ fetch("/posting/all")
     if($role == 1){
         const hammerTab = document.createElement('div');
         hammerTab.className = 'my-3';
-        hammerTab.id = 'adminButton';
 
-        const btn = document.createElement('a');
-        btn.href = '/admin';
+        const adminForm = document.createElement('form');
+        adminForm.action = 'http://localhost:9090/admin';
+
+        adminForm.id = 'adminButton';
+        hammerTab.appendChild(adminForm);
+        
+        const btn = document.createElement('button');
+        btn.className = 'btn';
 
         const hammerIcon = document.createElement('i');
         hammerIcon.className = 'fa-solid fa-hammer fs-4';
@@ -162,7 +174,7 @@ fetch("/posting/all")
         sp.innerHTML = 'Admin';
         btn.appendChild(sp);
 
-        hammerTab.appendChild(btn);
+        adminForm.appendChild(btn);
         const navbar = document.getElementById('nav');
         navbar.appendChild(hammerTab);
     }
