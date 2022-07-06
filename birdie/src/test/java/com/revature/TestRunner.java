@@ -15,7 +15,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
     plugin = {"pretty", "html:target/cucumber.html"},
-    features ="src/test/resources/features",
+    features = "src/test/resources/features",
     glue = {"com/revature/StepDefinitions"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
@@ -26,12 +26,12 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         System.out.println("Starting cucumber tests.");
     } 
 
-    /* @BeforeClass(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public void setupClass(){
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    } */
+    } 
 
-   /*  @Test(dataProvider = "features")
+    @Test(dataProvider = "features")
     public void feature(PickleWrapper pickleWrapper, FeatureWrapper feature){
         testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
     }
@@ -39,10 +39,10 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @DataProvider
     public Object[][] features(){
         return testNGCucumberRunner.provideScenarios();
-    } */
+    } 
 
-    /* @AfterClass(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void tearDownClass(){
         testNGCucumberRunner.finish();
-    } */
+    } 
 }

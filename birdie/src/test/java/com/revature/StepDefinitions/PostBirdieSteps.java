@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import com.revature.models.PageFactory.PostBirdiePageFactory;
 
@@ -26,6 +27,7 @@ public class PostBirdieSteps {
         driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+        driver.get("http://localhost:9090/dashboard/21");
         
         postBirdiePageFactory = new PostBirdiePageFactory(driver);
         
@@ -34,7 +36,7 @@ public class PostBirdieSteps {
 
  @Given("a user is on dashboard page")
  public void a_user_is_on_dashboard_page() throws InterruptedException{
-   driver.navigate().to("http://localhost:9090/dashboard/21");
+  Assert.assertEquals(driver.getCurrentUrl(),"http://localhost:9090/dashboard/21");
    Thread.sleep(2000);
  }
     
@@ -52,8 +54,10 @@ public class PostBirdieSteps {
  }
 
  @Then("the post is displayed below")
- public void the_post_is_displayed_below(){
-    driver.navigate().refresh();
+ public void the_post_is_displayed_below() throws InterruptedException{
+        Assert.assertEquals(driver.getCurrentUrl(), "http://localhost:9090/dashboard/21");
+        Thread.sleep(2000);
+    //driver.navigate().refresh();
  }
 
 /*  @When("a user enters text to search")
@@ -73,9 +77,9 @@ public class PostBirdieSteps {
   driver.navigate().to("http://localhost:9090/searchpage/21");
  } */
 
- @After
+  @After
     public void teardown(){
         this.driver.quit();
-    }
+    } 
 
 }

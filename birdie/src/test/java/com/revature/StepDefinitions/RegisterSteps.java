@@ -25,6 +25,7 @@ public class RegisterSteps {
         driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+        driver.get("http://localhost:9090/index.html");
         
         registerPageFactory = new RegisterPageFactory(driver);
         
@@ -33,7 +34,7 @@ public class RegisterSteps {
 
     @Given("a user is on signup page")
     public void a_user_is_on_signup_page(){
-        driver.get("http://localhost:9090/index.html");
+        Assert.assertEquals(driver.getCurrentUrl(), "http://localhost:9090/index.html");
     }
 
     @When("a user clicks on signup option")
@@ -63,12 +64,12 @@ public class RegisterSteps {
 
     @Then("a user is navigated to index page")
     public void a_user_is_navigated_to_index_page() throws InterruptedException{
-        driver.navigate().to("http://localhost:9090/index.html");
+        Assert.assertEquals(driver.getCurrentUrl(), "http://localhost:9090/index.html");
         Thread.sleep(2000);
     }
     
     @After
     public void teardown(){
         this.driver.quit();
-    }
+    } 
 }

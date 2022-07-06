@@ -18,9 +18,9 @@ public class LoginPageFactory {
     WebElement loginButton;
 
 
+
     public LoginPageFactory(WebDriver webDriver){
         this.webdriver = webDriver;
-
         PageFactory.initElements(webDriver, this);
     }
 
@@ -42,4 +42,5 @@ public class LoginPageFactory {
     public void inputUsername(String username) {
         usernameInput.sendKeys(username);
     }
+
 }
