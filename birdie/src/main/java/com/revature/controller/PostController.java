@@ -64,9 +64,10 @@ public class PostController {
 
         PostServe.makeReply(newPost);
     
-      
-        String url = "/dashboard/%s";
-        String result = String.format(url, userid);
+        // http://localhost:9090/posting//${userid}/${postid}
+        String url ="/posting/%s/%s";
+        // String url = "/dashboard/%s";
+        String result = String.format(url, userid,postid);
 
         ctx.redirect(result);   
 
