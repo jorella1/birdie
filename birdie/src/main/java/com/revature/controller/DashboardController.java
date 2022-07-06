@@ -79,8 +79,9 @@ public class DashboardController {
         // temp.put("list_id", Integer.parseInt(ctx.pathParam("id")));
         // temp.put("test", Integer.parseInt(ctx.pathParam("id")));
         //  newvar = temp.get(1);gu
+        System.out.println("user id"+ctx.pathParam("userid"));
         int userid = Integer.parseInt(ctx.pathParam("userid"));
-        temp.put("testing", Integer.parseInt(ctx.pathParam("userid")));
+        temp.put("userid", Integer.parseInt(ctx.pathParam("userid")));
         ctx.render("/templates/admin.vm",temp);
     };
 
