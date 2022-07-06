@@ -70,7 +70,7 @@ public class LoginSteps {
        driver.get("http://localhost:9090/dashboard/21");
       //driver.getPageSource().contains("Home");
       //driver.getTitle().contains("Dashboard");
-      Thread.sleep(2000);
+      Thread.sleep(10000);
     }
 
     @After

@@ -15,7 +15,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
     plugin = {"pretty", "html:target/cucumber.html"},
-    features ="src/test/resources/features/LoginFeature.feature",
+    features ="src/test/resources/features",
     glue = {"com/revature/StepDefinitions"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {

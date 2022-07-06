@@ -14,7 +14,7 @@
             <class name="com.revature.postValidationTests" />
         </classes>
     </test>
-    <test name="Cucumber login">
+    <test name="Cucumber tests">
         <classes>
             <class name="com.revature.TestRunner"/>
         </classes>

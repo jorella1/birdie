@@ -14,6 +14,12 @@ public class PostBirdiePageFactory {
     @FindBy(xpath = "/html/body/div/div/div[2]/div[2]/div[2]/form/input[2]")
     WebElement postButton;
 
+    @FindBy(name = "searchField")
+    WebElement searchBox;
+
+    @FindBy(name = "searchBtn")
+    WebElement searchButton;
+
     public PostBirdiePageFactory(WebDriver webDriver){
         this.webdriver = webDriver;
 
@@ -32,5 +38,18 @@ public class PostBirdiePageFactory {
 
     public void inputPost(String post) {
         postInput.sendKeys(post);
+    }
+
+    public void search(String text){
+        this.inputText(text);
+        this.clickSearchButton();
+    }
+
+    public void clickSearchButton() {
+        searchButton.click();
+    }
+
+    public void inputText(String text) {
+        searchBox.sendKeys(text);
     }
 }
