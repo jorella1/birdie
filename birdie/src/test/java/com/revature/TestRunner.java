@@ -1,16 +1,19 @@
 package com.revature;
 
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+
+import com.revature.models.PageFactory.LoginPageFactory;
+import com.revature.models.PageFactory.PostBirdiePageFactory;
+import com.revature.models.PageFactory.RegisterPageFactory;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import io.cucumber.testng.FeatureWrapper;
-import io.cucumber.testng.PickleWrapper;
-import io.cucumber.testng.TestNGCucumberRunner;
 
 
 @CucumberOptions(
@@ -20,29 +23,38 @@ import io.cucumber.testng.TestNGCucumberRunner;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-     private TestNGCucumberRunner testNGCucumberRunner;
-    @BeforeSuite
-    public void testStart(){
-        System.out.println("Starting cucumber tests.");
-    } 
+    public static WebDriver driver;
+    public static WebDriverWait explicitWait;
 
-    @BeforeClass(alwaysRun = true)
-    public void setupClass(){
-        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    } 
+    //PageFactories
 
-    @Test(dataProvider = "features")
-    public void feature(PickleWrapper pickleWrapper, FeatureWrapper feature){
-        testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
+    public static LoginPageFactory loginPageFactory;
+    public static RegisterPageFactory registerPageFactory;
+    public static PostBirdiePageFactory postBirdiePageFactory;
+
+    @BeforeClass
+    public static void setup(){
+       
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        //pagefactories
+        loginPageFactory = new LoginPageFactory(driver);
+        registerPageFactory = new RegisterPageFactory(driver);
+        postBirdiePageFactory = new PostBirdiePageFactory(driver);
+
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        System.out.println("Set up Complete!");
+
     }
 
-    @DataProvider
-    public Object[][] features(){
-        return testNGCucumberRunner.provideScenarios();
-    } 
+    @AfterClass
+    public static void teardown(){
+        driver.quit();
+        System.out.println("teardown complete");
+    }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDownClass(){
-        testNGCucumberRunner.finish();
-    } 
 }

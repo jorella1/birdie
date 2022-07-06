@@ -11,7 +11,7 @@ public class RegisterPageFactory {
     @FindBy(xpath = "/html/body/div[2]/div/div[3]/div/div[2]/div[1]/label[2]")
     WebElement signupForm;
 
-    @FindBy(id="username")
+    @FindBy(xpath = "/html/body/div[2]/div/div[3]/div/div[2]/div[2]/form[2]/div[1]/input")
     WebElement nameInput;
 
     @FindBy(id="pass")
