@@ -35,7 +35,7 @@
                     <button class="btn" type="submit">
                         <i class="fa-solid fa-magnifying-glass fs-4"></i>
                         <span class="fs-4 d-none d-xl-inline">Search</span>
-                        <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" hidden>
+                        <input type="text" id="searchVal" name="searchField" class="form-control mt-2" placeholder="Search Birdie" value=$userid hidden>
                         </button>
                         </form>
                     </div>
@@ -137,13 +137,13 @@ fetch("/posting/all")
     console.log("my role is ", $role);
 
     const homeForm = document.getElementById('goHome');
-    homeForm.action = `/dashboard/${userid}`;
+    homeForm.action = `http://localhost:9090/dashboard/${userid}`;
+
     const searchForm = document.getElementById('searchForm');
-    searchForm.action = `/searchpage/${userid}`
+    searchForm.action = `http://localhost:9090/searchpage/${userid}`
 
     const searchSideButton = document.getElementById('goSearch');
-    searchSideButton.value = 'test';
-    searchSideButton.action = `/searchpage/${userid}`
+    searchSideButton.action = `http://localhost:9090/searchpage/${userid}`
 
     if($role == 1){
         const hammerTab = document.createElement('div');
