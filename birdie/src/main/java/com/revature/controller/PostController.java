@@ -63,6 +63,14 @@ public class PostController {
 
 
         PostServe.makeReply(newPost);
+    
+        // http://localhost:9090/posting//${userid}/${postid}
+        String url ="/posting/%s/%s";
+        // String url = "/dashboard/%s";
+        String result = String.format(url, userid,postid);
+
+        ctx.redirect(result);   
+
         try{
 
         }catch(Exception e){
@@ -86,7 +94,7 @@ public class PostController {
         String search = ctx.pathParam("search");
         // String search = ctx.formParam("searchField");
         System.out.println(search);
-
+        
         // Map<String,String> temp = new HashMap<>();
         // temp.put("searches", search);
 
