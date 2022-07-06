@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document $userid</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/index.css" rel="stylesheet" type="text/css">
@@ -129,6 +129,44 @@ fetch("/posting/flagged")
 })
 .then(function(jsondata){
     console.log(jsondata);
+    const homeForm = document.getElementById('goHome');
+    homeForm.action = `http://localhost:9090/dashboard/${userid}`;
+
+    const searchForm = document.getElementById('searchForm');
+    searchForm.action = `http://localhost:9090/searchpage/${userid}`
+
+    const searchSideButton = document.getElementById('goSearch');
+    searchSideButton.action = `http://localhost:9090/searchpage/${userid}`
+
+    if($role == 1){
+        const hammerTab = document.createElement('div');
+        hammerTab.className = 'my-3';
+
+        const adminForm = document.createElement('form');
+        adminForm.action = 'http://localhost:9090/admin';
+
+        adminForm.id = 'adminButton';
+        hammerTab.appendChild(adminForm);
+        
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+
+        const hammerIcon = document.createElement('i');
+        hammerIcon.className = 'fa-solid fa-hammer fs-4';
+        btn.appendChild(hammerIcon);
+
+        const sp = document.createElement('SPAN');
+        sp.className = 'fs-4 d-none d-xl-inline';
+        sp.innerHTML = 'Admin';
+        btn.appendChild(sp);
+
+        adminForm.appendChild(btn);
+        const navbar = document.getElementById('nav');
+        navbar.appendChild(hammerTab);
+    }
+    else{
+    console.log('in the else statement');
+    }
     for(let i = 0; i < jsondata.length; i++){
         const divTweet = document.createElement('div');
         divTweet.className = 'tweet';
