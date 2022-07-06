@@ -84,8 +84,19 @@
             </div>
             <div class="col-lg-4 mt-1 border-start d-none d-lg-block">
                 <div class="position-sticky" style="top:0px">
-                    <div class="mt-4">
-                        <input type="text" class="form-control" placeholder="Search Birdie" />
+                   <div class="mt-4">
+                    <form id="searchForm" method="post">
+                        <div class="row">
+                            <div class="col-10 mt-2">
+                                <input type="text" id="searchVal" name="searchField" class="form-control" placeholder="Search Birdie" required>
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" name="searchBtn" class="btn"> 
+                                    <i class="fa-solid fa-magnifying-glass fs-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                     </div>
                     <div class="happening_box mt-5 p-3">
                         <div>
@@ -138,35 +149,7 @@ fetch("/posting/flagged")
     const searchSideButton = document.getElementById('goSearch');
     searchSideButton.action = `http://localhost:9090/searchpage/${userid}`
 
-    if($role == 1){
-        const hammerTab = document.createElement('div');
-        hammerTab.className = 'my-3';
-
-        const adminForm = document.createElement('form');
-        adminForm.action = 'http://localhost:9090/admin';
-
-        adminForm.id = 'adminButton';
-        hammerTab.appendChild(adminForm);
-        
-        const btn = document.createElement('button');
-        btn.className = 'btn';
-
-        const hammerIcon = document.createElement('i');
-        hammerIcon.className = 'fa-solid fa-hammer fs-4';
-        btn.appendChild(hammerIcon);
-
-        const sp = document.createElement('SPAN');
-        sp.className = 'fs-4 d-none d-xl-inline';
-        sp.innerHTML = 'Admin';
-        btn.appendChild(sp);
-
-        adminForm.appendChild(btn);
-        const navbar = document.getElementById('nav');
-        navbar.appendChild(hammerTab);
-    }
-    else{
-    console.log('in the else statement');
-    }
+    
     for(let i = 0; i < jsondata.length; i++){
         const divTweet = document.createElement('div');
         divTweet.className = 'tweet';
