@@ -7,7 +7,7 @@
 ### Release
 ### Date found
 
-    7/4/22
+    7/6/22
 
 ### Date closed
 
@@ -42,7 +42,7 @@
 
 ### Status
 
-    open
+    close
     
 ### Notes
 
